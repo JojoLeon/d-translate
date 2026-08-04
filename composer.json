@@ -2,9 +2,14 @@
     "name": "dreistein/d-translate",
     "type": "typo3-cms-extension",
     "description": "LLM-based translation for TYPO3: translates pages and records into your site languages through TYPO3's own localize path (Anthropic Claude, OpenAI, Mistral or Google Gemini).",
-    "homepage": "https://dreistein.de",
+    "homepage": "https://www.dreistein.de/en/dtranslate/manual",
     "license": ["GPL-2.0-or-later"],
     "keywords": ["TYPO3 CMS", "AI", "translation", "localization", "Anthropic", "Claude"],
+    "support": {
+        "docs": "https://www.dreistein.de/en/dtranslate/manual",
+        "issues": "https://github.com/JojoLeon/d-translate/issues",
+        "source": "https://github.com/JojoLeon/d-translate"
+    },
     "version": "0.1.0",
     "require": {
         "php": "^8.2",
