@@ -35,5 +35,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Joachim Dreistein',
     'author_email' => 'info@dreistein.de',
     'author_company' => 'Dreistein',
-    'version' => '0.1.0',
+    'version' => '0.1.1',
 ];

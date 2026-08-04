@@ -4,6 +4,13 @@ All notable changes to this extension are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.1.1] — 2026-08-04
+
+### Changed
+
+- Homepage and support links now point at the manual
+  (https://www.dreistein.de/en/dtranslate/manual) and the public repository
+
 ## [0.1.0] — 2026-08-04
 
 First public release (beta).
