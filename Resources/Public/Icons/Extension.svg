@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Extension icon: the "d" of the dTRANSLATE wordmark, with the translate sheets. -->
+  <rect width="64" height="64" rx="10" fill="#626f69"/>
+  <g transform="translate(10 12) scale(0.19)">
+    <path d="M172,0L214,0L214,200L34,200C15.348,200 0,184.652 0,166L0,88C-0,69.348 15.348,54 34,54L172,54L172,0ZM58,96C49.223,96 42,103.223 42,112L42,142C42,150.777 49.223,158 58,158L156,158C164.777,158 172,150.777 172,142L172,112C172,103.223 164.777,96 156,96L58,96Z" fill="#ff5c1c" fill-rule="nonzero"/>
+  </g>
+  <circle cx="47" cy="47" r="12" fill="#626f69"/>
+  <g stroke="#ffffff" fill="none" stroke-linejoin="round">
+    <path d="M41 50v-8.2a1.8 1.8 0 0 1 1.8-1.8H51" stroke-width="2.2" opacity=".65"/>
+    <rect x="44.5" y="43.5" width="10.5" height="10.5" rx="1.8" stroke-width="2.5"/>
+  </g>
+</svg>

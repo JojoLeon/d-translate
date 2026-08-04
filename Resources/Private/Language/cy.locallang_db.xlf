@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="cy" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="tx_dtranslate_llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>Ffurfweddiad LLM</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Teitl</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type" xml:space="preserve">
+                <source>Provider type</source>
+                <target>Math o ddarparwr</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.anthropic" xml:space="preserve">
+                <source>Anthropic (Claude)</source>
+                <target>Anthropic (Claude)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.gemini" xml:space="preserve">
+                <source>Google (Gemini)</source>
+                <target>Google (Gemini)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.mistral" xml:space="preserve">
+                <source>Mistral</source>
+                <target>Mistral</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.openai" xml:space="preserve">
+                <source>OpenAI</source>
+                <target>OpenAI</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.endpoint" xml:space="preserve">
+                <source>API base URL</source>
+                <target>URL sylfaen yr API</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.chat_model" xml:space="preserve">
+                <source>Chat model</source>
+                <target>Model sgwrsio</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key" xml:space="preserve">
+                <source>API key</source>
+                <target>Allwedd API</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key.description" xml:space="preserve">
+                <source>Provider API key. Stored as entered — it has to be sent to the provider.</source>
+                <target>Allwedd API y darparwr. Caiff ei chadw fel y’i rhoddwyd — rhaid ei hanfon at y darparwr.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Proffil cyfieithu</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Teitl</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier" xml:space="preserve">
+                <source>Site identifier</source>
+                <target>Dynodwr y safle</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.description" xml:space="preserve">
+                <source>The TYPO3 site this profile applies to. Empty = default profile, used for every site without one of its own.</source>
+                <target>Y safle TYPO3 y mae’r proffil hwn yn berthnasol iddo. Gwag = proffil diofyn, a ddefnyddir ar gyfer pob safle heb un ei hun.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.all" xml:space="preserve">
+                <source>[all sites — default profile]</source>
+                <target>[pob safle — proffil diofyn]</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>Ffurfweddiad LLM</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language" xml:space="preserve">
+                <source>Source language (override)</source>
+                <target>Iaith ffynhonnell (diystyru)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language.description" xml:space="preserve">
+                <source>Only needed when the source texts are not written in the default language of the site. Empty = derive the name from the site locale.</source>
+                <target>Dim ond pan nad yw’r testunau ffynhonnell wedi’u hysgrifennu yn iaith ddiofyn y safle. Gwag = deillio’r enw o locale y safle.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Ffurfioldeb</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.default" xml:space="preserve">
+                <source>Default</source>
+                <target>Rhagosodiad</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.formal" xml:space="preserve">
+                <source>Formal</source>
+                <target>Ffurfiol</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.informal" xml:space="preserve">
+                <source>Informal</source>
+                <target>Anffurfiol</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint" xml:space="preserve">
+                <source>Style / glossary hint</source>
+                <target>Awgrym arddull / geirfa</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint.description" xml:space="preserve">
+                <source>Free-text guidance for the system prompt (tone, brand terms to keep, …).</source>
+                <target>Testun rhydd ar gyfer anogwr y system (naws, termau brand i’w cadw, …).</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables" xml:space="preserve">
+                <source>Translatable tables (allowlist)</source>
+                <target>Tablau cyfieithadwy (rhestr a ganiateir)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables.description" xml:space="preserve">
+                <source>Table names, separated by commas or one per line. Empty = allow every localizable table.</source>
+                <target>Enwau tablau, wedi’u gwahanu gan atalnodau neu un fesul llinell. Gwag = caniatáu pob tabl y gellir ei leoleiddio.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields" xml:space="preserve">
+                <source>Additional fields (table.column)</source>
+                <target>Meysydd ychwanegol (tabl.colofn)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields.description" xml:space="preserve">
+                <source>One per line or comma-separated. Text, RTE and FlexForm columns are supported. Standard page SEO fields are translated automatically.</source>
+                <target>Un fesul llinell neu wedi’u gwahanu gan atalnodau. Cefnogir colofnau testun, RTE a FlexForm. Caiff meysydd SEO safonol tudalennau eu cyfieithu’n awtomatig.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Geirfa</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.description" xml:space="preserve">
+                <source>Term pairs injected into the system prompt for consistent terminology.</source>
+                <target>Parau o dermau a roddir yn anogwr y system er mwyn cysondeb terminoleg.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary" xml:space="preserve">
+                <source>Glossary entry</source>
+                <target>Cofnod geirfa</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
+                <source>Applies to target language</source>
+                <target>Yn berthnasol i’r iaith darged</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
+                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
+                <target>Cyfyngu’r term i un iaith ar safle, neu adael iddo fod yn berthnasol i bob iaith darged.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">
+                <source>All target languages</source>
+                <target>Pob iaith darged</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.source_term" xml:space="preserve">
+                <source>Source term</source>
+                <target>Term ffynhonnell</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_term" xml:space="preserve">
+                <source>Target term (translation / keep as is)</source>
+                <target>Term targed (cyfieithiad / cadw fel y mae)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.note" xml:space="preserve">
+                <source>Note</source>
+                <target>Nodyn</target>
+            </trans-unit>
+            <trans-unit id="tabs.language" xml:space="preserve">
+                <source>Language</source>
+                <target>Iaith</target>
+            </trans-unit>
+            <trans-unit id="tabs.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Geirfa</target>
+            </trans-unit>
+            <trans-unit id="tabs.scope" xml:space="preserve">
+                <source>Scope</source>
+                <target>Cwmpas</target>
+            </trans-unit>
+            <trans-unit id="tabs.access" xml:space="preserve">
+                <source>Access</source>
+                <target>Mynediad</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

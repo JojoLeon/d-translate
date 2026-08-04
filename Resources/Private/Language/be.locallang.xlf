@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="be" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="about.open" xml:space="preserve">
+                <source>About dTRANSLATE</source>
+                <target>Пра dTRANSLATE</target>
+            </trans-unit>
+            <trans-unit id="about.close" xml:space="preserve">
+                <source>Close</source>
+                <target>Закрыць</target>
+            </trans-unit>
+            <trans-unit id="about.logoAlt" xml:space="preserve">
+                <source>Logo: dreistein medienentwicklung</source>
+                <target>Logo: dreistein medienentwicklung</target>
+            </trans-unit>
+            <trans-unit id="about.claim" xml:space="preserve">
+                <source>Modern web development and AI integration for mid-sized businesses.</source>
+                <target>Сучасная вэб-распрацоўка і інтэграцыя ШІ для сярэдняга бізнесу.</target>
+            </trans-unit>
+            <trans-unit id="about.copyright" xml:space="preserve">
+                <source>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</source>
+                <target>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</target>
+            </trans-unit>
+            <trans-unit id="about.license" xml:space="preserve">
+                <source>License: GNU General Public License v2 or later.</source>
+                <target>Ліцэнзія: GNU General Public License v2 або навейшая.</target>
+            </trans-unit>
+            <trans-unit id="about.description" xml:space="preserve">
+                <source>LLM-based translation for TYPO3: profiles, glossaries, background runs.</source>
+                <target>Пераклад моўнай мадэллю для TYPO3: профілі, гласарыі, фонавыя запускі.</target>
+            </trans-unit>
+            <trans-unit id="about.more" xml:space="preserve">
+                <source>More at</source>
+                <target>Падрабязней на</target>
+            </trans-unit>
+            <trans-unit id="module.intro" xml:space="preserve">
+                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind a site to an LLM configuration.</source>
+                <target>Пераклад з дапамогай моўнай мадэлі праз шлях localize у DataHandler. Профілі звязваюць сайт з канфігурацыяй LLM.</target>
+            </trans-unit>
+            <trans-unit id="module.translatePage" xml:space="preserve">
+                <source>Translate page</source>
+                <target>Перакласці старонку</target>
+            </trans-unit>
+            <trans-unit id="module.profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Профіль перакладу</target>
+            </trans-unit>
+            <trans-unit id="module.allSites" xml:space="preserve">
+                <source>all sites</source>
+                <target>усе сайты</target>
+            </trans-unit>
+            <trans-unit id="module.targetLanguages" xml:space="preserve">
+                <source>Target languages</source>
+                <target>Мэтавыя мовы</target>
+            </trans-unit>
+            <trans-unit id="module.records" xml:space="preserve">
+                <source>Translatable records (page %s)</source>
+                <target>Запісы для перакладу (старонка %s)</target>
+            </trans-unit>
+            <trans-unit id="module.pageItself" xml:space="preserve">
+                <source>This page</source>
+                <target>Гэта старонка</target>
+            </trans-unit>
+            <trans-unit id="module.pageItselfHint" xml:space="preserve">
+                <source>The page record — title, slug and SEO metadata — is part of every run and cannot be deselected.</source>
+                <target>Запіс старонкі — загаловак, slug і SEO-метаданыя — уваходзіць у кожны запуск і не можа быць адключаны.</target>
+            </trans-unit>
+            <trans-unit id="module.recordsHint" xml:space="preserve">
+                <source>Checked records are translated. An unchecked container skips its whole group; unchecked children of a checked container stay in the source language. IRRE children are translated together with their parent record.</source>
+                <target>Адзначаныя запісы перакладаюцца. Неадзначаны кантэйнер прапускае ўсю групу; неадзначаныя даччыныя запісы адзначанага кантэйнера застаюцца на зыходнай мове. Даччыныя запісы IRRE перакладаюцца разам з бацькоўскім запісам.</target>
+            </trans-unit>
+            <trans-unit id="module.noRecords" xml:space="preserve">
+                <source>No translatable records on this page.</source>
+                <target>На гэтай старонцы няма запісаў для перакладу.</target>
+            </trans-unit>
+            <trans-unit id="module.selectAll" xml:space="preserve">
+                <source>Select all</source>
+                <target>Выбраць усё</target>
+            </trans-unit>
+            <trans-unit id="module.selectNone" xml:space="preserve">
+                <source>Deselect all</source>
+                <target>Зняць выбар</target>
+            </trans-unit>
+            <trans-unit id="module.selectPageInTree" xml:space="preserve">
+                <source>Please select a page in the page tree on the left.</source>
+                <target>Выберыце старонку ў дрэве злева.</target>
+            </trans-unit>
+            <trans-unit id="module.submit" xml:space="preserve">
+                <source>Translate selection</source>
+                <target>Перакласці выбранае</target>
+            </trans-unit>
+            <trans-unit id="module.publishPage" xml:space="preserve">
+                <source>Publish translated page immediately</source>
+                <target>Адразу апублікаваць перакладзеную старонку</target>
+            </trans-unit>
+            <trans-unit id="module.reload" xml:space="preserve">
+                <source>Reload page</source>
+                <target>Перазагрузіць старонку</target>
+            </trans-unit>
+            <trans-unit id="module.profiles" xml:space="preserve">
+                <source>Translation profiles</source>
+                <target>Профілі перакладу</target>
+            </trans-unit>
+            <trans-unit id="module.newProfile" xml:space="preserve">
+                <source>+ New profile</source>
+                <target>+ Новы профіль</target>
+            </trans-unit>
+            <trans-unit id="module.llmConfigs" xml:space="preserve">
+                <source>LLM configurations</source>
+                <target>Канфігурацыі LLM</target>
+            </trans-unit>
+            <trans-unit id="module.newLlmConfig" xml:space="preserve">
+                <source>+ New configuration</source>
+                <target>+ Новая канфігурацыя</target>
+            </trans-unit>
+            <trans-unit id="module.noProfiles" xml:space="preserve">
+                <source>No profiles yet.</source>
+                <target>Профіляў пакуль няма.</target>
+            </trans-unit>
+            <trans-unit id="module.noLlmConfigs" xml:space="preserve">
+                <source>No configurations yet.</source>
+                <target>Канфігурацый пакуль няма.</target>
+            </trans-unit>
+            <trans-unit id="module.edit" xml:space="preserve">
+                <source>Edit</source>
+                <target>Рэдагаваць</target>
+            </trans-unit>
+            <trans-unit id="column.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Назва</target>
+            </trans-unit>
+            <trans-unit id="column.site" xml:space="preserve">
+                <source>Site</source>
+                <target>Сайт</target>
+            </trans-unit>
+            <trans-unit id="column.llmConfig" xml:space="preserve">
+                <source>LLM config</source>
+                <target>Канфігурацыя LLM</target>
+            </trans-unit>
+            <trans-unit id="column.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Узровень ветлівасці</target>
+            </trans-unit>
+            <trans-unit id="column.tables" xml:space="preserve">
+                <source>Tables</source>
+                <target>Табліцы</target>
+            </trans-unit>
+            <trans-unit id="column.type" xml:space="preserve">
+                <source>Type</source>
+                <target>Тып</target>
+            </trans-unit>
+            <trans-unit id="column.model" xml:space="preserve">
+                <source>Model</source>
+                <target>Мадэль</target>
+            </trans-unit>
+            <trans-unit id="column.endpoint" xml:space="preserve">
+                <source>Endpoint</source>
+                <target>Канчатковы пункт</target>
+            </trans-unit>
+            <trans-unit id="js.pageMeta" xml:space="preserve">
+                <source>Page metadata</source>
+                <target>Метаданыя старонкі</target>
+            </trans-unit>
+            <trans-unit id="js.chooseLanguage" xml:space="preserve">
+                <source>Please choose at least one target language.</source>
+                <target>Выберыце хаця б адну мэтавую мову.</target>
+            </trans-unit>
+            <trans-unit id="js.progress" xml:space="preserve">
+                <source>Translating %s/%s: %s …</source>
+                <target>Пераклад %s/%s: %s …</target>
+            </trans-unit>
+            <trans-unit id="js.finished" xml:space="preserve">
+                <source>Finished. Reloading page …</source>
+                <target>Гатова. Старонка перазагружаецца …</target>
+            </trans-unit>
+            <trans-unit id="js.finishedErrors" xml:space="preserve">
+                <source>%s chunk(s) with errors — messages stay on screen, please check.</source>
+                <target>Блокаў з памылкамі: %s — паведамленні застаюцца на экране, праверце іх.</target>
+            </trans-unit>
+            <trans-unit id="js.finishedHints" xml:space="preserve">
+                <source>Finished, with notices — messages stay on screen, please check.</source>
+                <target>Гатова, з заўвагамі — паведамленні застаюцца на экране, праверце іх.</target>
+            </trans-unit>
+            <trans-unit id="js.aborted" xml:space="preserve">
+                <source>Run aborted — please check the LLM configuration.</source>
+                <target>Запуск спынены — праверце канфігурацыю LLM.</target>
+            </trans-unit>
+            <trans-unit id="js.serverError" xml:space="preserve">
+                <source>Server error (HTTP %s).</source>
+                <target>Памылка сервера (HTTP %s).</target>
+            </trans-unit>
+            <trans-unit id="js.seeLog" xml:space="preserve">
+                <source>Details in the TYPO3 log.</source>
+                <target>Падрабязнасці ў журнале TYPO3.</target>
+            </trans-unit>
+            <trans-unit id="js.networkError" xml:space="preserve">
+                <source>Network error at %s: %s</source>
+                <target>Сеткавая памылка пры %s: %s</target>
+            </trans-unit>
+            <trans-unit id="run.selectPageAndLanguage" xml:space="preserve">
+                <source>Please select a page (in the page tree) and at least one target language.</source>
+                <target>Выберыце старонку (у дрэве старонак) і хаця б адну мэтавую мову.</target>
+            </trans-unit>
+            <trans-unit id="run.invalidParameters" xml:space="preserve">
+                <source>Invalid parameters.</source>
+                <target>Няправільныя параметры.</target>
+            </trans-unit>
+            <trans-unit id="run.subject" xml:space="preserve">
+                <source>Page %s → %s</source>
+                <target>Старонка %s → %s</target>
+            </trans-unit>
+            <trans-unit id="run.created" xml:space="preserve">
+                <source>%s newly translated</source>
+                <target>перакладзена ўпершыню: %s</target>
+            </trans-unit>
+            <trans-unit id="run.updated" xml:space="preserve">
+                <source>%s updated</source>
+                <target>абноўлена: %s</target>
+            </trans-unit>
+            <trans-unit id="run.createdAndUpdated" xml:space="preserve">
+                <source>%s new, %s updated</source>
+                <target>новых: %s, абноўлена: %s</target>
+            </trans-unit>
+            <trans-unit id="run.noChange" xml:space="preserve">
+                <source>no change</source>
+                <target>без зменаў</target>
+            </trans-unit>
+            <trans-unit id="run.pageCreated" xml:space="preserve">
+                <source>page translation created</source>
+                <target>пераклад старонкі створаны</target>
+            </trans-unit>
+            <trans-unit id="run.pageUpdated" xml:space="preserve">
+                <source>page metadata updated</source>
+                <target>метаданыя старонкі абноўлены</target>
+            </trans-unit>
+            <trans-unit id="run.pageUnchanged" xml:space="preserve">
+                <source>page unchanged</source>
+                <target>старонка без зменаў</target>
+            </trans-unit>
+            <trans-unit id="run.hints" xml:space="preserve">
+                <source>Notices: %s</source>
+                <target>Заўвагі: %s</target>
+            </trans-unit>
+            <trans-unit id="run.emptySelection" xml:space="preserve">
+                <source>No records to translate (empty selection).</source>
+                <target>Няма запісаў для перакладу (пусты выбар).</target>
+            </trans-unit>
+            <trans-unit id="run.failed" xml:space="preserve">
+                <source>Translation failed.</source>
+                <target>Не ўдалося выканаць пераклад.</target>
+            </trans-unit>
+            <trans-unit id="run.itemGaveUp" xml:space="preserve">
+                <source>Given up after %s attempts — this record kept interrupting the run. The other records were processed.</source>
+                <target>Спынена пасля %s спробаў — гэты запіс увесь час перарываў выкананне. Астатнія запісы апрацаваны.</target>
+            </trans-unit>
+            <trans-unit id="run.noProfile" xml:space="preserve">
+                <source>No translation profile applies to this page. Assign the site to a profile, or leave a profile's site empty to make it the default.</source>
+                <target>Для гэтай старонкі не дзейнічае ніводны профіль перакладу. Прывяжыце сайт да профілю або пакіньце поле сайта пустым, каб профіль стаў прадвызначаным.</target>
+            </trans-unit>
+            <trans-unit id="run.sourceLanguageUnknown" xml:space="preserve">
+                <source>The source language could not be determined. Set it in the translation profile, or give the default language of the site a locale.</source>
+                <target>Не ўдалося вызначыць зыходную мову. Пазначце яе ў профілі перакладу або задайце лакаль для прадвызначанай мовы сайта.</target>
+            </trans-unit>
+            <trans-unit id="run.summary" xml:space="preserve">
+                <source>%s re-translated, %s newly created.</source>
+                <target>перакладзена нанова: %s, створана: %s.</target>
+            </trans-unit>
+            <trans-unit id="run.queued" xml:space="preserve">
+                <source>Run #%s queued — %s unit(s) will be processed in the background.</source>
+                <target>Запуск №%s пастаўлены ў чаргу — %s адзінак(і) будуць апрацаваны ў фоне.</target>
+            </trans-unit>
+            <trans-unit id="run.alreadyRunning" xml:space="preserve">
+                <source>A run for this page and language is already open (#%s). Please wait for it to finish or cancel it.</source>
+                <target>Для гэтай старонкі і мовы ўжо адкрыты запуск (№%s). Дачакайцеся яго заканчэння або скасуйце яго.</target>
+            </trans-unit>
+            <trans-unit id="run.cancelled" xml:space="preserve">
+                <source>Run #%s cancelled.</source>
+                <target>Запуск №%s скасаваны.</target>
+            </trans-unit>
+            <trans-unit id="run.background" xml:space="preserve">
+                <source>Process in the background</source>
+                <target>Апрацоўваць у фоне</target>
+            </trans-unit>
+            <trans-unit id="run.backgroundHint" xml:space="preserve">
+                <source>The run is handled by the server worker — you can close this page.</source>
+                <target>Запускам займаецца серверны апрацоўшчык — гэтую старонку можна закрыць.</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslated" xml:space="preserve">
+                <source>Skip translated</source>
+                <target>Прапускаць перакладзенае</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslatedHint" xml:space="preserve">
+                <source>Records that already have a translation are left untouched; only the missing ones are created.</source>
+                <target>Запісы, якія ўжо маюць пераклад, застаюцца некранутымі; ствараюцца толькі адсутныя.</target>
+            </trans-unit>
+            <trans-unit id="run.estimate" xml:space="preserve">
+                <source>This run covers %s unit(s) in %s language(s).</source>
+                <target>Гэты запуск ахоплівае %s адзінак(і) у %s мове(ах).</target>
+            </trans-unit>
+            <trans-unit id="run.confirmTitle" xml:space="preserve">
+                <source>Start this run in the browser?</source>
+                <target>Запусціць гэты працэс у браўзеры?</target>
+            </trans-unit>
+            <trans-unit id="run.confirmHint" xml:space="preserve">
+                <source>Without "Process in the background" this page has to stay open until the run has finished. Tick that option to hand the run to the server worker instead.</source>
+                <target>Без «Апрацоўваць у фоне» гэтая старонка павінна заставацца адкрытай, пакуль запуск не завершыцца. Уключыце гэты параметр, каб перадаць запуск сервернаму воркеру.</target>
+            </trans-unit>
+            <trans-unit id="run.confirmContinue" xml:space="preserve">
+                <source>Start in the browser</source>
+                <target>Запусціць у браўзеры</target>
+            </trans-unit>
+            <trans-unit id="run.confirmCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Скасаваць</target>
+            </trans-unit>
+            <trans-unit id="run.budgetExceeded" xml:space="preserve">
+                <source>Run stopped: the limit of %s LLM calls was reached.</source>
+                <target>Запуск спынены: дасягнуты ліміт у %s запытаў да LLM.</target>
+            </trans-unit>
+            <trans-unit id="run.jobs" xml:space="preserve">
+                <source>Recent runs</source>
+                <target>Апошнія запускі</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.queued" xml:space="preserve">
+                <source>queued</source>
+                <target>у чарзе</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.running" xml:space="preserve">
+                <source>running</source>
+                <target>выконваецца</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.done" xml:space="preserve">
+                <source>done</source>
+                <target>завершаны</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.failed" xml:space="preserve">
+                <source>failed</source>
+                <target>няўдача</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.cancelled" xml:space="preserve">
+                <source>cancelled</source>
+                <target>скасаваны</target>
+            </trans-unit>
+            <trans-unit id="run.jobProgress" xml:space="preserve">
+                <source>%s of %s</source>
+                <target>%s з %s</target>
+            </trans-unit>
+            <trans-unit id="run.jobUsage" xml:space="preserve">
+                <source>%s calls · %s tokens</source>
+                <target>%s запытаў · %s токенаў</target>
+            </trans-unit>
+            <trans-unit id="run.jobCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Скасаваць</target>
+            </trans-unit>
+            <trans-unit id="run.noJobs" xml:space="preserve">
+                <source>No runs yet.</source>
+                <target>Запускаў пакуль няма.</target>
+            </trans-unit>
+            <trans-unit id="task.work.title" xml:space="preserve">
+                <source>dTRANSLATE: Process translation queue</source>
+                <target>dTRANSLATE: апрацаваць чаргу перакладу</target>
+            </trans-unit>
+            <trans-unit id="task.work.description" xml:space="preserve">
+                <source>Works off the queued translation runs of the backend module. Schedule it every minute. Alternative to the console command dtranslate:work — use one or the other, not both.</source>
+                <target>Апрацоўвае запускі перакладу, пастаўленыя ў чаргу модулем бэкенду. Плануйце яе кожную хвіліну. Альтэрнатыва кансольнай камандзе dtranslate:work — выкарыстоўвайце штосьці адно, не абодва.</target>
+            </trans-unit>
+            <trans-unit id="js.stepFailed" xml:space="preserve">
+                <source>The server did not answer for this unit (HTTP %s) — the run continues with the next one.</source>
+                <target>Сервер не адказаў па гэтай адзінцы (HTTP %s) — запуск працягваецца з наступнай.</target>
+            </trans-unit>
+            <trans-unit id="js.jobStarted" xml:space="preserve">
+                <source>Run #%s started: %s unit(s).</source>
+                <target>Запуск №%s пачаты: %s адзінак.</target>
+            </trans-unit>
+            <trans-unit id="run.genericError" xml:space="preserve">
+                <source>Unexpected error (%s): %s — details in the TYPO3 log.</source>
+                <target>Нечаканая памылка (%s): %s — падрабязнасці ў журнале TYPO3.</target>
+            </trans-unit>
+            <trans-unit id="field.tooLong" xml:space="preserve">
+                <source>%s was left in the source language: the translation is longer than the field allows (%s of %s characters).</source>
+                <target>%s засталося на выходнай мове: пераклад даўжэйшы, чым дазваляе поле (%s з %s знакаў).</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKeyConfigured" xml:space="preserve">
+                <source>The LLM configuration "%s" has no API key. Please enter one in the configuration.</source>
+                <target>У канфігурацыі LLM «%s» няма ключа API. Увядзіце яго ў канфігурацыі.</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKey" xml:space="preserve">
+                <source>No API key is set for the LLM configuration in use.</source>
+                <target>Для выкарыстанай канфігурацыі LLM не зададзены ключ API.</target>
+            </trans-unit>
+            <trans-unit id="llm.keyRejected" xml:space="preserve">
+                <source>%s rejected the API key (HTTP %s). Please check the key in the LLM configuration and enter it again.</source>
+                <target>%s адхіліў ключ API (HTTP %s). Праверце ключ у канфігурацыі LLM і ўвядзіце яго зноў.</target>
+            </trans-unit>
+            <trans-unit id="llm.unknownModel" xml:space="preserve">
+                <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
+                <target>%s не ведае такой мадэлі ці канчатковага пункта (HTTP 404). Праверце назву мадэлі («%s») і базавы URL API (%s).</target>
+            </trans-unit>
+            <trans-unit id="llm.rateLimit" xml:space="preserve">
+                <source>%s declined the request because of a rate limit (HTTP 429).</source>
+                <target>%s адхіліў запыт з-за абмежавання частаты (HTTP 429).</target>
+            </trans-unit>
+            <trans-unit id="llm.quota" xml:space="preserve">
+                <source>The quota of the %s account is used up (HTTP %s). Please check billing and credit.</source>
+                <target>Квота ўліковага запісу %s вычарпана (HTTP %s). Праверце аплату і баланс.</target>
+            </trans-unit>
+            <trans-unit id="llm.badRequest" xml:space="preserve">
+                <source>%s rejected the request (HTTP %s) — usually an unknown model name ("%s") or an unsupported parameter.</source>
+                <target>%s адхіліў запыт (HTTP %s) — звычайна гэта невядомая назва мадэлі («%s») або непадтрымліваны параметр.</target>
+            </trans-unit>
+            <trans-unit id="llm.serverError" xml:space="preserve">
+                <source>%s reports a malfunction (HTTP %s). Please try again later.</source>
+                <target>%s паведамляе пра збой (HTTP %s). Паспрабуйце пазней.</target>
+            </trans-unit>
+            <trans-unit id="llm.httpStatus" xml:space="preserve">
+                <source>%s answered with HTTP %s.</source>
+                <target>%s адказаў з HTTP %s.</target>
+            </trans-unit>
+            <trans-unit id="llm.providerMessage" xml:space="preserve">
+                <source>Provider message: %s</source>
+                <target>Паведамленне пастаўшчыка: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.unreachable" xml:space="preserve">
+                <source>"%s" cannot be reached. Please check the API base URL of the LLM configuration. (%s)</source>
+                <target>«%s» недаступны. Праверце базавы URL API у канфігурацыі LLM. (%s)</target>
+            </trans-unit>
+            <trans-unit id="llm.timeout" xml:space="preserve">
+                <source>Timeout on the request to %s — the provider did not answer in time.</source>
+                <target>Скончыўся час чакання запыту да %s — пастаўшчык не адказаў своечасова.</target>
+            </trans-unit>
+            <trans-unit id="llm.connectionFailed" xml:space="preserve">
+                <source>Connection to %s failed: %s</source>
+                <target>Не ўдалося злучыцца з %s: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.invalidJson" xml:space="preserve">
+                <source>%s did not return valid JSON.</source>
+                <target>%s вярнуў хібны JSON.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

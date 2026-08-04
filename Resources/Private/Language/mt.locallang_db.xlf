@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="mt" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="tx_dtranslate_llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>Konfigurazzjoni LLM</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Titlu</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type" xml:space="preserve">
+                <source>Provider type</source>
+                <target>Tip ta’ fornitur</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.anthropic" xml:space="preserve">
+                <source>Anthropic (Claude)</source>
+                <target>Anthropic (Claude)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.gemini" xml:space="preserve">
+                <source>Google (Gemini)</source>
+                <target>Google (Gemini)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.mistral" xml:space="preserve">
+                <source>Mistral</source>
+                <target>Mistral</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.openai" xml:space="preserve">
+                <source>OpenAI</source>
+                <target>OpenAI</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.endpoint" xml:space="preserve">
+                <source>API base URL</source>
+                <target>URL bażi tal-API</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.chat_model" xml:space="preserve">
+                <source>Chat model</source>
+                <target>Mudell tal-chat</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key" xml:space="preserve">
+                <source>API key</source>
+                <target>Ċavetta API</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key.description" xml:space="preserve">
+                <source>Provider API key. Stored as entered — it has to be sent to the provider.</source>
+                <target>Iċ-ċavetta API tal-fornitur. Tinħażen kif tiddaħħal — trid tintbagħat lill-fornitur.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Profil ta’ traduzzjoni</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Titlu</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier" xml:space="preserve">
+                <source>Site identifier</source>
+                <target>Identifikatur tas-sit</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.description" xml:space="preserve">
+                <source>The TYPO3 site this profile applies to. Empty = default profile, used for every site without one of its own.</source>
+                <target>Is-sit TYPO3 li għalih japplika dan il-profil. Vojt = profil awtomatiku, jintuża għal kull sit li m’għandux tiegħu.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.all" xml:space="preserve">
+                <source>[all sites — default profile]</source>
+                <target>[is-siti kollha — profil awtomatiku]</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>Konfigurazzjoni LLM</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language" xml:space="preserve">
+                <source>Source language (override)</source>
+                <target>Lingwa sors (issostitwixxi)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language.description" xml:space="preserve">
+                <source>Only needed when the source texts are not written in the default language of the site. Empty = derive the name from the site locale.</source>
+                <target>Meħtieġ biss meta t-testi sors ma jkunux miktuba bil-lingwa awtomatika tas-sit. Vojt = l-isem jinsilet mil-lokal tas-sit.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Livell ta’ formalità</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.default" xml:space="preserve">
+                <source>Default</source>
+                <target>Awtomatiku</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.formal" xml:space="preserve">
+                <source>Formal</source>
+                <target>Formali</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.informal" xml:space="preserve">
+                <source>Informal</source>
+                <target>Informali</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint" xml:space="preserve">
+                <source>Style / glossary hint</source>
+                <target>Indikazzjoni ta’ stil / glossarju</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint.description" xml:space="preserve">
+                <source>Free-text guidance for the system prompt (tone, brand terms to keep, …).</source>
+                <target>Test liberu għall-prompt tas-sistema (ton, termini ta’ marka li għandhom jinżammu, …).</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables" xml:space="preserve">
+                <source>Translatable tables (allowlist)</source>
+                <target>Tabelli li jistgħu jiġu tradotti (lista permessa)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables.description" xml:space="preserve">
+                <source>Table names, separated by commas or one per line. Empty = allow every localizable table.</source>
+                <target>Ismijiet ta’ tabelli, separati b’virgoli jew wieħed f’kull linja. Vojt = ippermetti kull tabella li tista’ tiġi lokalizzata.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields" xml:space="preserve">
+                <source>Additional fields (table.column)</source>
+                <target>Oqsma addizzjonali (tabella.kolonna)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields.description" xml:space="preserve">
+                <source>One per line or comma-separated. Text, RTE and FlexForm columns are supported. Standard page SEO fields are translated automatically.</source>
+                <target>Wieħed f’kull linja jew separati b’virgoli. Huma appoġġjati kolonni ta’ test, RTE u FlexForm. L-oqsma SEO standard tal-paġni jiġu tradotti awtomatikament.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Glossarju</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.description" xml:space="preserve">
+                <source>Term pairs injected into the system prompt for consistent terminology.</source>
+                <target>Pari ta’ termini li jiddaħħlu fil-prompt tas-sistema għal terminoloġija konsistenti.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary" xml:space="preserve">
+                <source>Glossary entry</source>
+                <target>Entrata tal-glossarju</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
+                <source>Applies to target language</source>
+                <target>Tapplika għal-lingwa fil-mira</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
+                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
+                <target>Jillimita t-terminu għal lingwa waħda ta’ sit, jew iħallih japplika għal-lingwi kollha fil-mira.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">
+                <source>All target languages</source>
+                <target>Il-lingwi kollha fil-mira</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.source_term" xml:space="preserve">
+                <source>Source term</source>
+                <target>Terminu sors</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_term" xml:space="preserve">
+                <source>Target term (translation / keep as is)</source>
+                <target>Terminu fil-mira (traduzzjoni / ħallih kif inhu)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.note" xml:space="preserve">
+                <source>Note</source>
+                <target>Nota</target>
+            </trans-unit>
+            <trans-unit id="tabs.language" xml:space="preserve">
+                <source>Language</source>
+                <target>Lingwa</target>
+            </trans-unit>
+            <trans-unit id="tabs.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Glossarju</target>
+            </trans-unit>
+            <trans-unit id="tabs.scope" xml:space="preserve">
+                <source>Scope</source>
+                <target>Ambitu</target>
+            </trans-unit>
+            <trans-unit id="tabs.access" xml:space="preserve">
+                <source>Access</source>
+                <target>Aċċess</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,161 @@
+/*
+ * d_translate backend module.
+ *
+ * Only what the module adds on top of the TYPO3 backend styles: the wordmark
+ * that replaces the module heading, and the about dialog it opens.
+ */
+
+/* ------------------------------------------------------------- brand mark */
+.dtr-brand {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Height follows the heading's font size so the mark sits on the baseline;
+   the aspect ratio comes from the SVG itself. */
+.dtr-brand__logo {
+    height: 1.1em;
+    width: auto;
+    display: block;
+}
+
+.dtr-brand:hover .dtr-brand__logo,
+.dtr-brand:focus-visible .dtr-brand__logo {
+    opacity: 0.75;
+}
+
+/* ------------------------------------------------------------ about dialog */
+.dtr-about {
+    border: 0;
+    border-radius: 12px;
+    padding: 0;
+    max-width: 26rem;
+    width: calc(100% - 2rem);
+    box-shadow: 0 20px 60px rgba(18, 18, 18, 0.25);
+}
+
+.dtr-about::backdrop {
+    background: rgba(18, 18, 18, 0.45);
+}
+
+.dtr-about__body {
+    position: relative;
+    padding: 2rem 2.25rem;
+    text-align: center;
+}
+
+.dtr-about__close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.85rem;
+    background: none;
+    border: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+}
+
+.dtr-about__close:hover {
+    color: #121212;
+}
+
+.dtr-about__brand-logo {
+    height: 30px;
+    width: auto;
+    display: block;
+    margin: 0 auto 1.25rem;
+}
+
+.dtr-about__logo {
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+.dtr-about__body h2 {
+    font-size: 1.05rem;
+    margin: 0 0 0.25rem;
+    color: #121212;
+}
+
+.dtr-about__claim {
+    color: #888;
+    margin-bottom: 0.75rem;
+}
+
+.dtr-about__body hr {
+    border: 0;
+    border-top: 1px solid #e8e8e8;
+    margin: 1rem 0;
+}
+
+.dtr-about__license {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
+}
+
+/* ------------------------------------------- bulk toggles of a record group */
+.dtr-bulk {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid var(--typo3-component-border-color, #ccc);
+}
+
+/* ------------------------------------------------------- inline field error */
+.dtr-fielderror {
+    color: var(--bs-danger, #dc3545);
+    font-size: 0.85rem;
+    margin: 0.4rem 0 0;
+}
+
+/* ---------------------------------------------------------- confirm dialog */
+.dtr-confirm {
+    border: 0;
+    border-radius: 12px;
+    padding: 0;
+    max-width: 30rem;
+    width: calc(100% - 2rem);
+    box-shadow: 0 20px 60px rgba(18, 18, 18, 0.25);
+}
+
+.dtr-confirm::backdrop {
+    background: rgba(18, 18, 18, 0.45);
+}
+
+.dtr-confirm__body {
+    padding: 1.75rem 2rem 1.5rem;
+}
+
+.dtr-confirm__title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+}
+
+.dtr-confirm__text {
+    margin: 0 0 0.5rem;
+}
+
+.dtr-confirm__hint {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
+}
+
+.dtr-confirm__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}

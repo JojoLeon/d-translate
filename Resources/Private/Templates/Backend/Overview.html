@@ -1,0 +1,271 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<!-- The backend's own module layout supplies the wrappers the backend CSS scrolls
+     with (.module / .module-body). Rendering the content bare works by accident in
+     v13/v14, but v12 puts overflow on .module — without it the page cannot scroll. -->
+<f:layout name="Module" />
+<f:section name="Content">
+
+<!-- Plain tags instead of f:asset.script/css on purpose: those resolve the
+     EXT: path to a URL that never changes when the file does, so browsers keep
+     serving a stale copy. {assetVersion} is the newest mtime of these three
+     files — see TranslationModuleController::assetVersion(). -->
+<link rel="stylesheet" href="{f:uri.resource(path: 'EXT:d_translate/Resources/Public/Css/backend-module.css')}?v={assetVersion}" />
+<script defer src="{f:uri.resource(path: 'EXT:d_translate/Resources/Public/JavaScript/translate-form.js')}?v={assetVersion}"></script>
+<script defer src="{f:uri.resource(path: 'EXT:d_translate/Resources/Public/JavaScript/about-modal.js')}?v={assetVersion}"></script>
+
+<f:variable name="ll">LLL:EXT:d_translate/Resources/Private/Language/locallang.xlf:</f:variable>
+
+<!-- Padding comes from .module-body; only the reading width is ours. -->
+<div class="dtranslate-page" style="max-width: 1400px;">
+    <h1>
+        <button type="button" class="dtr-brand" data-about-open title="{f:translate(key: '{ll}about.open')}">
+            <img class="dtr-brand__logo" src="{f:uri.resource(path: 'EXT:d_translate/Resources/Public/Images/logo-dtranslate.svg')}" alt="dTRANSLATE">
+        </button>
+    </h1>
+    <p class="text-muted"><f:translate key="{ll}module.intro" /></p>
+
+    <dialog class="dtr-about" data-about-dialog aria-labelledby="dtr-about-title">
+        <div class="dtr-about__body">
+            <button type="button" class="dtr-about__close" data-about-close aria-label="{f:translate(key: '{ll}about.close')}">&times;</button>
+            <img class="dtr-about__brand-logo" src="{f:uri.resource(path: 'EXT:d_translate/Resources/Public/Images/logo-dtranslate.svg')}" alt="dTRANSLATE">
+            <img class="dtr-about__logo" src="{f:uri.resource(path: 'EXT:d_translate/Resources/Public/Images/logo-dreistein.svg')}" alt="{f:translate(key: '{ll}about.logoAlt')}">
+            <h2 id="dtr-about-title">Joachim Dreistein Medienentwicklung</h2>
+            <p class="dtr-about__claim"><f:translate key="{ll}about.claim" /></p>
+            <p>
+                Bolkerstraße 14 · 40213 Düsseldorf<br>
+                <a href="mailto:info@dreistein.de">info@dreistein.de</a> ·
+                <a href="https://www.dreistein.de" target="_blank" rel="noopener">www.dreistein.de</a>
+            </p>
+            <hr>
+            <p class="dtr-about__license">
+                <f:translate key="{ll}about.copyright" /><br>
+                <f:translate key="{ll}about.license" /><br>
+                <f:translate key="{ll}about.description" /><br>
+                <f:translate key="{ll}about.more" />
+                <a href="https://www.dreistein.de" target="_blank" rel="noopener">www.dreistein.de</a>.
+            </p>
+        </div>
+    </dialog>
+
+    <!-- Messages of the non-JS submit path are rendered by the Module layout. -->
+
+    <div class="card mb-4">
+        <div class="card-header"><f:translate key="{ll}module.translatePage" /></div>
+        <div class="card-body">
+            <f:if condition="{currentPageId} > 0">
+                <f:then>
+                    <!-- The progress labels live here, not in the JS file: Fluid is the
+                         only place with a language service at hand. -->
+                    <form action="{translateUrl}" method="post" data-dtranslate-form="1"
+                          data-start-url="{startUrl}" data-step-url="{stepUrl}"
+                          data-label-page-meta="{f:translate(key: '{ll}js.pageMeta')}"
+                          data-label-choose-language="{f:translate(key: '{ll}js.chooseLanguage')}"
+                          data-label-progress="{f:translate(key: '{ll}js.progress')}"
+                          data-label-finished="{f:translate(key: '{ll}js.finished')}"
+                          data-label-finished-errors="{f:translate(key: '{ll}js.finishedErrors')}"
+                          data-label-finished-hints="{f:translate(key: '{ll}js.finishedHints')}"
+                          data-label-aborted="{f:translate(key: '{ll}js.aborted')}"
+                          data-label-server-error="{f:translate(key: '{ll}js.serverError')}"
+                          data-label-see-log="{f:translate(key: '{ll}js.seeLog')}"
+                          data-label-network-error="{f:translate(key: '{ll}js.networkError')}"
+                          data-label-step-failed="{f:translate(key: '{ll}js.stepFailed')}"
+                          data-label-job-started="{f:translate(key: '{ll}js.jobStarted')}"
+                          data-label-job-progress="{f:translate(key: '{ll}run.jobProgress')}"
+                          data-label-estimate="{f:translate(key: '{ll}run.estimate')}"
+                          data-confirm-above="{confirmAboveUnits}">
+                        <input type="hidden" name="pageId" value="{currentPageId}" />
+                        <div class="mb-3">
+                            <label class="form-label d-block" for="dtranslate-profile"><f:translate key="{ll}module.profile" /></label>
+                            <f:if condition="{profiles}">
+                                <f:then>
+                                    <select class="form-select" name="profile" id="dtranslate-profile" style="max-width: 32rem;">
+                                        <f:for each="{profiles}" as="p">
+                                            <option value="{p.uid}"<f:if condition="{p.uid} == {activeProfile}"> selected="selected"</f:if>>{p.title} (<f:if condition="{p.site_identifier}"><f:then>{p.site_identifier}</f:then><f:else><f:translate key="{ll}module.allSites" /></f:else></f:if>)</option>
+                                        </f:for>
+                                    </select>
+                                </f:then>
+                                <f:else>
+                                    <p class="text-muted mb-0"><f:translate key="{ll}module.noProfiles" /></p>
+                                </f:else>
+                            </f:if>
+                        </div>
+
+                        <div class="mb-3" data-dtranslate-languages>
+                            <label class="form-label d-block"><f:translate key="{ll}module.targetLanguages" /></label>
+                            <f:for each="{languages}" as="l">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="language[]" value="{l.languageId}" id="lang-{l.languageId}" />
+                                    <label class="form-check-label" for="lang-{l.languageId}">{l.title} <span class="text-muted">(#{l.languageId})</span></label>
+                                </div>
+                            </f:for>
+                            <!-- Sits next to the field it is about instead of interrupting
+                                 with a browser alert. role="alert" gets it announced the
+                                 moment it is unhidden. -->
+                            <p class="dtr-fielderror" data-dtranslate-language-error role="alert" hidden><f:translate key="{ll}js.chooseLanguage" /></p>
+                        </div>
+
+                        <label class="form-label"><f:translate key="{ll}module.records" arguments="{0: currentPageId}" /></label>
+
+                        <!-- The page record itself is always part of a run (title, slug,
+                             SEO metadata). Shown as a fixed row so the list below reads as
+                             what it is: the content ON this page. -->
+                        <div class="mb-3" style="border: 1px solid var(--typo3-component-border-color, #ccc); border-radius: 4px;">
+                            <div style="padding: .4rem .75rem; font-weight: 500; background: var(--typo3-component-bg, #fafafa); border-bottom: 1px solid var(--typo3-component-border-color, #ccc);">
+                                <f:translate key="{ll}module.pageItself" />
+                            </div>
+                            <div style="padding: .5rem .75rem;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" checked="checked" disabled="disabled" id="dtranslate-page-itself" />
+                                    <label class="form-check-label" for="dtranslate-page-itself">{pageLabel}</label>
+                                </div>
+                                <p class="text-muted mb-0" style="font-size: .85rem;"><f:translate key="{ll}module.pageItselfHint" /></p>
+                            </div>
+                        </div>
+
+                        <f:if condition="{recordGroups}">
+                            <f:then>
+                                <f:for each="{recordGroups}" as="group">
+                                    <div class="mb-3" data-dtranslate-group style="border: 1px solid var(--typo3-component-border-color, #ccc); border-radius: 4px;">
+                                        <div style="padding: .4rem .75rem; font-weight: 500; background: var(--typo3-component-bg, #fafafa); border-bottom: 1px solid var(--typo3-component-border-color, #ccc);">
+                                            <f:translate key="{group.titleKey}" default="{group.table}" /> <span class="text-muted">({group.table})</span>
+                                        </div>
+                                        <!-- Scoped to this group, not the whole page: with several
+                                             tables listed, "all" almost never means all of them. -->
+                                        <div class="dtr-bulk">
+                                            <button type="button" class="btn btn-sm btn-default" data-dtranslate-select-all><f:translate key="{ll}module.selectAll" /></button>
+                                            <button type="button" class="btn btn-sm btn-default" data-dtranslate-select-none><f:translate key="{ll}module.selectNone" /></button>
+                                        </div>
+                                        <div style="padding: .5rem .75rem;">
+                                            <f:for each="{group.elements}" as="el">
+                                                <div class="form-check" style="margin-left: {el.indent}px;">
+                                                    <input class="form-check-input" type="checkbox" name="records[]" value="{el.table}:{el.uid}" id="el-{el.table}-{el.uid}" checked="checked" />
+                                                    <label class="form-check-label" for="el-{el.table}-{el.uid}">
+                                                        <f:if condition="{el.depth} > 0">↳ </f:if>{el.label}
+                                                    </label>
+                                                </div>
+                                            </f:for>
+                                        </div>
+                                    </div>
+                                </f:for>
+                                <p class="text-muted" style="font-size: .85rem;"><f:translate key="{ll}module.recordsHint" /></p>
+                            </f:then>
+                            <f:else>
+                                <p class="text-muted"><f:translate key="{ll}module.noRecords" /></p>
+                            </f:else>
+                        </f:if>
+
+                        <div class="d-flex align-items-center" style="gap: 1rem; flex-wrap: wrap;">
+                            <button type="submit" class="btn btn-primary"><f:translate key="{ll}module.submit" /></button>
+                            <div class="form-check mb-0">
+                                <!-- Default comes from the extension configuration
+                                     (Behaviour → publishPages); the editor overrides it per run.
+                                     Written out twice because an empty checked="" still checks the box. -->
+                                <f:if condition="{publishPagesDefault}">
+                                    <f:then>
+                                        <input class="form-check-input" type="checkbox" name="publishPage" value="1" id="dtranslate-publish" checked="checked" />
+                                    </f:then>
+                                    <f:else>
+                                        <input class="form-check-input" type="checkbox" name="publishPage" value="1" id="dtranslate-publish" />
+                                    </f:else>
+                                </f:if>
+                                <label class="form-check-label" for="dtranslate-publish">
+                                    <f:translate key="{ll}module.publishPage" />
+                                </label>
+                            </div>
+                            <div class="form-check mb-0">
+                                <!-- Only fills the gaps: records that already have a
+                                     translation are left exactly as they are, which also
+                                     saves the LLM calls for them. Off by default, so a
+                                     run keeps overwriting as before unless asked. -->
+                                <input class="form-check-input" type="checkbox" name="skipTranslated" value="1" id="dtranslate-skip-translated" />
+                                <label class="form-check-label" for="dtranslate-skip-translated" title="{f:translate(key: '{ll}run.skipTranslatedHint')}">
+                                    <f:translate key="{ll}run.skipTranslated" />
+                                </label>
+                            </div>
+                            <div class="form-check mb-0">
+                                <!-- Hands the run to the worker instead of the browser;
+                                     the only sane mode for large selections. -->
+                                <f:if condition="{backgroundDefault}">
+                                    <f:then>
+                                        <input class="form-check-input" type="checkbox" name="background" value="1" id="dtranslate-background" checked="checked" />
+                                    </f:then>
+                                    <f:else>
+                                        <input class="form-check-input" type="checkbox" name="background" value="1" id="dtranslate-background" />
+                                    </f:else>
+                                </f:if>
+                                <label class="form-check-label" for="dtranslate-background" title="{f:translate(key: '{ll}run.backgroundHint')}">
+                                    <f:translate key="{ll}run.background" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="dtranslate-progress" style="display:none; margin-top: 1rem;">
+                            <div class="progress mb-2" style="height: 18px;">
+                                <div id="dtranslate-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width:0%"></div>
+                            </div>
+                            <div id="dtranslate-status" class="text-muted" style="font-size:.85rem;"></div>
+                            <ul id="dtranslate-log" style="font-size:.82rem; max-height:320px; overflow-y:auto; padding-left:1.2rem; margin-top:.4rem;"></ul>
+                            <!-- Shown instead of the automatic reload whenever there is
+                                 something to read; the reload would wipe the list. -->
+                            <button type="button" id="dtranslate-reload" class="btn btn-sm btn-default" style="display:none; margin-top:.5rem;"><f:translate key="{ll}module.reload" /></button>
+                        </div>
+                    </form>
+
+                    <!-- Asked only for foreground runs above the configured size:
+                         those are the ones that need this tab to stay open.
+                         method="dialog" gives the native return value, so the JS
+                         only has to read it — no click wiring, CSP-safe. -->
+                    <dialog class="dtr-confirm" data-dtranslate-confirm aria-labelledby="dtr-confirm-title">
+                        <form method="dialog" class="dtr-confirm__body">
+                            <h2 class="dtr-confirm__title" id="dtr-confirm-title"><f:translate key="{ll}run.confirmTitle" /></h2>
+                            <p class="dtr-confirm__text" data-dtranslate-confirm-text></p>
+                            <p class="dtr-confirm__hint"><f:translate key="{ll}run.confirmHint" /></p>
+                            <div class="dtr-confirm__actions">
+                                <!-- Cancel is a plain method="dialog" submit: it closes without
+                                     any JS, and being the first submit button it is also what
+                                     ENTER picks. Starting the run is the only path that needs
+                                     a handler, so only that button carries one. -->
+                                <button type="submit" class="btn btn-default"><f:translate key="{ll}run.confirmCancel" /></button>
+                                <button type="button" class="btn btn-primary" data-dtranslate-confirm-continue><f:translate key="{ll}run.confirmContinue" /></button>
+                            </div>
+                        </form>
+                    </dialog>
+                </f:then>
+                <f:else>
+                    <p class="text-muted"><f:translate key="{ll}module.selectPageInTree" /></p>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+
+    <div class="card mb-4" id="dtranslate-jobs" data-status-url="{statusUrl}">
+        <div class="card-header"><f:translate key="{ll}run.jobs" /></div>
+        <table class="table table-striped mb-0">
+            <tbody>
+                <f:for each="{jobs}" as="job">
+                    <tr data-job-id="{job.uid}" data-job-open="{f:if(condition: job.open, then: '1', else: '0')}">
+                        <td style="width: 4rem;">#{job.uid}</td>
+                        <td><f:format.date format="d.m.Y H:i">@{job.crdate}</f:format.date></td>
+                        <td>{job.languages}</td>
+                        <td data-job-state><f:translate key="{ll}run.jobState.{job.state}" default="{job.state}" /></td>
+                        <td data-job-progress>{job.done} / {job.total}</td>
+                        <td class="text-muted"><f:translate key="{ll}run.jobUsage" arguments="{0: job.calls, 1: job.tokens}" /></td>
+                        <td>
+                            <f:if condition="{job.open}">
+                                <a class="btn btn-sm btn-default" href="{cancelUrl}&amp;job={job.uid}&amp;id={currentPageId}"><f:translate key="{ll}run.jobCancel" /></a>
+                            </f:if>
+                        </td>
+                    </tr>
+                </f:for>
+                <f:if condition="{jobs -> f:count()} == 0">
+                    <tr><td class="text-muted"><f:translate key="{ll}run.noJobs" /></td></tr>
+                </f:if>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</f:section>
+</html>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="bg" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="tx_dtranslate_llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>LLM конфигурация</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Заглавие</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type" xml:space="preserve">
+                <source>Provider type</source>
+                <target>Тип доставчик</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.anthropic" xml:space="preserve">
+                <source>Anthropic (Claude)</source>
+                <target>Anthropic (Claude)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.gemini" xml:space="preserve">
+                <source>Google (Gemini)</source>
+                <target>Google (Gemini)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.mistral" xml:space="preserve">
+                <source>Mistral</source>
+                <target>Mistral</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.openai" xml:space="preserve">
+                <source>OpenAI</source>
+                <target>OpenAI</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.endpoint" xml:space="preserve">
+                <source>API base URL</source>
+                <target>Основен URL на API</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.chat_model" xml:space="preserve">
+                <source>Chat model</source>
+                <target>Чат модел</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key" xml:space="preserve">
+                <source>API key</source>
+                <target>API ключ</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key.description" xml:space="preserve">
+                <source>Provider API key. Stored as entered — it has to be sent to the provider.</source>
+                <target>API ключ на доставчика. Съхранява се непроменен — трябва да се изпраща на доставчика.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Профил за превод</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Заглавие</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier" xml:space="preserve">
+                <source>Site identifier</source>
+                <target>Идентификатор на сайта</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.description" xml:space="preserve">
+                <source>The TYPO3 site this profile applies to. Empty = default profile, used for every site without one of its own.</source>
+                <target>Сайтът в TYPO3, за който важи този профил. Празно = основен профил, използва се за всеки сайт без собствен.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.all" xml:space="preserve">
+                <source>[all sites — default profile]</source>
+                <target>[всички сайтове — основен профил]</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>LLM конфигурация</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language" xml:space="preserve">
+                <source>Source language (override)</source>
+                <target>Изходен език (замяна)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language.description" xml:space="preserve">
+                <source>Only needed when the source texts are not written in the default language of the site. Empty = derive the name from the site locale.</source>
+                <target>Необходимо само когато изходните текстове не са написани на езика по подразбиране на сайта. Празно = името се извежда от локала на сайта.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Ниво на учтивост</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.default" xml:space="preserve">
+                <source>Default</source>
+                <target>По подразбиране</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.formal" xml:space="preserve">
+                <source>Formal</source>
+                <target>Официално (Вие)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.informal" xml:space="preserve">
+                <source>Informal</source>
+                <target>Неофициално (ти)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint" xml:space="preserve">
+                <source>Style / glossary hint</source>
+                <target>Указание за стил / речник</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint.description" xml:space="preserve">
+                <source>Free-text guidance for the system prompt (tone, brand terms to keep, …).</source>
+                <target>Свободен текст за системния промпт (тон, марки, които да се запазят, …).</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables" xml:space="preserve">
+                <source>Translatable tables (allowlist)</source>
+                <target>Таблици за превод (списък с разрешени)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables.description" xml:space="preserve">
+                <source>Table names, separated by commas or one per line. Empty = allow every localizable table.</source>
+                <target>Имена на таблици, разделени със запетая или по едно на ред. Празно = разреши всяка таблица, която може да се локализира.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields" xml:space="preserve">
+                <source>Additional fields (table.column)</source>
+                <target>Допълнителни полета (таблица.колона)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields.description" xml:space="preserve">
+                <source>One per line or comma-separated. Text, RTE and FlexForm columns are supported. Standard page SEO fields are translated automatically.</source>
+                <target>По едно на ред или разделени със запетая. Поддържат се текстови, RTE и FlexForm колони. Стандартните SEO полета на страниците се превеждат автоматично.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Речник</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.description" xml:space="preserve">
+                <source>Term pairs injected into the system prompt for consistent terminology.</source>
+                <target>Двойки термини, вмъквани в системния промпт за последователна терминология.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary" xml:space="preserve">
+                <source>Glossary entry</source>
+                <target>Запис в речника</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
+                <source>Applies to target language</source>
+                <target>Отнася се за целеви език</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
+                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
+                <target>Ограничава термина до един език на сайт или го оставя да важи за всички целеви езици.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">
+                <source>All target languages</source>
+                <target>Всички целеви езици</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.source_term" xml:space="preserve">
+                <source>Source term</source>
+                <target>Изходен термин</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_term" xml:space="preserve">
+                <source>Target term (translation / keep as is)</source>
+                <target>Целеви термин (превод / запази без промяна)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.note" xml:space="preserve">
+                <source>Note</source>
+                <target>Бележка</target>
+            </trans-unit>
+            <trans-unit id="tabs.language" xml:space="preserve">
+                <source>Language</source>
+                <target>Език</target>
+            </trans-unit>
+            <trans-unit id="tabs.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Речник</target>
+            </trans-unit>
+            <trans-unit id="tabs.scope" xml:space="preserve">
+                <source>Scope</source>
+                <target>Обхват</target>
+            </trans-unit>
+            <trans-unit id="tabs.access" xml:space="preserve">
+                <source>Access</source>
+                <target>Достъп</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

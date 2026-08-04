@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="is" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="about.open" xml:space="preserve">
+                <source>About dTRANSLATE</source>
+                <target>Um dTRANSLATE</target>
+            </trans-unit>
+            <trans-unit id="about.close" xml:space="preserve">
+                <source>Close</source>
+                <target>Loka</target>
+            </trans-unit>
+            <trans-unit id="about.logoAlt" xml:space="preserve">
+                <source>Logo: dreistein medienentwicklung</source>
+                <target>Logo: dreistein medienentwicklung</target>
+            </trans-unit>
+            <trans-unit id="about.claim" xml:space="preserve">
+                <source>Modern web development and AI integration for mid-sized businesses.</source>
+                <target>Nútímaleg vefþróun og gervigreindarsamþætting fyrir meðalstór fyrirtæki.</target>
+            </trans-unit>
+            <trans-unit id="about.copyright" xml:space="preserve">
+                <source>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</source>
+                <target>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</target>
+            </trans-unit>
+            <trans-unit id="about.license" xml:space="preserve">
+                <source>License: GNU General Public License v2 or later.</source>
+                <target>Leyfi: GNU General Public License v2 eða síðar.</target>
+            </trans-unit>
+            <trans-unit id="about.description" xml:space="preserve">
+                <source>LLM-based translation for TYPO3: profiles, glossaries, background runs.</source>
+                <target>Þýðing með mállíkani fyrir TYPO3: snið, orðalistar, bakgrunnskeyrslur.</target>
+            </trans-unit>
+            <trans-unit id="about.more" xml:space="preserve">
+                <source>More at</source>
+                <target>Nánar á</target>
+            </trans-unit>
+            <trans-unit id="module.intro" xml:space="preserve">
+                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind a site to an LLM configuration.</source>
+                <target>Þýðing með mállíkani um localize-leið DataHandler. Snið tengja vefsvæði við LLM-stillingu.</target>
+            </trans-unit>
+            <trans-unit id="module.translatePage" xml:space="preserve">
+                <source>Translate page</source>
+                <target>Þýða síðu</target>
+            </trans-unit>
+            <trans-unit id="module.profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Þýðingarsnið</target>
+            </trans-unit>
+            <trans-unit id="module.allSites" xml:space="preserve">
+                <source>all sites</source>
+                <target>öll vefsvæði</target>
+            </trans-unit>
+            <trans-unit id="module.targetLanguages" xml:space="preserve">
+                <source>Target languages</source>
+                <target>Markmál</target>
+            </trans-unit>
+            <trans-unit id="module.records" xml:space="preserve">
+                <source>Translatable records (page %s)</source>
+                <target>Þýðanlegar færslur (síða %s)</target>
+            </trans-unit>
+            <trans-unit id="module.pageItself" xml:space="preserve">
+                <source>This page</source>
+                <target>Þessi síða</target>
+            </trans-unit>
+            <trans-unit id="module.pageItselfHint" xml:space="preserve">
+                <source>The page record — title, slug and SEO metadata — is part of every run and cannot be deselected.</source>
+                <target>Síðuskráin — titill, slug og SEO-lýsigögn — er hluti af hverri keyrslu og ekki er hægt að afvelja hana.</target>
+            </trans-unit>
+            <trans-unit id="module.recordsHint" xml:space="preserve">
+                <source>Checked records are translated. An unchecked container skips its whole group; unchecked children of a checked container stay in the source language. IRRE children are translated together with their parent record.</source>
+                <target>Merktar færslur eru þýddar. Ómerkt umgjörð sleppir öllum hópnum; ómerkt undirfærsla í merktri umgjörð helst á upprunamálinu. IRRE-undirfærslur eru þýddar með móðurfærslunni.</target>
+            </trans-unit>
+            <trans-unit id="module.noRecords" xml:space="preserve">
+                <source>No translatable records on this page.</source>
+                <target>Engar þýðanlegar færslur á þessari síðu.</target>
+            </trans-unit>
+            <trans-unit id="module.selectAll" xml:space="preserve">
+                <source>Select all</source>
+                <target>Velja allt</target>
+            </trans-unit>
+            <trans-unit id="module.selectNone" xml:space="preserve">
+                <source>Deselect all</source>
+                <target>Afvelja allt</target>
+            </trans-unit>
+            <trans-unit id="module.selectPageInTree" xml:space="preserve">
+                <source>Please select a page in the page tree on the left.</source>
+                <target>Veldu síðu í síðutrénu til vinstri.</target>
+            </trans-unit>
+            <trans-unit id="module.submit" xml:space="preserve">
+                <source>Translate selection</source>
+                <target>Þýða valið</target>
+            </trans-unit>
+            <trans-unit id="module.publishPage" xml:space="preserve">
+                <source>Publish translated page immediately</source>
+                <target>Birta þýddu síðuna strax</target>
+            </trans-unit>
+            <trans-unit id="module.reload" xml:space="preserve">
+                <source>Reload page</source>
+                <target>Endurhlaða síðuna</target>
+            </trans-unit>
+            <trans-unit id="module.profiles" xml:space="preserve">
+                <source>Translation profiles</source>
+                <target>Þýðingarsnið</target>
+            </trans-unit>
+            <trans-unit id="module.newProfile" xml:space="preserve">
+                <source>+ New profile</source>
+                <target>+ Nýtt snið</target>
+            </trans-unit>
+            <trans-unit id="module.llmConfigs" xml:space="preserve">
+                <source>LLM configurations</source>
+                <target>LLM-stillingar</target>
+            </trans-unit>
+            <trans-unit id="module.newLlmConfig" xml:space="preserve">
+                <source>+ New configuration</source>
+                <target>+ Ný stilling</target>
+            </trans-unit>
+            <trans-unit id="module.noProfiles" xml:space="preserve">
+                <source>No profiles yet.</source>
+                <target>Engin snið enn.</target>
+            </trans-unit>
+            <trans-unit id="module.noLlmConfigs" xml:space="preserve">
+                <source>No configurations yet.</source>
+                <target>Engar stillingar enn.</target>
+            </trans-unit>
+            <trans-unit id="module.edit" xml:space="preserve">
+                <source>Edit</source>
+                <target>Breyta</target>
+            </trans-unit>
+            <trans-unit id="column.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Titill</target>
+            </trans-unit>
+            <trans-unit id="column.site" xml:space="preserve">
+                <source>Site</source>
+                <target>Vefsvæði</target>
+            </trans-unit>
+            <trans-unit id="column.llmConfig" xml:space="preserve">
+                <source>LLM config</source>
+                <target>LLM-stilling</target>
+            </trans-unit>
+            <trans-unit id="column.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Formfesta</target>
+            </trans-unit>
+            <trans-unit id="column.tables" xml:space="preserve">
+                <source>Tables</source>
+                <target>Töflur</target>
+            </trans-unit>
+            <trans-unit id="column.type" xml:space="preserve">
+                <source>Type</source>
+                <target>Tegund</target>
+            </trans-unit>
+            <trans-unit id="column.model" xml:space="preserve">
+                <source>Model</source>
+                <target>Líkan</target>
+            </trans-unit>
+            <trans-unit id="column.endpoint" xml:space="preserve">
+                <source>Endpoint</source>
+                <target>Endapunktur</target>
+            </trans-unit>
+            <trans-unit id="js.pageMeta" xml:space="preserve">
+                <source>Page metadata</source>
+                <target>Lýsigögn síðu</target>
+            </trans-unit>
+            <trans-unit id="js.chooseLanguage" xml:space="preserve">
+                <source>Please choose at least one target language.</source>
+                <target>Veldu að minnsta kosti eitt markmál.</target>
+            </trans-unit>
+            <trans-unit id="js.progress" xml:space="preserve">
+                <source>Translating %s/%s: %s …</source>
+                <target>Þýði %s/%s: %s …</target>
+            </trans-unit>
+            <trans-unit id="js.finished" xml:space="preserve">
+                <source>Finished. Reloading page …</source>
+                <target>Lokið. Síðan er endurhlaðin …</target>
+            </trans-unit>
+            <trans-unit id="js.finishedErrors" xml:space="preserve">
+                <source>%s chunk(s) with errors — messages stay on screen, please check.</source>
+                <target>%s hluti með villum — skilaboðin standa áfram, vinsamlegast skoðaðu þau.</target>
+            </trans-unit>
+            <trans-unit id="js.finishedHints" xml:space="preserve">
+                <source>Finished, with notices — messages stay on screen, please check.</source>
+                <target>Lokið, með athugasemdum — skilaboðin standa áfram, vinsamlegast skoðaðu þau.</target>
+            </trans-unit>
+            <trans-unit id="js.aborted" xml:space="preserve">
+                <source>Run aborted — please check the LLM configuration.</source>
+                <target>Keyrslu hætt — athugaðu LLM-stillinguna.</target>
+            </trans-unit>
+            <trans-unit id="js.serverError" xml:space="preserve">
+                <source>Server error (HTTP %s).</source>
+                <target>Þjónsvilla (HTTP %s).</target>
+            </trans-unit>
+            <trans-unit id="js.seeLog" xml:space="preserve">
+                <source>Details in the TYPO3 log.</source>
+                <target>Nánar í TYPO3-annálnum.</target>
+            </trans-unit>
+            <trans-unit id="js.networkError" xml:space="preserve">
+                <source>Network error at %s: %s</source>
+                <target>Netvilla við %s: %s</target>
+            </trans-unit>
+            <trans-unit id="run.selectPageAndLanguage" xml:space="preserve">
+                <source>Please select a page (in the page tree) and at least one target language.</source>
+                <target>Veldu síðu (í síðutrénu) og að minnsta kosti eitt markmál.</target>
+            </trans-unit>
+            <trans-unit id="run.invalidParameters" xml:space="preserve">
+                <source>Invalid parameters.</source>
+                <target>Ógildar færibreytur.</target>
+            </trans-unit>
+            <trans-unit id="run.subject" xml:space="preserve">
+                <source>Page %s → %s</source>
+                <target>Síða %s → %s</target>
+            </trans-unit>
+            <trans-unit id="run.created" xml:space="preserve">
+                <source>%s newly translated</source>
+                <target>%s nýþýddar</target>
+            </trans-unit>
+            <trans-unit id="run.updated" xml:space="preserve">
+                <source>%s updated</source>
+                <target>%s uppfærðar</target>
+            </trans-unit>
+            <trans-unit id="run.createdAndUpdated" xml:space="preserve">
+                <source>%s new, %s updated</source>
+                <target>%s nýjar, %s uppfærðar</target>
+            </trans-unit>
+            <trans-unit id="run.noChange" xml:space="preserve">
+                <source>no change</source>
+                <target>engin breyting</target>
+            </trans-unit>
+            <trans-unit id="run.pageCreated" xml:space="preserve">
+                <source>page translation created</source>
+                <target>síðuþýðing stofnuð</target>
+            </trans-unit>
+            <trans-unit id="run.pageUpdated" xml:space="preserve">
+                <source>page metadata updated</source>
+                <target>lýsigögn síðu uppfærð</target>
+            </trans-unit>
+            <trans-unit id="run.pageUnchanged" xml:space="preserve">
+                <source>page unchanged</source>
+                <target>síða óbreytt</target>
+            </trans-unit>
+            <trans-unit id="run.hints" xml:space="preserve">
+                <source>Notices: %s</source>
+                <target>Athugasemdir: %s</target>
+            </trans-unit>
+            <trans-unit id="run.emptySelection" xml:space="preserve">
+                <source>No records to translate (empty selection).</source>
+                <target>Engar færslur til að þýða (tómt val).</target>
+            </trans-unit>
+            <trans-unit id="run.failed" xml:space="preserve">
+                <source>Translation failed.</source>
+                <target>Þýðing mistókst.</target>
+            </trans-unit>
+            <trans-unit id="run.itemGaveUp" xml:space="preserve">
+                <source>Given up after %s attempts — this record kept interrupting the run. The other records were processed.</source>
+                <target>Gefist upp eftir %s tilraunir — þessi færsla truflaði keyrsluna aftur og aftur. Aðrar færslur voru unnar.</target>
+            </trans-unit>
+            <trans-unit id="run.noProfile" xml:space="preserve">
+                <source>No translation profile applies to this page. Assign the site to a profile, or leave a profile's site empty to make it the default.</source>
+                <target>Ekkert þýðingarsnið gildir fyrir þessa síðu. Tengdu vefsvæðið við snið eða skildu vefsvæði sniðs eftir autt svo það gildi sem sjálfgefið.</target>
+            </trans-unit>
+            <trans-unit id="run.sourceLanguageUnknown" xml:space="preserve">
+                <source>The source language could not be determined. Set it in the translation profile, or give the default language of the site a locale.</source>
+                <target>Ekki tókst að ákvarða upprunamálið. Skráðu það í þýðingarsniðið eða gefðu sjálfgefnu máli vefsvæðisins staðfærslu.</target>
+            </trans-unit>
+            <trans-unit id="run.summary" xml:space="preserve">
+                <source>%s re-translated, %s newly created.</source>
+                <target>%s endurþýddar, %s nýstofnaðar.</target>
+            </trans-unit>
+            <trans-unit id="run.queued" xml:space="preserve">
+                <source>Run #%s queued — %s unit(s) will be processed in the background.</source>
+                <target>Keyrsla #%s sett í biðröð — %s eining(ar) verða unnar í bakgrunni.</target>
+            </trans-unit>
+            <trans-unit id="run.alreadyRunning" xml:space="preserve">
+                <source>A run for this page and language is already open (#%s). Please wait for it to finish or cancel it.</source>
+                <target>Keyrsla fyrir þessa síðu og þetta tungumál er þegar í gangi (#%s). Bíddu eða hættu við hana.</target>
+            </trans-unit>
+            <trans-unit id="run.cancelled" xml:space="preserve">
+                <source>Run #%s cancelled.</source>
+                <target>Hætt við keyrslu #%s.</target>
+            </trans-unit>
+            <trans-unit id="run.background" xml:space="preserve">
+                <source>Process in the background</source>
+                <target>Vinna í bakgrunni</target>
+            </trans-unit>
+            <trans-unit id="run.backgroundHint" xml:space="preserve">
+                <source>The run is handled by the server worker — you can close this page.</source>
+                <target>Þjónustuferli þjónsins sér um keyrsluna — þú mátt loka þessari síðu.</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslated" xml:space="preserve">
+                <source>Skip translated</source>
+                <target>Sleppa þýddu</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslatedHint" xml:space="preserve">
+                <source>Records that already have a translation are left untouched; only the missing ones are created.</source>
+                <target>Færslur sem þegar eiga þýðingu haldast óbreyttar; aðeins þær sem vantar eru búnar til.</target>
+            </trans-unit>
+            <trans-unit id="run.estimate" xml:space="preserve">
+                <source>This run covers %s unit(s) in %s language(s).</source>
+                <target>Þessi keyrsla nær yfir %s eining(ar) á %s tungumáli.</target>
+            </trans-unit>
+            <trans-unit id="run.confirmTitle" xml:space="preserve">
+                <source>Start this run in the browser?</source>
+                <target>Hefja þessa keyrslu í vafranum?</target>
+            </trans-unit>
+            <trans-unit id="run.confirmHint" xml:space="preserve">
+                <source>Without "Process in the background" this page has to stay open until the run has finished. Tick that option to hand the run to the server worker instead.</source>
+                <target>Án „Vinna í bakgrunni“ verður þessi síða að vera opin þar til keyrslunni lýkur. Hakaðu við þann valkost til að fela þjóninum keyrsluna í staðinn.</target>
+            </trans-unit>
+            <trans-unit id="run.confirmContinue" xml:space="preserve">
+                <source>Start in the browser</source>
+                <target>Hefja í vafranum</target>
+            </trans-unit>
+            <trans-unit id="run.confirmCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Hætta við</target>
+            </trans-unit>
+            <trans-unit id="run.budgetExceeded" xml:space="preserve">
+                <source>Run stopped: the limit of %s LLM calls was reached.</source>
+                <target>Keyrsla stöðvuð: hámarki %s LLM-kalla var náð.</target>
+            </trans-unit>
+            <trans-unit id="run.jobs" xml:space="preserve">
+                <source>Recent runs</source>
+                <target>Nýlegar keyrslur</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.queued" xml:space="preserve">
+                <source>queued</source>
+                <target>í bið</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.running" xml:space="preserve">
+                <source>running</source>
+                <target>í gangi</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.done" xml:space="preserve">
+                <source>done</source>
+                <target>lokið</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.failed" xml:space="preserve">
+                <source>failed</source>
+                <target>mistókst</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.cancelled" xml:space="preserve">
+                <source>cancelled</source>
+                <target>hætt við</target>
+            </trans-unit>
+            <trans-unit id="run.jobProgress" xml:space="preserve">
+                <source>%s of %s</source>
+                <target>%s af %s</target>
+            </trans-unit>
+            <trans-unit id="run.jobUsage" xml:space="preserve">
+                <source>%s calls · %s tokens</source>
+                <target>%s köll · %s tákn</target>
+            </trans-unit>
+            <trans-unit id="run.jobCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Hætta við</target>
+            </trans-unit>
+            <trans-unit id="run.noJobs" xml:space="preserve">
+                <source>No runs yet.</source>
+                <target>Engar keyrslur enn.</target>
+            </trans-unit>
+            <trans-unit id="task.work.title" xml:space="preserve">
+                <source>dTRANSLATE: Process translation queue</source>
+                <target>dTRANSLATE: Vinna úr þýðingarröðinni</target>
+            </trans-unit>
+            <trans-unit id="task.work.description" xml:space="preserve">
+                <source>Works off the queued translation runs of the backend module. Schedule it every minute. Alternative to the console command dtranslate:work — use one or the other, not both.</source>
+                <target>Vinnur úr þýðingarkeyrslum sem bakendaeiningin setti í röð. Tímasettu hana á hverri mínútu. Valkostur við skipanalínuskipunina dtranslate:work — notaðu annað hvort, ekki bæði.</target>
+            </trans-unit>
+            <trans-unit id="js.stepFailed" xml:space="preserve">
+                <source>The server did not answer for this unit (HTTP %s) — the run continues with the next one.</source>
+                <target>Þjónninn svaraði ekki fyrir þessa einingu (HTTP %s) — keyrslan heldur áfram með næstu.</target>
+            </trans-unit>
+            <trans-unit id="js.jobStarted" xml:space="preserve">
+                <source>Run #%s started: %s unit(s).</source>
+                <target>Keyrsla #%s hafin: %s eining(ar).</target>
+            </trans-unit>
+            <trans-unit id="run.genericError" xml:space="preserve">
+                <source>Unexpected error (%s): %s — details in the TYPO3 log.</source>
+                <target>Óvænt villa (%s): %s — nánar í TYPO3-annálnum.</target>
+            </trans-unit>
+            <trans-unit id="field.tooLong" xml:space="preserve">
+                <source>%s was left in the source language: the translation is longer than the field allows (%s of %s characters).</source>
+                <target>%s var skilið eftir á frummálinu: þýðingin er lengri en reiturinn leyfir (%s af %s stöfum).</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKeyConfigured" xml:space="preserve">
+                <source>The LLM configuration "%s" has no API key. Please enter one in the configuration.</source>
+                <target>LLM-stillingin „%s“ er án API-lykils. Sláðu hann inn í stillingunni.</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKey" xml:space="preserve">
+                <source>No API key is set for the LLM configuration in use.</source>
+                <target>Enginn API-lykill er skráður fyrir LLM-stillinguna sem er notuð.</target>
+            </trans-unit>
+            <trans-unit id="llm.keyRejected" xml:space="preserve">
+                <source>%s rejected the API key (HTTP %s). Please check the key in the LLM configuration and enter it again.</source>
+                <target>%s hafnaði API-lyklinum (HTTP %s). Athugaðu lykilinn í LLM-stillingunni og sláðu hann inn að nýju.</target>
+            </trans-unit>
+            <trans-unit id="llm.unknownModel" xml:space="preserve">
+                <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
+                <target>%s þekkir ekki þetta líkan eða endapunkt (HTTP 404). Athugaðu heiti líkansins („%s“) og grunnslóð API (%s).</target>
+            </trans-unit>
+            <trans-unit id="llm.rateLimit" xml:space="preserve">
+                <source>%s declined the request because of a rate limit (HTTP 429).</source>
+                <target>%s hafnaði beiðninni vegna hraðatakmarkana (HTTP 429).</target>
+            </trans-unit>
+            <trans-unit id="llm.quota" xml:space="preserve">
+                <source>The quota of the %s account is used up (HTTP %s). Please check billing and credit.</source>
+                <target>Kvóti %s-reikningsins er uppurinn (HTTP %s). Athugaðu reikningsfærslur og inneign.</target>
+            </trans-unit>
+            <trans-unit id="llm.badRequest" xml:space="preserve">
+                <source>%s rejected the request (HTTP %s) — usually an unknown model name ("%s") or an unsupported parameter.</source>
+                <target>%s hafnaði beiðninni (HTTP %s) — oftast óþekkt heiti líkans („%s“) eða óstudd færibreyta.</target>
+            </trans-unit>
+            <trans-unit id="llm.serverError" xml:space="preserve">
+                <source>%s reports a malfunction (HTTP %s). Please try again later.</source>
+                <target>%s tilkynnir um bilun (HTTP %s). Reyndu aftur síðar.</target>
+            </trans-unit>
+            <trans-unit id="llm.httpStatus" xml:space="preserve">
+                <source>%s answered with HTTP %s.</source>
+                <target>%s svaraði með HTTP %s.</target>
+            </trans-unit>
+            <trans-unit id="llm.providerMessage" xml:space="preserve">
+                <source>Provider message: %s</source>
+                <target>Skilaboð frá þjónustuaðila: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.unreachable" xml:space="preserve">
+                <source>"%s" cannot be reached. Please check the API base URL of the LLM configuration. (%s)</source>
+                <target>„%s“ næst ekki. Athugaðu grunnslóð API í LLM-stillingunni. (%s)</target>
+            </trans-unit>
+            <trans-unit id="llm.timeout" xml:space="preserve">
+                <source>Timeout on the request to %s — the provider did not answer in time.</source>
+                <target>Tímamörk runnu út í beiðni til %s — þjónustuaðilinn svaraði ekki í tæka tíð.</target>
+            </trans-unit>
+            <trans-unit id="llm.connectionFailed" xml:space="preserve">
+                <source>Connection to %s failed: %s</source>
+                <target>Tenging við %s mistókst: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.invalidJson" xml:space="preserve">
+                <source>%s did not return valid JSON.</source>
+                <target>%s skilaði ekki gildu JSON.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

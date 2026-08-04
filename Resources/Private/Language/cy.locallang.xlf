@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="cy" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="about.open" xml:space="preserve">
+                <source>About dTRANSLATE</source>
+                <target>Ynghylch dTRANSLATE</target>
+            </trans-unit>
+            <trans-unit id="about.close" xml:space="preserve">
+                <source>Close</source>
+                <target>Cau</target>
+            </trans-unit>
+            <trans-unit id="about.logoAlt" xml:space="preserve">
+                <source>Logo: dreistein medienentwicklung</source>
+                <target>Logo: dreistein medienentwicklung</target>
+            </trans-unit>
+            <trans-unit id="about.claim" xml:space="preserve">
+                <source>Modern web development and AI integration for mid-sized businesses.</source>
+                <target>Datblygu gwe modern ac integreiddio deallusrwydd artiffisial i fusnesau canolig.</target>
+            </trans-unit>
+            <trans-unit id="about.copyright" xml:space="preserve">
+                <source>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</source>
+                <target>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</target>
+            </trans-unit>
+            <trans-unit id="about.license" xml:space="preserve">
+                <source>License: GNU General Public License v2 or later.</source>
+                <target>Trwydded: GNU General Public License v2 neu’n ddiweddarach.</target>
+            </trans-unit>
+            <trans-unit id="about.description" xml:space="preserve">
+                <source>LLM-based translation for TYPO3: profiles, glossaries, background runs.</source>
+                <target>Cyfieithu gyda model iaith ar gyfer TYPO3: proffiliau, geirfaoedd, rhediadau cefndir.</target>
+            </trans-unit>
+            <trans-unit id="about.more" xml:space="preserve">
+                <source>More at</source>
+                <target>Rhagor yn</target>
+            </trans-unit>
+            <trans-unit id="module.intro" xml:space="preserve">
+                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind a site to an LLM configuration.</source>
+                <target>Cyfieithu gyda model iaith drwy lwybr localize y DataHandler. Mae proffiliau’n cysylltu safle â ffurfweddiad LLM.</target>
+            </trans-unit>
+            <trans-unit id="module.translatePage" xml:space="preserve">
+                <source>Translate page</source>
+                <target>Cyfieithu’r dudalen</target>
+            </trans-unit>
+            <trans-unit id="module.profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Proffil cyfieithu</target>
+            </trans-unit>
+            <trans-unit id="module.allSites" xml:space="preserve">
+                <source>all sites</source>
+                <target>pob safle</target>
+            </trans-unit>
+            <trans-unit id="module.targetLanguages" xml:space="preserve">
+                <source>Target languages</source>
+                <target>Ieithoedd targed</target>
+            </trans-unit>
+            <trans-unit id="module.records" xml:space="preserve">
+                <source>Translatable records (page %s)</source>
+                <target>Cofnodion cyfieithadwy (tudalen %s)</target>
+            </trans-unit>
+            <trans-unit id="module.pageItself" xml:space="preserve">
+                <source>This page</source>
+                <target>Y dudalen hon</target>
+            </trans-unit>
+            <trans-unit id="module.pageItselfHint" xml:space="preserve">
+                <source>The page record — title, slug and SEO metadata — is part of every run and cannot be deselected.</source>
+                <target>Mae cofnod y dudalen — teitl, slug a metadata SEO — yn rhan o bob rhediad ac ni ellir ei ddad-ddewis.</target>
+            </trans-unit>
+            <trans-unit id="module.recordsHint" xml:space="preserve">
+                <source>Checked records are translated. An unchecked container skips its whole group; unchecked children of a checked container stay in the source language. IRRE children are translated together with their parent record.</source>
+                <target>Caiff y cofnodion sydd wedi’u ticio eu cyfieithu. Mae cynhwysydd heb ei dicio yn hepgor y grŵp cyfan; mae plant heb eu ticio o dan gynhwysydd wedi’i dicio yn aros yn yr iaith wreiddiol. Caiff plant IRRE eu cyfieithu ynghyd â’r cofnod rhiant.</target>
+            </trans-unit>
+            <trans-unit id="module.noRecords" xml:space="preserve">
+                <source>No translatable records on this page.</source>
+                <target>Nid oes cofnodion cyfieithadwy ar y dudalen hon.</target>
+            </trans-unit>
+            <trans-unit id="module.selectAll" xml:space="preserve">
+                <source>Select all</source>
+                <target>Dewis y cyfan</target>
+            </trans-unit>
+            <trans-unit id="module.selectNone" xml:space="preserve">
+                <source>Deselect all</source>
+                <target>Dad-ddewis y cyfan</target>
+            </trans-unit>
+            <trans-unit id="module.selectPageInTree" xml:space="preserve">
+                <source>Please select a page in the page tree on the left.</source>
+                <target>Dewiswch dudalen yn y goeden ar y chwith.</target>
+            </trans-unit>
+            <trans-unit id="module.submit" xml:space="preserve">
+                <source>Translate selection</source>
+                <target>Cyfieithu’r dewis</target>
+            </trans-unit>
+            <trans-unit id="module.publishPage" xml:space="preserve">
+                <source>Publish translated page immediately</source>
+                <target>Cyhoeddi’r dudalen wedi’i chyfieithu ar unwaith</target>
+            </trans-unit>
+            <trans-unit id="module.reload" xml:space="preserve">
+                <source>Reload page</source>
+                <target>Ail-lwytho’r dudalen</target>
+            </trans-unit>
+            <trans-unit id="module.profiles" xml:space="preserve">
+                <source>Translation profiles</source>
+                <target>Proffiliau cyfieithu</target>
+            </trans-unit>
+            <trans-unit id="module.newProfile" xml:space="preserve">
+                <source>+ New profile</source>
+                <target>+ Proffil newydd</target>
+            </trans-unit>
+            <trans-unit id="module.llmConfigs" xml:space="preserve">
+                <source>LLM configurations</source>
+                <target>Ffurfweddiadau LLM</target>
+            </trans-unit>
+            <trans-unit id="module.newLlmConfig" xml:space="preserve">
+                <source>+ New configuration</source>
+                <target>+ Ffurfweddiad newydd</target>
+            </trans-unit>
+            <trans-unit id="module.noProfiles" xml:space="preserve">
+                <source>No profiles yet.</source>
+                <target>Dim proffiliau eto.</target>
+            </trans-unit>
+            <trans-unit id="module.noLlmConfigs" xml:space="preserve">
+                <source>No configurations yet.</source>
+                <target>Dim ffurfweddiadau eto.</target>
+            </trans-unit>
+            <trans-unit id="module.edit" xml:space="preserve">
+                <source>Edit</source>
+                <target>Golygu</target>
+            </trans-unit>
+            <trans-unit id="column.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Teitl</target>
+            </trans-unit>
+            <trans-unit id="column.site" xml:space="preserve">
+                <source>Site</source>
+                <target>Safle</target>
+            </trans-unit>
+            <trans-unit id="column.llmConfig" xml:space="preserve">
+                <source>LLM config</source>
+                <target>Ffurfweddiad LLM</target>
+            </trans-unit>
+            <trans-unit id="column.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Ffurfioldeb</target>
+            </trans-unit>
+            <trans-unit id="column.tables" xml:space="preserve">
+                <source>Tables</source>
+                <target>Tablau</target>
+            </trans-unit>
+            <trans-unit id="column.type" xml:space="preserve">
+                <source>Type</source>
+                <target>Math</target>
+            </trans-unit>
+            <trans-unit id="column.model" xml:space="preserve">
+                <source>Model</source>
+                <target>Model</target>
+            </trans-unit>
+            <trans-unit id="column.endpoint" xml:space="preserve">
+                <source>Endpoint</source>
+                <target>Pwynt terfyn</target>
+            </trans-unit>
+            <trans-unit id="js.pageMeta" xml:space="preserve">
+                <source>Page metadata</source>
+                <target>Metadata’r dudalen</target>
+            </trans-unit>
+            <trans-unit id="js.chooseLanguage" xml:space="preserve">
+                <source>Please choose at least one target language.</source>
+                <target>Dewiswch o leiaf un iaith darged.</target>
+            </trans-unit>
+            <trans-unit id="js.progress" xml:space="preserve">
+                <source>Translating %s/%s: %s …</source>
+                <target>Yn cyfieithu %s/%s: %s …</target>
+            </trans-unit>
+            <trans-unit id="js.finished" xml:space="preserve">
+                <source>Finished. Reloading page …</source>
+                <target>Wedi gorffen. Mae’r dudalen yn ail-lwytho …</target>
+            </trans-unit>
+            <trans-unit id="js.finishedErrors" xml:space="preserve">
+                <source>%s chunk(s) with errors — messages stay on screen, please check.</source>
+                <target>Rhannau â gwallau: %s — mae’r negeseuon yn aros ar y sgrin, gwiriwch nhw.</target>
+            </trans-unit>
+            <trans-unit id="js.finishedHints" xml:space="preserve">
+                <source>Finished, with notices — messages stay on screen, please check.</source>
+                <target>Wedi gorffen, gyda sylwadau — mae’r negeseuon yn aros ar y sgrin, gwiriwch nhw.</target>
+            </trans-unit>
+            <trans-unit id="js.aborted" xml:space="preserve">
+                <source>Run aborted — please check the LLM configuration.</source>
+                <target>Rhediad wedi’i atal — gwiriwch y ffurfweddiad LLM.</target>
+            </trans-unit>
+            <trans-unit id="js.serverError" xml:space="preserve">
+                <source>Server error (HTTP %s).</source>
+                <target>Gwall gweinydd (HTTP %s).</target>
+            </trans-unit>
+            <trans-unit id="js.seeLog" xml:space="preserve">
+                <source>Details in the TYPO3 log.</source>
+                <target>Manylion yng nghofnod TYPO3.</target>
+            </trans-unit>
+            <trans-unit id="js.networkError" xml:space="preserve">
+                <source>Network error at %s: %s</source>
+                <target>Gwall rhwydwaith yn %s: %s</target>
+            </trans-unit>
+            <trans-unit id="run.selectPageAndLanguage" xml:space="preserve">
+                <source>Please select a page (in the page tree) and at least one target language.</source>
+                <target>Dewiswch dudalen (yng nghoeden y tudalennau) ac o leiaf un iaith darged.</target>
+            </trans-unit>
+            <trans-unit id="run.invalidParameters" xml:space="preserve">
+                <source>Invalid parameters.</source>
+                <target>Paramedrau annilys.</target>
+            </trans-unit>
+            <trans-unit id="run.subject" xml:space="preserve">
+                <source>Page %s → %s</source>
+                <target>Tudalen %s → %s</target>
+            </trans-unit>
+            <trans-unit id="run.created" xml:space="preserve">
+                <source>%s newly translated</source>
+                <target>wedi’u cyfieithu o’r newydd: %s</target>
+            </trans-unit>
+            <trans-unit id="run.updated" xml:space="preserve">
+                <source>%s updated</source>
+                <target>wedi’u diweddaru: %s</target>
+            </trans-unit>
+            <trans-unit id="run.createdAndUpdated" xml:space="preserve">
+                <source>%s new, %s updated</source>
+                <target>newydd: %s, wedi’u diweddaru: %s</target>
+            </trans-unit>
+            <trans-unit id="run.noChange" xml:space="preserve">
+                <source>no change</source>
+                <target>dim newid</target>
+            </trans-unit>
+            <trans-unit id="run.pageCreated" xml:space="preserve">
+                <source>page translation created</source>
+                <target>crëwyd cyfieithiad y dudalen</target>
+            </trans-unit>
+            <trans-unit id="run.pageUpdated" xml:space="preserve">
+                <source>page metadata updated</source>
+                <target>diweddarwyd metadata’r dudalen</target>
+            </trans-unit>
+            <trans-unit id="run.pageUnchanged" xml:space="preserve">
+                <source>page unchanged</source>
+                <target>tudalen heb newid</target>
+            </trans-unit>
+            <trans-unit id="run.hints" xml:space="preserve">
+                <source>Notices: %s</source>
+                <target>Sylwadau: %s</target>
+            </trans-unit>
+            <trans-unit id="run.emptySelection" xml:space="preserve">
+                <source>No records to translate (empty selection).</source>
+                <target>Dim cofnodion i’w cyfieithu (dewis gwag).</target>
+            </trans-unit>
+            <trans-unit id="run.failed" xml:space="preserve">
+                <source>Translation failed.</source>
+                <target>Methodd y cyfieithu.</target>
+            </trans-unit>
+            <trans-unit id="run.itemGaveUp" xml:space="preserve">
+                <source>Given up after %s attempts — this record kept interrupting the run. The other records were processed.</source>
+                <target>Rhoddwyd y gorau iddi ar ôl %s ymgais — roedd y cofnod hwn yn torri ar draws y rhediad o hyd. Proseswyd y cofnodion eraill.</target>
+            </trans-unit>
+            <trans-unit id="run.noProfile" xml:space="preserve">
+                <source>No translation profile applies to this page. Assign the site to a profile, or leave a profile's site empty to make it the default.</source>
+                <target>Nid oes proffil cyfieithu yn berthnasol i’r dudalen hon. Neilltuwch y safle i broffil, neu gadewch safle proffil yn wag i’w wneud yn ddiofyn.</target>
+            </trans-unit>
+            <trans-unit id="run.sourceLanguageUnknown" xml:space="preserve">
+                <source>The source language could not be determined. Set it in the translation profile, or give the default language of the site a locale.</source>
+                <target>Nid oedd modd pennu’r iaith ffynhonnell. Gosodwch hi yn y proffil cyfieithu, neu rhowch locale i iaith ddiofyn y safle.</target>
+            </trans-unit>
+            <trans-unit id="run.summary" xml:space="preserve">
+                <source>%s re-translated, %s newly created.</source>
+                <target>wedi’u hailgyfieithu: %s, wedi’u creu: %s.</target>
+            </trans-unit>
+            <trans-unit id="run.queued" xml:space="preserve">
+                <source>Run #%s queued — %s unit(s) will be processed in the background.</source>
+                <target>Rhoddwyd rhediad #%s yn y ciw — caiff %s uned eu prosesu yn y cefndir.</target>
+            </trans-unit>
+            <trans-unit id="run.alreadyRunning" xml:space="preserve">
+                <source>A run for this page and language is already open (#%s). Please wait for it to finish or cancel it.</source>
+                <target>Mae rhediad ar agor eisoes ar gyfer y dudalen a’r iaith hon (#%s). Arhoswch iddo orffen neu ei ganslo.</target>
+            </trans-unit>
+            <trans-unit id="run.cancelled" xml:space="preserve">
+                <source>Run #%s cancelled.</source>
+                <target>Canslwyd rhediad #%s.</target>
+            </trans-unit>
+            <trans-unit id="run.background" xml:space="preserve">
+                <source>Process in the background</source>
+                <target>Prosesu yn y cefndir</target>
+            </trans-unit>
+            <trans-unit id="run.backgroundHint" xml:space="preserve">
+                <source>The run is handled by the server worker — you can close this page.</source>
+                <target>Gweithiwr y gweinydd sy’n gofalu am y rhediad — cewch gau’r dudalen hon.</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslated" xml:space="preserve">
+                <source>Skip translated</source>
+                <target>Hepgor y rhai a gyfieithwyd</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslatedHint" xml:space="preserve">
+                <source>Records that already have a translation are left untouched; only the missing ones are created.</source>
+                <target>Mae cofnodion sydd eisoes â chyfieithiad yn aros heb eu cyffwrdd; dim ond y rhai coll a grëir.</target>
+            </trans-unit>
+            <trans-unit id="run.estimate" xml:space="preserve">
+                <source>This run covers %s unit(s) in %s language(s).</source>
+                <target>Mae’r rhediad hwn yn cwmpasu %s uned mewn %s iaith.</target>
+            </trans-unit>
+            <trans-unit id="run.confirmTitle" xml:space="preserve">
+                <source>Start this run in the browser?</source>
+                <target>Dechrau’r rhediad hwn yn y porwr?</target>
+            </trans-unit>
+            <trans-unit id="run.confirmHint" xml:space="preserve">
+                <source>Without "Process in the background" this page has to stay open until the run has finished. Tick that option to hand the run to the server worker instead.</source>
+                <target>Heb “Prosesu yn y cefndir” rhaid i’r dudalen hon aros ar agor nes bod y rhediad wedi gorffen. Ticiwch yr opsiwn hwnnw i drosglwyddo’r rhediad i weithiwr y gweinydd.</target>
+            </trans-unit>
+            <trans-unit id="run.confirmContinue" xml:space="preserve">
+                <source>Start in the browser</source>
+                <target>Dechrau yn y porwr</target>
+            </trans-unit>
+            <trans-unit id="run.confirmCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Canslo</target>
+            </trans-unit>
+            <trans-unit id="run.budgetExceeded" xml:space="preserve">
+                <source>Run stopped: the limit of %s LLM calls was reached.</source>
+                <target>Stopiwyd y rhediad: cyrhaeddwyd y terfyn o %s galwad LLM.</target>
+            </trans-unit>
+            <trans-unit id="run.jobs" xml:space="preserve">
+                <source>Recent runs</source>
+                <target>Rhediadau diweddar</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.queued" xml:space="preserve">
+                <source>queued</source>
+                <target>yn y ciw</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.running" xml:space="preserve">
+                <source>running</source>
+                <target>ar y gweill</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.done" xml:space="preserve">
+                <source>done</source>
+                <target>wedi gorffen</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.failed" xml:space="preserve">
+                <source>failed</source>
+                <target>wedi methu</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.cancelled" xml:space="preserve">
+                <source>cancelled</source>
+                <target>wedi’i ganslo</target>
+            </trans-unit>
+            <trans-unit id="run.jobProgress" xml:space="preserve">
+                <source>%s of %s</source>
+                <target>%s o %s</target>
+            </trans-unit>
+            <trans-unit id="run.jobUsage" xml:space="preserve">
+                <source>%s calls · %s tokens</source>
+                <target>%s galwad · %s tocyn</target>
+            </trans-unit>
+            <trans-unit id="run.jobCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Canslo</target>
+            </trans-unit>
+            <trans-unit id="run.noJobs" xml:space="preserve">
+                <source>No runs yet.</source>
+                <target>Dim rhediadau eto.</target>
+            </trans-unit>
+            <trans-unit id="task.work.title" xml:space="preserve">
+                <source>dTRANSLATE: Process translation queue</source>
+                <target>dTRANSLATE: prosesu’r ciw cyfieithu</target>
+            </trans-unit>
+            <trans-unit id="task.work.description" xml:space="preserve">
+                <source>Works off the queued translation runs of the backend module. Schedule it every minute. Alternative to the console command dtranslate:work — use one or the other, not both.</source>
+                <target>Yn prosesu’r rhediadau cyfieithu a roddwyd yn y ciw gan y modiwl backend. Amserlennwch ef bob munud. Dewis arall i’r gorchymyn consol dtranslate:work — defnyddiwch un neu’r llall, nid y ddau.</target>
+            </trans-unit>
+            <trans-unit id="js.stepFailed" xml:space="preserve">
+                <source>The server did not answer for this unit (HTTP %s) — the run continues with the next one.</source>
+                <target>Ni atebodd y gweinydd ar gyfer yr uned hon (HTTP %s) — mae’r rhediad yn parhau gyda’r nesaf.</target>
+            </trans-unit>
+            <trans-unit id="js.jobStarted" xml:space="preserve">
+                <source>Run #%s started: %s unit(s).</source>
+                <target>Dechreuodd rhediad #%s: %s uned.</target>
+            </trans-unit>
+            <trans-unit id="run.genericError" xml:space="preserve">
+                <source>Unexpected error (%s): %s — details in the TYPO3 log.</source>
+                <target>Gwall annisgwyl (%s): %s — manylion yng nghofnod TYPO3.</target>
+            </trans-unit>
+            <trans-unit id="field.tooLong" xml:space="preserve">
+                <source>%s was left in the source language: the translation is longer than the field allows (%s of %s characters).</source>
+                <target>Gadawyd %s yn yr iaith ffynhonnell: mae’r cyfieithiad yn hirach nag y mae’r maes yn caniatáu (%s o %s nod).</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKeyConfigured" xml:space="preserve">
+                <source>The LLM configuration "%s" has no API key. Please enter one in the configuration.</source>
+                <target>Nid oes gan y ffurfweddiad LLM „%s” allwedd API. Rhowch un yn y ffurfweddiad.</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKey" xml:space="preserve">
+                <source>No API key is set for the LLM configuration in use.</source>
+                <target>Nid oes allwedd API wedi’i gosod ar gyfer y ffurfweddiad LLM sydd yn cael ei ddefnyddio.</target>
+            </trans-unit>
+            <trans-unit id="llm.keyRejected" xml:space="preserve">
+                <source>%s rejected the API key (HTTP %s). Please check the key in the LLM configuration and enter it again.</source>
+                <target>Gwrthododd %s yr allwedd API (HTTP %s). Gwiriwch yr allwedd yn y ffurfweddiad LLM a’i rhoi eto.</target>
+            </trans-unit>
+            <trans-unit id="llm.unknownModel" xml:space="preserve">
+                <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
+                <target>Nid yw %s yn adnabod y model na’r pwynt terfyn hwnnw (HTTP 404). Gwiriwch enw’r model („%s”) a URL sylfaen yr API (%s).</target>
+            </trans-unit>
+            <trans-unit id="llm.rateLimit" xml:space="preserve">
+                <source>%s declined the request because of a rate limit (HTTP 429).</source>
+                <target>Gwrthododd %s y cais oherwydd terfyn cyfradd (HTTP 429).</target>
+            </trans-unit>
+            <trans-unit id="llm.quota" xml:space="preserve">
+                <source>The quota of the %s account is used up (HTTP %s). Please check billing and credit.</source>
+                <target>Mae cwota’r cyfrif %s wedi’i ddefnyddio (HTTP %s). Gwiriwch y bilio a’r balans.</target>
+            </trans-unit>
+            <trans-unit id="llm.badRequest" xml:space="preserve">
+                <source>%s rejected the request (HTTP %s) — usually an unknown model name ("%s") or an unsupported parameter.</source>
+                <target>Gwrthododd %s y cais (HTTP %s) — fel arfer enw model anhysbys („%s”) neu baramedr nas cefnogir.</target>
+            </trans-unit>
+            <trans-unit id="llm.serverError" xml:space="preserve">
+                <source>%s reports a malfunction (HTTP %s). Please try again later.</source>
+                <target>Mae %s yn adrodd am nam (HTTP %s). Rhowch gynnig arall arni’n nes ymlaen.</target>
+            </trans-unit>
+            <trans-unit id="llm.httpStatus" xml:space="preserve">
+                <source>%s answered with HTTP %s.</source>
+                <target>Atebodd %s gyda HTTP %s.</target>
+            </trans-unit>
+            <trans-unit id="llm.providerMessage" xml:space="preserve">
+                <source>Provider message: %s</source>
+                <target>Neges gan y darparwr: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.unreachable" xml:space="preserve">
+                <source>"%s" cannot be reached. Please check the API base URL of the LLM configuration. (%s)</source>
+                <target>Nid oes modd cyrraedd „%s”. Gwiriwch URL sylfaen yr API yn y ffurfweddiad LLM. (%s)</target>
+            </trans-unit>
+            <trans-unit id="llm.timeout" xml:space="preserve">
+                <source>Timeout on the request to %s — the provider did not answer in time.</source>
+                <target>Goramser ar y cais at %s — ni atebodd y darparwr mewn pryd.</target>
+            </trans-unit>
+            <trans-unit id="llm.connectionFailed" xml:space="preserve">
+                <source>Connection to %s failed: %s</source>
+                <target>Methodd y cysylltiad â %s: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.invalidJson" xml:space="preserve">
+                <source>%s did not return valid JSON.</source>
+                <target>Ni ddychwelodd %s JSON dilys.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

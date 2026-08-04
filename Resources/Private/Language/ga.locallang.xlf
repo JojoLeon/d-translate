@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="ga" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="about.open" xml:space="preserve">
+                <source>About dTRANSLATE</source>
+                <target>Maidir le dTRANSLATE</target>
+            </trans-unit>
+            <trans-unit id="about.close" xml:space="preserve">
+                <source>Close</source>
+                <target>Dún</target>
+            </trans-unit>
+            <trans-unit id="about.logoAlt" xml:space="preserve">
+                <source>Logo: dreistein medienentwicklung</source>
+                <target>Logo: dreistein medienentwicklung</target>
+            </trans-unit>
+            <trans-unit id="about.claim" xml:space="preserve">
+                <source>Modern web development and AI integration for mid-sized businesses.</source>
+                <target>Forbairt gréasáin nua-aimseartha agus comhtháthú intleachta saorga do ghnólachtaí meánmhéide.</target>
+            </trans-unit>
+            <trans-unit id="about.copyright" xml:space="preserve">
+                <source>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</source>
+                <target>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</target>
+            </trans-unit>
+            <trans-unit id="about.license" xml:space="preserve">
+                <source>License: GNU General Public License v2 or later.</source>
+                <target>Ceadúnas: GNU General Public License v2 nó níos déanaí.</target>
+            </trans-unit>
+            <trans-unit id="about.description" xml:space="preserve">
+                <source>LLM-based translation for TYPO3: profiles, glossaries, background runs.</source>
+                <target>Aistriúchán le samhail teanga do TYPO3: próifílí, gluaiseanna, rití sa chúlra.</target>
+            </trans-unit>
+            <trans-unit id="about.more" xml:space="preserve">
+                <source>More at</source>
+                <target>Tuilleadh ag</target>
+            </trans-unit>
+            <trans-unit id="module.intro" xml:space="preserve">
+                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind a site to an LLM configuration.</source>
+                <target>Aistriúchán le samhail teanga tríd an gcosán localize sa DataHandler. Nascann próifílí suíomh le cumraíocht LLM.</target>
+            </trans-unit>
+            <trans-unit id="module.translatePage" xml:space="preserve">
+                <source>Translate page</source>
+                <target>Aistrigh an leathanach</target>
+            </trans-unit>
+            <trans-unit id="module.profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Próifíl aistriúcháin</target>
+            </trans-unit>
+            <trans-unit id="module.allSites" xml:space="preserve">
+                <source>all sites</source>
+                <target>gach suíomh</target>
+            </trans-unit>
+            <trans-unit id="module.targetLanguages" xml:space="preserve">
+                <source>Target languages</source>
+                <target>Sprioctheangacha</target>
+            </trans-unit>
+            <trans-unit id="module.records" xml:space="preserve">
+                <source>Translatable records (page %s)</source>
+                <target>Taifid inaistrithe (leathanach %s)</target>
+            </trans-unit>
+            <trans-unit id="module.pageItself" xml:space="preserve">
+                <source>This page</source>
+                <target>An leathanach seo</target>
+            </trans-unit>
+            <trans-unit id="module.pageItselfHint" xml:space="preserve">
+                <source>The page record — title, slug and SEO metadata — is part of every run and cannot be deselected.</source>
+                <target>Tá taifead an leathanaigh — teideal, slug agus meiteashonraí SEO — mar chuid de gach rith agus ní féidir é a dhíroghnú.</target>
+            </trans-unit>
+            <trans-unit id="module.recordsHint" xml:space="preserve">
+                <source>Checked records are translated. An unchecked container skips its whole group; unchecked children of a checked container stay in the source language. IRRE children are translated together with their parent record.</source>
+                <target>Aistrítear na taifid atá ticeáilte. Scipeálann coimeádán gan tic an grúpa iomlán; fanann leanaí gan tic i gcoimeádán ticeáilte sa bhunteanga. Aistrítear leanaí IRRE in éineacht leis an taifead tuismitheora.</target>
+            </trans-unit>
+            <trans-unit id="module.noRecords" xml:space="preserve">
+                <source>No translatable records on this page.</source>
+                <target>Níl aon taifead inaistrithe ar an leathanach seo.</target>
+            </trans-unit>
+            <trans-unit id="module.selectAll" xml:space="preserve">
+                <source>Select all</source>
+                <target>Roghnaigh gach rud</target>
+            </trans-unit>
+            <trans-unit id="module.selectNone" xml:space="preserve">
+                <source>Deselect all</source>
+                <target>Díroghnaigh gach rud</target>
+            </trans-unit>
+            <trans-unit id="module.selectPageInTree" xml:space="preserve">
+                <source>Please select a page in the page tree on the left.</source>
+                <target>Roghnaigh leathanach sa chrann ar chlé.</target>
+            </trans-unit>
+            <trans-unit id="module.submit" xml:space="preserve">
+                <source>Translate selection</source>
+                <target>Aistrigh an rogha</target>
+            </trans-unit>
+            <trans-unit id="module.publishPage" xml:space="preserve">
+                <source>Publish translated page immediately</source>
+                <target>Foilsigh an leathanach aistrithe láithreach</target>
+            </trans-unit>
+            <trans-unit id="module.reload" xml:space="preserve">
+                <source>Reload page</source>
+                <target>Athlódáil an leathanach</target>
+            </trans-unit>
+            <trans-unit id="module.profiles" xml:space="preserve">
+                <source>Translation profiles</source>
+                <target>Próifílí aistriúcháin</target>
+            </trans-unit>
+            <trans-unit id="module.newProfile" xml:space="preserve">
+                <source>+ New profile</source>
+                <target>+ Próifíl nua</target>
+            </trans-unit>
+            <trans-unit id="module.llmConfigs" xml:space="preserve">
+                <source>LLM configurations</source>
+                <target>Cumraíochtaí LLM</target>
+            </trans-unit>
+            <trans-unit id="module.newLlmConfig" xml:space="preserve">
+                <source>+ New configuration</source>
+                <target>+ Cumraíocht nua</target>
+            </trans-unit>
+            <trans-unit id="module.noProfiles" xml:space="preserve">
+                <source>No profiles yet.</source>
+                <target>Níl aon phróifíl ann fós.</target>
+            </trans-unit>
+            <trans-unit id="module.noLlmConfigs" xml:space="preserve">
+                <source>No configurations yet.</source>
+                <target>Níl aon chumraíocht ann fós.</target>
+            </trans-unit>
+            <trans-unit id="module.edit" xml:space="preserve">
+                <source>Edit</source>
+                <target>Cuir in eagar</target>
+            </trans-unit>
+            <trans-unit id="column.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Teideal</target>
+            </trans-unit>
+            <trans-unit id="column.site" xml:space="preserve">
+                <source>Site</source>
+                <target>Suíomh</target>
+            </trans-unit>
+            <trans-unit id="column.llmConfig" xml:space="preserve">
+                <source>LLM config</source>
+                <target>Cumraíocht LLM</target>
+            </trans-unit>
+            <trans-unit id="column.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Foirmiúlacht</target>
+            </trans-unit>
+            <trans-unit id="column.tables" xml:space="preserve">
+                <source>Tables</source>
+                <target>Táblaí</target>
+            </trans-unit>
+            <trans-unit id="column.type" xml:space="preserve">
+                <source>Type</source>
+                <target>Cineál</target>
+            </trans-unit>
+            <trans-unit id="column.model" xml:space="preserve">
+                <source>Model</source>
+                <target>Samhail</target>
+            </trans-unit>
+            <trans-unit id="column.endpoint" xml:space="preserve">
+                <source>Endpoint</source>
+                <target>Críochphointe</target>
+            </trans-unit>
+            <trans-unit id="js.pageMeta" xml:space="preserve">
+                <source>Page metadata</source>
+                <target>Meiteashonraí an leathanaigh</target>
+            </trans-unit>
+            <trans-unit id="js.chooseLanguage" xml:space="preserve">
+                <source>Please choose at least one target language.</source>
+                <target>Roghnaigh sprioctheanga amháin ar a laghad.</target>
+            </trans-unit>
+            <trans-unit id="js.progress" xml:space="preserve">
+                <source>Translating %s/%s: %s …</source>
+                <target>Á aistriú %s/%s: %s …</target>
+            </trans-unit>
+            <trans-unit id="js.finished" xml:space="preserve">
+                <source>Finished. Reloading page …</source>
+                <target>Déanta. Tá an leathanach á athlódáil …</target>
+            </trans-unit>
+            <trans-unit id="js.finishedErrors" xml:space="preserve">
+                <source>%s chunk(s) with errors — messages stay on screen, please check.</source>
+                <target>Codanna le hearráidí: %s — fanann na teachtaireachtaí ar an scáileán, seiceáil iad le do thoil.</target>
+            </trans-unit>
+            <trans-unit id="js.finishedHints" xml:space="preserve">
+                <source>Finished, with notices — messages stay on screen, please check.</source>
+                <target>Críochnaithe, le nótaí — fanann na teachtaireachtaí ar an scáileán, seiceáil iad le do thoil.</target>
+            </trans-unit>
+            <trans-unit id="js.aborted" xml:space="preserve">
+                <source>Run aborted — please check the LLM configuration.</source>
+                <target>Cuireadh deireadh leis an rith — seiceáil an chumraíocht LLM.</target>
+            </trans-unit>
+            <trans-unit id="js.serverError" xml:space="preserve">
+                <source>Server error (HTTP %s).</source>
+                <target>Earráid freastalaí (HTTP %s).</target>
+            </trans-unit>
+            <trans-unit id="js.seeLog" xml:space="preserve">
+                <source>Details in the TYPO3 log.</source>
+                <target>Sonraí i loga TYPO3.</target>
+            </trans-unit>
+            <trans-unit id="js.networkError" xml:space="preserve">
+                <source>Network error at %s: %s</source>
+                <target>Earráid líonra ag %s: %s</target>
+            </trans-unit>
+            <trans-unit id="run.selectPageAndLanguage" xml:space="preserve">
+                <source>Please select a page (in the page tree) and at least one target language.</source>
+                <target>Roghnaigh leathanach (i gcrann na leathanach) agus sprioctheanga amháin ar a laghad.</target>
+            </trans-unit>
+            <trans-unit id="run.invalidParameters" xml:space="preserve">
+                <source>Invalid parameters.</source>
+                <target>Paraiméadair neamhbhailí.</target>
+            </trans-unit>
+            <trans-unit id="run.subject" xml:space="preserve">
+                <source>Page %s → %s</source>
+                <target>Leathanach %s → %s</target>
+            </trans-unit>
+            <trans-unit id="run.created" xml:space="preserve">
+                <source>%s newly translated</source>
+                <target>aistrithe as an nua: %s</target>
+            </trans-unit>
+            <trans-unit id="run.updated" xml:space="preserve">
+                <source>%s updated</source>
+                <target>nuashonraithe: %s</target>
+            </trans-unit>
+            <trans-unit id="run.createdAndUpdated" xml:space="preserve">
+                <source>%s new, %s updated</source>
+                <target>nua: %s, nuashonraithe: %s</target>
+            </trans-unit>
+            <trans-unit id="run.noChange" xml:space="preserve">
+                <source>no change</source>
+                <target>gan athrú</target>
+            </trans-unit>
+            <trans-unit id="run.pageCreated" xml:space="preserve">
+                <source>page translation created</source>
+                <target>cruthaíodh aistriúchán an leathanaigh</target>
+            </trans-unit>
+            <trans-unit id="run.pageUpdated" xml:space="preserve">
+                <source>page metadata updated</source>
+                <target>nuashonraíodh meiteashonraí an leathanaigh</target>
+            </trans-unit>
+            <trans-unit id="run.pageUnchanged" xml:space="preserve">
+                <source>page unchanged</source>
+                <target>gan athrú ar an leathanach</target>
+            </trans-unit>
+            <trans-unit id="run.hints" xml:space="preserve">
+                <source>Notices: %s</source>
+                <target>Nótaí: %s</target>
+            </trans-unit>
+            <trans-unit id="run.emptySelection" xml:space="preserve">
+                <source>No records to translate (empty selection).</source>
+                <target>Níl aon taifead le haistriú (rogha folamh).</target>
+            </trans-unit>
+            <trans-unit id="run.failed" xml:space="preserve">
+                <source>Translation failed.</source>
+                <target>Theip ar an aistriúchán.</target>
+            </trans-unit>
+            <trans-unit id="run.itemGaveUp" xml:space="preserve">
+                <source>Given up after %s attempts — this record kept interrupting the run. The other records were processed.</source>
+                <target>Tugadh suas i ndiaidh %s iarracht — bhí an taifead seo ag cur isteach ar an rith arís is arís eile. Próiseáladh na taifid eile.</target>
+            </trans-unit>
+            <trans-unit id="run.noProfile" xml:space="preserve">
+                <source>No translation profile applies to this page. Assign the site to a profile, or leave a profile's site empty to make it the default.</source>
+                <target>Níl aon phróifíl aistriúcháin i bhfeidhm don leathanach seo. Sann an suíomh do phróifíl, nó fág suíomh próifíle folamh chun í a dhéanamh réamhshocraithe.</target>
+            </trans-unit>
+            <trans-unit id="run.sourceLanguageUnknown" xml:space="preserve">
+                <source>The source language could not be determined. Set it in the translation profile, or give the default language of the site a locale.</source>
+                <target>Níorbh fhéidir an bhunteanga a dhéanamh amach. Socraigh í sa phróifíl aistriúcháin, nó tabhair logán do theanga réamhshocraithe an tsuímh.</target>
+            </trans-unit>
+            <trans-unit id="run.summary" xml:space="preserve">
+                <source>%s re-translated, %s newly created.</source>
+                <target>athaistrithe: %s, cruthaithe: %s.</target>
+            </trans-unit>
+            <trans-unit id="run.queued" xml:space="preserve">
+                <source>Run #%s queued — %s unit(s) will be processed in the background.</source>
+                <target>Cuireadh rith #%s sa scuaine — próiseálfar %s aonad sa chúlra.</target>
+            </trans-unit>
+            <trans-unit id="run.alreadyRunning" xml:space="preserve">
+                <source>A run for this page and language is already open (#%s). Please wait for it to finish or cancel it.</source>
+                <target>Tá rith ar oscailt cheana don leathanach agus don teanga seo (#%s). Fan go gcríochnóidh sé nó cealaigh é.</target>
+            </trans-unit>
+            <trans-unit id="run.cancelled" xml:space="preserve">
+                <source>Run #%s cancelled.</source>
+                <target>Cealaíodh rith #%s.</target>
+            </trans-unit>
+            <trans-unit id="run.background" xml:space="preserve">
+                <source>Process in the background</source>
+                <target>Próiseáil sa chúlra</target>
+            </trans-unit>
+            <trans-unit id="run.backgroundHint" xml:space="preserve">
+                <source>The run is handled by the server worker — you can close this page.</source>
+                <target>Déanann oibrí an fhreastalaí an rith — is féidir leat an leathanach seo a dhúnadh.</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslated" xml:space="preserve">
+                <source>Skip translated</source>
+                <target>Scipeáil na cinn aistrithe</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslatedHint" xml:space="preserve">
+                <source>Records that already have a translation are left untouched; only the missing ones are created.</source>
+                <target>Fágtar taifid a bhfuil aistriúchán acu cheana gan athrú; ní chruthaítear ach na cinn atá in easnamh.</target>
+            </trans-unit>
+            <trans-unit id="run.estimate" xml:space="preserve">
+                <source>This run covers %s unit(s) in %s language(s).</source>
+                <target>Clúdaíonn an rith seo %s aonad i %s teanga.</target>
+            </trans-unit>
+            <trans-unit id="run.confirmTitle" xml:space="preserve">
+                <source>Start this run in the browser?</source>
+                <target>An rith seo a thosú sa bhrabhsálaí?</target>
+            </trans-unit>
+            <trans-unit id="run.confirmHint" xml:space="preserve">
+                <source>Without "Process in the background" this page has to stay open until the run has finished. Tick that option to hand the run to the server worker instead.</source>
+                <target>Gan “Próiseáil sa chúlra” caithfidh an leathanach seo fanacht oscailte go dtí go gcríochnaíonn an rith. Tic an rogha sin chun an rith a thabhairt d’oibrí an fhreastalaí.</target>
+            </trans-unit>
+            <trans-unit id="run.confirmContinue" xml:space="preserve">
+                <source>Start in the browser</source>
+                <target>Tosaigh sa bhrabhsálaí</target>
+            </trans-unit>
+            <trans-unit id="run.confirmCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Cealaigh</target>
+            </trans-unit>
+            <trans-unit id="run.budgetExceeded" xml:space="preserve">
+                <source>Run stopped: the limit of %s LLM calls was reached.</source>
+                <target>Stopadh an rith: sroicheadh an teorainn de %s ghlao LLM.</target>
+            </trans-unit>
+            <trans-unit id="run.jobs" xml:space="preserve">
+                <source>Recent runs</source>
+                <target>Rití le déanaí</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.queued" xml:space="preserve">
+                <source>queued</source>
+                <target>sa scuaine</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.running" xml:space="preserve">
+                <source>running</source>
+                <target>ar siúl</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.done" xml:space="preserve">
+                <source>done</source>
+                <target>déanta</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.failed" xml:space="preserve">
+                <source>failed</source>
+                <target>theip air</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.cancelled" xml:space="preserve">
+                <source>cancelled</source>
+                <target>cealaithe</target>
+            </trans-unit>
+            <trans-unit id="run.jobProgress" xml:space="preserve">
+                <source>%s of %s</source>
+                <target>%s as %s</target>
+            </trans-unit>
+            <trans-unit id="run.jobUsage" xml:space="preserve">
+                <source>%s calls · %s tokens</source>
+                <target>%s glao · %s comhartha</target>
+            </trans-unit>
+            <trans-unit id="run.jobCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Cealaigh</target>
+            </trans-unit>
+            <trans-unit id="run.noJobs" xml:space="preserve">
+                <source>No runs yet.</source>
+                <target>Níl aon rith ann fós.</target>
+            </trans-unit>
+            <trans-unit id="task.work.title" xml:space="preserve">
+                <source>dTRANSLATE: Process translation queue</source>
+                <target>dTRANSLATE: próiseáil scuaine an aistriúcháin</target>
+            </trans-unit>
+            <trans-unit id="task.work.description" xml:space="preserve">
+                <source>Works off the queued translation runs of the backend module. Schedule it every minute. Alternative to the console command dtranslate:work — use one or the other, not both.</source>
+                <target>Próiseálann na ritheanna aistriúcháin a chuir modúl an chúldeireadh sa scuaine. Sceidealaigh é gach nóiméad. Rogha eile ar an ordú consóil dtranslate:work — bain úsáid as ceann amháin, ná as an dá cheann.</target>
+            </trans-unit>
+            <trans-unit id="js.stepFailed" xml:space="preserve">
+                <source>The server did not answer for this unit (HTTP %s) — the run continues with the next one.</source>
+                <target>Níor fhreagair an freastalaí don aonad seo (HTTP %s) — leanann an rith leis an gcéad cheann eile.</target>
+            </trans-unit>
+            <trans-unit id="js.jobStarted" xml:space="preserve">
+                <source>Run #%s started: %s unit(s).</source>
+                <target>Cuireadh tús le rith #%s: %s aonad.</target>
+            </trans-unit>
+            <trans-unit id="run.genericError" xml:space="preserve">
+                <source>Unexpected error (%s): %s — details in the TYPO3 log.</source>
+                <target>Earráid gan choinne (%s): %s — sonraí i loga TYPO3.</target>
+            </trans-unit>
+            <trans-unit id="field.tooLong" xml:space="preserve">
+                <source>%s was left in the source language: the translation is longer than the field allows (%s of %s characters).</source>
+                <target>Fágadh %s sa teanga fhoinseach: tá an aistriúchán níos faide ná mar a cheadaíonn an réimse (%s as %s carachtar).</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKeyConfigured" xml:space="preserve">
+                <source>The LLM configuration "%s" has no API key. Please enter one in the configuration.</source>
+                <target>Níl eochair API ag an gcumraíocht LLM „%s”. Cuir ceann isteach sa chumraíocht.</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKey" xml:space="preserve">
+                <source>No API key is set for the LLM configuration in use.</source>
+                <target>Níl aon eochair API socraithe don chumraíocht LLM atá in úsáid.</target>
+            </trans-unit>
+            <trans-unit id="llm.keyRejected" xml:space="preserve">
+                <source>%s rejected the API key (HTTP %s). Please check the key in the LLM configuration and enter it again.</source>
+                <target>Dhiúltaigh %s don eochair API (HTTP %s). Seiceáil an eochair sa chumraíocht LLM agus cuir isteach arís í.</target>
+            </trans-unit>
+            <trans-unit id="llm.unknownModel" xml:space="preserve">
+                <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
+                <target>Níl aithne ag %s ar an tsamhail nó ar an gcríochphointe sin (HTTP 404). Seiceáil ainm na samhla („%s”) agus bun-URL an API (%s).</target>
+            </trans-unit>
+            <trans-unit id="llm.rateLimit" xml:space="preserve">
+                <source>%s declined the request because of a rate limit (HTTP 429).</source>
+                <target>Dhiúltaigh %s don iarratas mar gheall ar theorainn ráta (HTTP 429).</target>
+            </trans-unit>
+            <trans-unit id="llm.quota" xml:space="preserve">
+                <source>The quota of the %s account is used up (HTTP %s). Please check billing and credit.</source>
+                <target>Tá cuóta an chuntais %s ídithe (HTTP %s). Seiceáil an billeáil agus an t-iarmhéid.</target>
+            </trans-unit>
+            <trans-unit id="llm.badRequest" xml:space="preserve">
+                <source>%s rejected the request (HTTP %s) — usually an unknown model name ("%s") or an unsupported parameter.</source>
+                <target>Dhiúltaigh %s don iarratas (HTTP %s) — de ghnáth ainm samhla anaithnid („%s”) nó paraiméadar nach dtacaítear leis.</target>
+            </trans-unit>
+            <trans-unit id="llm.serverError" xml:space="preserve">
+                <source>%s reports a malfunction (HTTP %s). Please try again later.</source>
+                <target>Tuairiscíonn %s fadhb (HTTP %s). Bain triail eile as ar ball.</target>
+            </trans-unit>
+            <trans-unit id="llm.httpStatus" xml:space="preserve">
+                <source>%s answered with HTTP %s.</source>
+                <target>D’fhreagair %s le HTTP %s.</target>
+            </trans-unit>
+            <trans-unit id="llm.providerMessage" xml:space="preserve">
+                <source>Provider message: %s</source>
+                <target>Teachtaireacht ón soláthraí: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.unreachable" xml:space="preserve">
+                <source>"%s" cannot be reached. Please check the API base URL of the LLM configuration. (%s)</source>
+                <target>Ní féidir „%s” a bhaint amach. Seiceáil bun-URL an API sa chumraíocht LLM. (%s)</target>
+            </trans-unit>
+            <trans-unit id="llm.timeout" xml:space="preserve">
+                <source>Timeout on the request to %s — the provider did not answer in time.</source>
+                <target>Imithe thar am leis an iarratas chuig %s — níor fhreagair an soláthraí in am.</target>
+            </trans-unit>
+            <trans-unit id="llm.connectionFailed" xml:space="preserve">
+                <source>Connection to %s failed: %s</source>
+                <target>Theip ar an nasc le %s: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.invalidJson" xml:space="preserve">
+                <source>%s did not return valid JSON.</source>
+                <target>Níor sheol %s JSON bailí ar ais.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

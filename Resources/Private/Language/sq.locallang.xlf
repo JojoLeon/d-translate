@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="sq" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="about.open" xml:space="preserve">
+                <source>About dTRANSLATE</source>
+                <target>Rreth dTRANSLATE</target>
+            </trans-unit>
+            <trans-unit id="about.close" xml:space="preserve">
+                <source>Close</source>
+                <target>Mbyll</target>
+            </trans-unit>
+            <trans-unit id="about.logoAlt" xml:space="preserve">
+                <source>Logo: dreistein medienentwicklung</source>
+                <target>Logo: dreistein medienentwicklung</target>
+            </trans-unit>
+            <trans-unit id="about.claim" xml:space="preserve">
+                <source>Modern web development and AI integration for mid-sized businesses.</source>
+                <target>Zhvillim modern uebi dhe integrim i IA-së për ndërmarrjet e mesme.</target>
+            </trans-unit>
+            <trans-unit id="about.copyright" xml:space="preserve">
+                <source>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</source>
+                <target>dTRANSLATE (d_translate) — © 2026 Joachim Dreistein.</target>
+            </trans-unit>
+            <trans-unit id="about.license" xml:space="preserve">
+                <source>License: GNU General Public License v2 or later.</source>
+                <target>Licenca: GNU General Public License v2 ose më vonë.</target>
+            </trans-unit>
+            <trans-unit id="about.description" xml:space="preserve">
+                <source>LLM-based translation for TYPO3: profiles, glossaries, background runs.</source>
+                <target>Përkthim me model gjuhësor për TYPO3: profile, fjalorthë, ekzekutime në sfond.</target>
+            </trans-unit>
+            <trans-unit id="about.more" xml:space="preserve">
+                <source>More at</source>
+                <target>Më shumë te</target>
+            </trans-unit>
+            <trans-unit id="module.intro" xml:space="preserve">
+                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind a site to an LLM configuration.</source>
+                <target>Përkthim me model gjuhësor përmes rrugës localize të DataHandler-it. Profilet lidhin një sajt me një konfigurim LLM.</target>
+            </trans-unit>
+            <trans-unit id="module.translatePage" xml:space="preserve">
+                <source>Translate page</source>
+                <target>Përkthe faqen</target>
+            </trans-unit>
+            <trans-unit id="module.profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Profil përkthimi</target>
+            </trans-unit>
+            <trans-unit id="module.allSites" xml:space="preserve">
+                <source>all sites</source>
+                <target>të gjithë sajtet</target>
+            </trans-unit>
+            <trans-unit id="module.targetLanguages" xml:space="preserve">
+                <source>Target languages</source>
+                <target>Gjuhët e synuara</target>
+            </trans-unit>
+            <trans-unit id="module.records" xml:space="preserve">
+                <source>Translatable records (page %s)</source>
+                <target>Regjistrime të përkthyeshme (faqja %s)</target>
+            </trans-unit>
+            <trans-unit id="module.pageItself" xml:space="preserve">
+                <source>This page</source>
+                <target>Kjo faqe</target>
+            </trans-unit>
+            <trans-unit id="module.pageItselfHint" xml:space="preserve">
+                <source>The page record — title, slug and SEO metadata — is part of every run and cannot be deselected.</source>
+                <target>Regjistrimi i faqes — titulli, slug dhe metadata SEO — është pjesë e çdo ekzekutimi dhe nuk mund të hiqet.</target>
+            </trans-unit>
+            <trans-unit id="module.recordsHint" xml:space="preserve">
+                <source>Checked records are translated. An unchecked container skips its whole group; unchecked children of a checked container stay in the source language. IRRE children are translated together with their parent record.</source>
+                <target>Regjistrimet e shënuara përkthehen. Një kontejner i pashënuar e kapërcen tërë grupin; fëmijët e pashënuar të një kontejneri të shënuar mbeten në gjuhën burimore. Fëmijët IRRE përkthehen bashkë me regjistrimin prind.</target>
+            </trans-unit>
+            <trans-unit id="module.noRecords" xml:space="preserve">
+                <source>No translatable records on this page.</source>
+                <target>Nuk ka regjistrime të përkthyeshme në këtë faqe.</target>
+            </trans-unit>
+            <trans-unit id="module.selectAll" xml:space="preserve">
+                <source>Select all</source>
+                <target>Zgjidh të gjitha</target>
+            </trans-unit>
+            <trans-unit id="module.selectNone" xml:space="preserve">
+                <source>Deselect all</source>
+                <target>Hiq zgjedhjen</target>
+            </trans-unit>
+            <trans-unit id="module.selectPageInTree" xml:space="preserve">
+                <source>Please select a page in the page tree on the left.</source>
+                <target>Zgjidhni një faqe në pemën majtas.</target>
+            </trans-unit>
+            <trans-unit id="module.submit" xml:space="preserve">
+                <source>Translate selection</source>
+                <target>Përkthe të zgjedhurat</target>
+            </trans-unit>
+            <trans-unit id="module.publishPage" xml:space="preserve">
+                <source>Publish translated page immediately</source>
+                <target>Publiko menjëherë faqen e përkthyer</target>
+            </trans-unit>
+            <trans-unit id="module.reload" xml:space="preserve">
+                <source>Reload page</source>
+                <target>Ringarko faqen</target>
+            </trans-unit>
+            <trans-unit id="module.profiles" xml:space="preserve">
+                <source>Translation profiles</source>
+                <target>Profile përkthimi</target>
+            </trans-unit>
+            <trans-unit id="module.newProfile" xml:space="preserve">
+                <source>+ New profile</source>
+                <target>+ Profil i ri</target>
+            </trans-unit>
+            <trans-unit id="module.llmConfigs" xml:space="preserve">
+                <source>LLM configurations</source>
+                <target>Konfigurime LLM</target>
+            </trans-unit>
+            <trans-unit id="module.newLlmConfig" xml:space="preserve">
+                <source>+ New configuration</source>
+                <target>+ Konfigurim i ri</target>
+            </trans-unit>
+            <trans-unit id="module.noProfiles" xml:space="preserve">
+                <source>No profiles yet.</source>
+                <target>Ende nuk ka profile.</target>
+            </trans-unit>
+            <trans-unit id="module.noLlmConfigs" xml:space="preserve">
+                <source>No configurations yet.</source>
+                <target>Ende nuk ka konfigurime.</target>
+            </trans-unit>
+            <trans-unit id="module.edit" xml:space="preserve">
+                <source>Edit</source>
+                <target>Redakto</target>
+            </trans-unit>
+            <trans-unit id="column.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Titulli</target>
+            </trans-unit>
+            <trans-unit id="column.site" xml:space="preserve">
+                <source>Site</source>
+                <target>Sajti</target>
+            </trans-unit>
+            <trans-unit id="column.llmConfig" xml:space="preserve">
+                <source>LLM config</source>
+                <target>Konfigurim LLM</target>
+            </trans-unit>
+            <trans-unit id="column.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Niveli i formalitetit</target>
+            </trans-unit>
+            <trans-unit id="column.tables" xml:space="preserve">
+                <source>Tables</source>
+                <target>Tabelat</target>
+            </trans-unit>
+            <trans-unit id="column.type" xml:space="preserve">
+                <source>Type</source>
+                <target>Lloji</target>
+            </trans-unit>
+            <trans-unit id="column.model" xml:space="preserve">
+                <source>Model</source>
+                <target>Modeli</target>
+            </trans-unit>
+            <trans-unit id="column.endpoint" xml:space="preserve">
+                <source>Endpoint</source>
+                <target>Pika fundore</target>
+            </trans-unit>
+            <trans-unit id="js.pageMeta" xml:space="preserve">
+                <source>Page metadata</source>
+                <target>Metatë dhënat e faqes</target>
+            </trans-unit>
+            <trans-unit id="js.chooseLanguage" xml:space="preserve">
+                <source>Please choose at least one target language.</source>
+                <target>Zgjidhni të paktën një gjuhë të synuar.</target>
+            </trans-unit>
+            <trans-unit id="js.progress" xml:space="preserve">
+                <source>Translating %s/%s: %s …</source>
+                <target>Duke përkthyer %s/%s: %s …</target>
+            </trans-unit>
+            <trans-unit id="js.finished" xml:space="preserve">
+                <source>Finished. Reloading page …</source>
+                <target>Gati. Faqja po ringarkohet …</target>
+            </trans-unit>
+            <trans-unit id="js.finishedErrors" xml:space="preserve">
+                <source>%s chunk(s) with errors — messages stay on screen, please check.</source>
+                <target>Pjesë me gabime: %s — mesazhet mbeten në ekran, ju lutemi kontrollojini.</target>
+            </trans-unit>
+            <trans-unit id="js.finishedHints" xml:space="preserve">
+                <source>Finished, with notices — messages stay on screen, please check.</source>
+                <target>Përfundoi, me vërejtje — mesazhet mbeten në ekran, ju lutemi kontrollojini.</target>
+            </trans-unit>
+            <trans-unit id="js.aborted" xml:space="preserve">
+                <source>Run aborted — please check the LLM configuration.</source>
+                <target>Ekzekutimi u ndërpre — kontrolloni konfigurimin LLM.</target>
+            </trans-unit>
+            <trans-unit id="js.serverError" xml:space="preserve">
+                <source>Server error (HTTP %s).</source>
+                <target>Gabim serveri (HTTP %s).</target>
+            </trans-unit>
+            <trans-unit id="js.seeLog" xml:space="preserve">
+                <source>Details in the TYPO3 log.</source>
+                <target>Detajet në regjistrin e TYPO3.</target>
+            </trans-unit>
+            <trans-unit id="js.networkError" xml:space="preserve">
+                <source>Network error at %s: %s</source>
+                <target>Gabim rrjeti te %s: %s</target>
+            </trans-unit>
+            <trans-unit id="run.selectPageAndLanguage" xml:space="preserve">
+                <source>Please select a page (in the page tree) and at least one target language.</source>
+                <target>Zgjidhni një faqe (në pemën e faqeve) dhe të paktën një gjuhë të synuar.</target>
+            </trans-unit>
+            <trans-unit id="run.invalidParameters" xml:space="preserve">
+                <source>Invalid parameters.</source>
+                <target>Parametra të pavlefshëm.</target>
+            </trans-unit>
+            <trans-unit id="run.subject" xml:space="preserve">
+                <source>Page %s → %s</source>
+                <target>Faqja %s → %s</target>
+            </trans-unit>
+            <trans-unit id="run.created" xml:space="preserve">
+                <source>%s newly translated</source>
+                <target>të përkthyera rishtas: %s</target>
+            </trans-unit>
+            <trans-unit id="run.updated" xml:space="preserve">
+                <source>%s updated</source>
+                <target>të përditësuara: %s</target>
+            </trans-unit>
+            <trans-unit id="run.createdAndUpdated" xml:space="preserve">
+                <source>%s new, %s updated</source>
+                <target>të reja: %s, të përditësuara: %s</target>
+            </trans-unit>
+            <trans-unit id="run.noChange" xml:space="preserve">
+                <source>no change</source>
+                <target>pa ndryshim</target>
+            </trans-unit>
+            <trans-unit id="run.pageCreated" xml:space="preserve">
+                <source>page translation created</source>
+                <target>përkthimi i faqes u krijua</target>
+            </trans-unit>
+            <trans-unit id="run.pageUpdated" xml:space="preserve">
+                <source>page metadata updated</source>
+                <target>metatë dhënat e faqes u përditësuan</target>
+            </trans-unit>
+            <trans-unit id="run.pageUnchanged" xml:space="preserve">
+                <source>page unchanged</source>
+                <target>faqja e pandryshuar</target>
+            </trans-unit>
+            <trans-unit id="run.hints" xml:space="preserve">
+                <source>Notices: %s</source>
+                <target>Vërejtje: %s</target>
+            </trans-unit>
+            <trans-unit id="run.emptySelection" xml:space="preserve">
+                <source>No records to translate (empty selection).</source>
+                <target>Nuk ka regjistrime për t’u përkthyer (përzgjedhje bosh).</target>
+            </trans-unit>
+            <trans-unit id="run.failed" xml:space="preserve">
+                <source>Translation failed.</source>
+                <target>Përkthimi dështoi.</target>
+            </trans-unit>
+            <trans-unit id="run.itemGaveUp" xml:space="preserve">
+                <source>Given up after %s attempts — this record kept interrupting the run. The other records were processed.</source>
+                <target>U hoq dorë pas %s përpjekjesh — ky regjistrim e ndërpriste vazhdimisht ekzekutimin. Regjistrimet e tjera u përpunuan.</target>
+            </trans-unit>
+            <trans-unit id="run.noProfile" xml:space="preserve">
+                <source>No translation profile applies to this page. Assign the site to a profile, or leave a profile's site empty to make it the default.</source>
+                <target>Për këtë faqe nuk vlen asnjë profil përkthimi. Cakto sajtin te një profil ose lëre bosh sajtin e një profili që ai të bëhet i parazgjedhuri.</target>
+            </trans-unit>
+            <trans-unit id="run.sourceLanguageUnknown" xml:space="preserve">
+                <source>The source language could not be determined. Set it in the translation profile, or give the default language of the site a locale.</source>
+                <target>Gjuha burimore nuk u përcaktua dot. Vendoseni në profilin e përkthimit ose jepini gjuhës së parazgjedhur të sajtit një lokale.</target>
+            </trans-unit>
+            <trans-unit id="run.summary" xml:space="preserve">
+                <source>%s re-translated, %s newly created.</source>
+                <target>të ripërkthyera: %s, të krijuara: %s.</target>
+            </trans-unit>
+            <trans-unit id="run.queued" xml:space="preserve">
+                <source>Run #%s queued — %s unit(s) will be processed in the background.</source>
+                <target>Ekzekutimi #%s u vendos në radhë — %s njësi do të përpunohen në sfond.</target>
+            </trans-unit>
+            <trans-unit id="run.alreadyRunning" xml:space="preserve">
+                <source>A run for this page and language is already open (#%s). Please wait for it to finish or cancel it.</source>
+                <target>Për këtë faqe dhe gjuhë ka tashmë një ekzekutim të hapur (#%s). Prisni të përfundojë ose anulojeni.</target>
+            </trans-unit>
+            <trans-unit id="run.cancelled" xml:space="preserve">
+                <source>Run #%s cancelled.</source>
+                <target>Ekzekutimi #%s u anulua.</target>
+            </trans-unit>
+            <trans-unit id="run.background" xml:space="preserve">
+                <source>Process in the background</source>
+                <target>Përpuno në sfond</target>
+            </trans-unit>
+            <trans-unit id="run.backgroundHint" xml:space="preserve">
+                <source>The run is handled by the server worker — you can close this page.</source>
+                <target>Ekzekutimin e merr përsipër procesi i serverit — këtë faqe mund ta mbyllni.</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslated" xml:space="preserve">
+                <source>Skip translated</source>
+                <target>Kapërce të përkthyerat</target>
+            </trans-unit>
+            <trans-unit id="run.skipTranslatedHint" xml:space="preserve">
+                <source>Records that already have a translation are left untouched; only the missing ones are created.</source>
+                <target>Regjistrimet që kanë tashmë një përkthim mbeten të paprekura; krijohen vetëm ato që mungojnë.</target>
+            </trans-unit>
+            <trans-unit id="run.estimate" xml:space="preserve">
+                <source>This run covers %s unit(s) in %s language(s).</source>
+                <target>Ky ekzekutim mbulon %s njësi në %s gjuhë.</target>
+            </trans-unit>
+            <trans-unit id="run.confirmTitle" xml:space="preserve">
+                <source>Start this run in the browser?</source>
+                <target>Ta nisësh këtë ekzekutim në shfletues?</target>
+            </trans-unit>
+            <trans-unit id="run.confirmHint" xml:space="preserve">
+                <source>Without "Process in the background" this page has to stay open until the run has finished. Tick that option to hand the run to the server worker instead.</source>
+                <target>Pa «Përpuno në sfond» kjo faqe duhet të mbetet e hapur derisa ekzekutimi të përfundojë. Shënoje atë opsion që ekzekutimin ta marrë përsipër punëtori i serverit.</target>
+            </trans-unit>
+            <trans-unit id="run.confirmContinue" xml:space="preserve">
+                <source>Start in the browser</source>
+                <target>Nis në shfletues</target>
+            </trans-unit>
+            <trans-unit id="run.confirmCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Anulo</target>
+            </trans-unit>
+            <trans-unit id="run.budgetExceeded" xml:space="preserve">
+                <source>Run stopped: the limit of %s LLM calls was reached.</source>
+                <target>Ekzekutimi u ndal: u arrit kufiri prej %s thirrjesh LLM.</target>
+            </trans-unit>
+            <trans-unit id="run.jobs" xml:space="preserve">
+                <source>Recent runs</source>
+                <target>Ekzekutimet e fundit</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.queued" xml:space="preserve">
+                <source>queued</source>
+                <target>në radhë</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.running" xml:space="preserve">
+                <source>running</source>
+                <target>në vazhdim</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.done" xml:space="preserve">
+                <source>done</source>
+                <target>përfunduar</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.failed" xml:space="preserve">
+                <source>failed</source>
+                <target>dështoi</target>
+            </trans-unit>
+            <trans-unit id="run.jobState.cancelled" xml:space="preserve">
+                <source>cancelled</source>
+                <target>anuluar</target>
+            </trans-unit>
+            <trans-unit id="run.jobProgress" xml:space="preserve">
+                <source>%s of %s</source>
+                <target>%s nga %s</target>
+            </trans-unit>
+            <trans-unit id="run.jobUsage" xml:space="preserve">
+                <source>%s calls · %s tokens</source>
+                <target>%s thirrje · %s tokena</target>
+            </trans-unit>
+            <trans-unit id="run.jobCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Anulo</target>
+            </trans-unit>
+            <trans-unit id="run.noJobs" xml:space="preserve">
+                <source>No runs yet.</source>
+                <target>Ende asnjë ekzekutim.</target>
+            </trans-unit>
+            <trans-unit id="task.work.title" xml:space="preserve">
+                <source>dTRANSLATE: Process translation queue</source>
+                <target>dTRANSLATE: përpuno radhën e përkthimeve</target>
+            </trans-unit>
+            <trans-unit id="task.work.description" xml:space="preserve">
+                <source>Works off the queued translation runs of the backend module. Schedule it every minute. Alternative to the console command dtranslate:work — use one or the other, not both.</source>
+                <target>Përpunon ekzekutimet e përkthimit të vendosura në radhë nga moduli i backend-it. Planifikojeni çdo minutë. Alternativë e komandës së konsolës dtranslate:work — përdorni një ose tjetrën, jo të dyja.</target>
+            </trans-unit>
+            <trans-unit id="js.stepFailed" xml:space="preserve">
+                <source>The server did not answer for this unit (HTTP %s) — the run continues with the next one.</source>
+                <target>Serveri nuk u përgjigj për këtë njësi (HTTP %s) — ekzekutimi vazhdon me tjetrën.</target>
+            </trans-unit>
+            <trans-unit id="js.jobStarted" xml:space="preserve">
+                <source>Run #%s started: %s unit(s).</source>
+                <target>Ekzekutimi #%s filloi: %s njësi.</target>
+            </trans-unit>
+            <trans-unit id="run.genericError" xml:space="preserve">
+                <source>Unexpected error (%s): %s — details in the TYPO3 log.</source>
+                <target>Gabim i papritur (%s): %s — detajet në regjistrin e TYPO3.</target>
+            </trans-unit>
+            <trans-unit id="field.tooLong" xml:space="preserve">
+                <source>%s was left in the source language: the translation is longer than the field allows (%s of %s characters).</source>
+                <target>%s mbeti në gjuhën burimore: përkthimi është më i gjatë nga sa lejon fusha (%s nga %s karaktere).</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKeyConfigured" xml:space="preserve">
+                <source>The LLM configuration "%s" has no API key. Please enter one in the configuration.</source>
+                <target>Konfigurimi LLM „%s” nuk ka çelës API. Vendosni një çelës në konfigurim.</target>
+            </trans-unit>
+            <trans-unit id="llm.noApiKey" xml:space="preserve">
+                <source>No API key is set for the LLM configuration in use.</source>
+                <target>Për konfigurimin LLM në përdorim nuk është caktuar asnjë çelës API.</target>
+            </trans-unit>
+            <trans-unit id="llm.keyRejected" xml:space="preserve">
+                <source>%s rejected the API key (HTTP %s). Please check the key in the LLM configuration and enter it again.</source>
+                <target>%s e refuzoi çelësin API (HTTP %s). Kontrolloni çelësin në konfigurimin LLM dhe vendoseni sërish.</target>
+            </trans-unit>
+            <trans-unit id="llm.unknownModel" xml:space="preserve">
+                <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
+                <target>%s nuk e njeh këtë model ose pikë fundore (HTTP 404). Kontrolloni emrin e modelit („%s”) dhe URL-në bazë të API-t (%s).</target>
+            </trans-unit>
+            <trans-unit id="llm.rateLimit" xml:space="preserve">
+                <source>%s declined the request because of a rate limit (HTTP 429).</source>
+                <target>%s e refuzoi kërkesën për shkak të një kufiri shpeshtësie (HTTP 429).</target>
+            </trans-unit>
+            <trans-unit id="llm.quota" xml:space="preserve">
+                <source>The quota of the %s account is used up (HTTP %s). Please check billing and credit.</source>
+                <target>Kuota e llogarisë %s ka mbaruar (HTTP %s). Kontrolloni faturimin dhe bilancin.</target>
+            </trans-unit>
+            <trans-unit id="llm.badRequest" xml:space="preserve">
+                <source>%s rejected the request (HTTP %s) — usually an unknown model name ("%s") or an unsupported parameter.</source>
+                <target>%s e refuzoi kërkesën (HTTP %s) — zakonisht një emër modeli i panjohur („%s”) ose një parametër i pambështetur.</target>
+            </trans-unit>
+            <trans-unit id="llm.serverError" xml:space="preserve">
+                <source>%s reports a malfunction (HTTP %s). Please try again later.</source>
+                <target>%s raporton një defekt (HTTP %s). Provoni sërish më vonë.</target>
+            </trans-unit>
+            <trans-unit id="llm.httpStatus" xml:space="preserve">
+                <source>%s answered with HTTP %s.</source>
+                <target>%s u përgjigj me HTTP %s.</target>
+            </trans-unit>
+            <trans-unit id="llm.providerMessage" xml:space="preserve">
+                <source>Provider message: %s</source>
+                <target>Mesazhi i ofruesit: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.unreachable" xml:space="preserve">
+                <source>"%s" cannot be reached. Please check the API base URL of the LLM configuration. (%s)</source>
+                <target>„%s” nuk arrihet. Kontrolloni URL-në bazë të API-t në konfigurimin LLM. (%s)</target>
+            </trans-unit>
+            <trans-unit id="llm.timeout" xml:space="preserve">
+                <source>Timeout on the request to %s — the provider did not answer in time.</source>
+                <target>Skadoi koha për kërkesën drejt %s — ofruesi nuk u përgjigj në kohë.</target>
+            </trans-unit>
+            <trans-unit id="llm.connectionFailed" xml:space="preserve">
+                <source>Connection to %s failed: %s</source>
+                <target>Lidhja me %s dështoi: %s</target>
+            </trans-unit>
+            <trans-unit id="llm.invalidJson" xml:space="preserve">
+                <source>%s did not return valid JSON.</source>
+                <target>%s nuk ktheu një JSON të vlefshëm.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

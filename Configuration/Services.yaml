@@ -1,0 +1,66 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Dreistein\DTranslate\:
+    resource: '../Classes/*'
+    exclude:
+      - '../Classes/Llm/ResolvedLlm.php'
+      - '../Classes/Llm/ResolvedProfile.php'
+      - '../Classes/Service/TranslationRunResult.php'
+
+  # Request-scoped state shared between the command-map hook (writer) and the
+  # field hook (reader). SingletonInterface guarantees one instance per request
+  # regardless of whether it is reached via DI or GeneralUtility::makeInstance.
+  Dreistein\DTranslate\Translation\ProcessingContext:
+    public: true
+
+  # DataHandler instantiates hook classes via GeneralUtility::makeInstance(),
+  # which only injects constructor dependencies for PUBLIC container services.
+  Dreistein\DTranslate\Hook\CommandMapHook:
+    public: true
+
+  Dreistein\DTranslate\Hook\TranslateFieldHook:
+    public: true
+
+  # Scheduler tasks are unserialized from the database, not built by the
+  # container — the task fetches the worker itself, which only works for a
+  # public service.
+  Dreistein\DTranslate\Job\QueueWorker:
+    public: true
+
+  Dreistein\DTranslate\Controller\Backend\TranslationModuleController:
+    tags: ['backend.controller']
+
+  # The segment cache is a named TYPO3 cache, so it cannot be autowired.
+  cache.dtranslate_segments:
+    class: TYPO3\CMS\Core\Cache\Frontend\FrontendInterface
+    factory: ['@TYPO3\CMS\Core\Cache\CacheManager', 'getCache']
+    arguments: ['dtranslate_segments']
+
+  Dreistein\DTranslate\Service\TranslationService:
+    arguments:
+      $segmentCache: '@cache.dtranslate_segments'
+
+  Dreistein\DTranslate\Command\TranslateRecordCommand:
+    tags:
+      - name: 'console.command'
+        command: 'dtranslate:translate-record'
+        description: 'Translate a single record through the real DataHandler hook path.'
+        schedulable: false
+
+  Dreistein\DTranslate\Command\WorkQueueCommand:
+    tags:
+      - name: 'console.command'
+        command: 'dtranslate:work'
+        description: 'Process queued translation jobs (background worker; run from cron).'
+        schedulable: true
+
+  Dreistein\DTranslate\Command\TranslatePageCommand:
+    tags:
+      - name: 'console.command'
+        command: 'dtranslate:page'
+        description: 'Translate all default-language content of a page into a target language.'
+        schedulable: false

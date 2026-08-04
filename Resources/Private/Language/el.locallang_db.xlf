@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="el" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="tx_dtranslate_llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>Διαμόρφωση LLM</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Τίτλος</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type" xml:space="preserve">
+                <source>Provider type</source>
+                <target>Τύπος παρόχου</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.anthropic" xml:space="preserve">
+                <source>Anthropic (Claude)</source>
+                <target>Anthropic (Claude)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.gemini" xml:space="preserve">
+                <source>Google (Gemini)</source>
+                <target>Google (Gemini)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.mistral" xml:space="preserve">
+                <source>Mistral</source>
+                <target>Mistral</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.openai" xml:space="preserve">
+                <source>OpenAI</source>
+                <target>OpenAI</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.endpoint" xml:space="preserve">
+                <source>API base URL</source>
+                <target>Βασική διεύθυνση URL του API</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.chat_model" xml:space="preserve">
+                <source>Chat model</source>
+                <target>Μοντέλο συνομιλίας</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key" xml:space="preserve">
+                <source>API key</source>
+                <target>Κλειδί API</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key.description" xml:space="preserve">
+                <source>Provider API key. Stored as entered — it has to be sent to the provider.</source>
+                <target>Κλειδί API του παρόχου. Αποθηκεύεται όπως καταχωρίστηκε — πρέπει να αποστέλλεται στον πάροχο.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Προφίλ μετάφρασης</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Τίτλος</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier" xml:space="preserve">
+                <source>Site identifier</source>
+                <target>Αναγνωριστικό ιστότοπου</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.description" xml:space="preserve">
+                <source>The TYPO3 site this profile applies to. Empty = default profile, used for every site without one of its own.</source>
+                <target>Ο ιστότοπος TYPO3 στον οποίο ισχύει αυτό το προφίλ. Κενό = προεπιλεγμένο προφίλ, ισχύει για κάθε ιστότοπο χωρίς δικό του.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.all" xml:space="preserve">
+                <source>[all sites — default profile]</source>
+                <target>[όλοι οι ιστότοποι — προεπιλεγμένο προφίλ]</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>Διαμόρφωση LLM</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language" xml:space="preserve">
+                <source>Source language (override)</source>
+                <target>Γλώσσα προέλευσης (παράκαμψη)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language.description" xml:space="preserve">
+                <source>Only needed when the source texts are not written in the default language of the site. Empty = derive the name from the site locale.</source>
+                <target>Χρειάζεται μόνο όταν τα κείμενα προέλευσης δεν είναι γραμμένα στην προεπιλεγμένη γλώσσα του ιστότοπου. Κενό = το όνομα προκύπτει από την τοπική ρύθμιση του ιστότοπου.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Βαθμός τυπικότητας</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.default" xml:space="preserve">
+                <source>Default</source>
+                <target>Προεπιλογή</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.formal" xml:space="preserve">
+                <source>Formal</source>
+                <target>Τυπικός (πληθυντικός ευγενείας)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.informal" xml:space="preserve">
+                <source>Informal</source>
+                <target>Ανεπίσημος (ενικός)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint" xml:space="preserve">
+                <source>Style / glossary hint</source>
+                <target>Υπόδειξη ύφους / γλωσσαρίου</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint.description" xml:space="preserve">
+                <source>Free-text guidance for the system prompt (tone, brand terms to keep, …).</source>
+                <target>Ελεύθερο κείμενο για το prompt συστήματος (ύφος, όροι μάρκας που πρέπει να διατηρηθούν, …).</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables" xml:space="preserve">
+                <source>Translatable tables (allowlist)</source>
+                <target>Μεταφράσιμοι πίνακες (λίστα επιτρεπόμενων)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables.description" xml:space="preserve">
+                <source>Table names, separated by commas or one per line. Empty = allow every localizable table.</source>
+                <target>Ονόματα πινάκων, χωρισμένα με κόμματα ή ένα ανά γραμμή. Κενό = να επιτρέπεται κάθε πίνακας που μπορεί να τοπικοποιηθεί.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields" xml:space="preserve">
+                <source>Additional fields (table.column)</source>
+                <target>Πρόσθετα πεδία (πίνακας.στήλη)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields.description" xml:space="preserve">
+                <source>One per line or comma-separated. Text, RTE and FlexForm columns are supported. Standard page SEO fields are translated automatically.</source>
+                <target>Ένα ανά γραμμή ή χωρισμένα με κόμματα. Υποστηρίζονται στήλες κειμένου, RTE και FlexForm. Τα τυπικά πεδία SEO των σελίδων μεταφράζονται αυτόματα.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Γλωσσάρι</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.description" xml:space="preserve">
+                <source>Term pairs injected into the system prompt for consistent terminology.</source>
+                <target>Ζεύγη όρων που εισάγονται στο prompt συστήματος για συνεπή ορολογία.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary" xml:space="preserve">
+                <source>Glossary entry</source>
+                <target>Καταχώριση γλωσσαρίου</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
+                <source>Applies to target language</source>
+                <target>Ισχύει για τη γλώσσα-στόχο</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
+                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
+                <target>Περιορίζει τον όρο σε μία γλώσσα ενός ιστότοπου ή τον αφήνει να ισχύει για όλες τις γλώσσες-στόχους.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">
+                <source>All target languages</source>
+                <target>Όλες οι γλώσσες-στόχοι</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.source_term" xml:space="preserve">
+                <source>Source term</source>
+                <target>Όρος προέλευσης</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_term" xml:space="preserve">
+                <source>Target term (translation / keep as is)</source>
+                <target>Όρος-στόχος (μετάφραση / να μείνει ως έχει)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.note" xml:space="preserve">
+                <source>Note</source>
+                <target>Σημείωση</target>
+            </trans-unit>
+            <trans-unit id="tabs.language" xml:space="preserve">
+                <source>Language</source>
+                <target>Γλώσσα</target>
+            </trans-unit>
+            <trans-unit id="tabs.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Γλωσσάρι</target>
+            </trans-unit>
+            <trans-unit id="tabs.scope" xml:space="preserve">
+                <source>Scope</source>
+                <target>Εύρος</target>
+            </trans-unit>
+            <trans-unit id="tabs.access" xml:space="preserve">
+                <source>Access</source>
+                <target>Πρόσβαση</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

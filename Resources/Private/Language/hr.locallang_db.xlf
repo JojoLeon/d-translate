@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file target-language="hr" source-language="en" datatype="plaintext" original="messages" date="2026-07-28T00:00:00Z" product-name="d_translate">
+        <header/>
+        <body>
+            <trans-unit id="tx_dtranslate_llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>LLM konfiguracija</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Naslov</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type" xml:space="preserve">
+                <source>Provider type</source>
+                <target>Vrsta pružatelja usluge</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.anthropic" xml:space="preserve">
+                <source>Anthropic (Claude)</source>
+                <target>Anthropic (Claude)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.gemini" xml:space="preserve">
+                <source>Google (Gemini)</source>
+                <target>Google (Gemini)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.mistral" xml:space="preserve">
+                <source>Mistral</source>
+                <target>Mistral</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.type.openai" xml:space="preserve">
+                <source>OpenAI</source>
+                <target>OpenAI</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.endpoint" xml:space="preserve">
+                <source>API base URL</source>
+                <target>Osnovni URL API-ja</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.chat_model" xml:space="preserve">
+                <source>Chat model</source>
+                <target>Model za razgovor</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key" xml:space="preserve">
+                <source>API key</source>
+                <target>API ključ</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_llm_config.api_key.description" xml:space="preserve">
+                <source>Provider API key. Stored as entered — it has to be sent to the provider.</source>
+                <target>API ključ pružatelja usluge. Sprema se nepromijenjen — mora se slati pružatelju usluge.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile" xml:space="preserve">
+                <source>Translation profile</source>
+                <target>Prevoditeljski profil</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.title" xml:space="preserve">
+                <source>Title</source>
+                <target>Naslov</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier" xml:space="preserve">
+                <source>Site identifier</source>
+                <target>Identifikator web-mjesta</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.description" xml:space="preserve">
+                <source>The TYPO3 site this profile applies to. Empty = default profile, used for every site without one of its own.</source>
+                <target>TYPO3 web-mjesto na koje se ovaj profil odnosi. Prazno = zadani profil, koristi se za svako web-mjesto bez vlastitog.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.site_identifier.all" xml:space="preserve">
+                <source>[all sites — default profile]</source>
+                <target>[sva web-mjesta — zadani profil]</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.llm_config" xml:space="preserve">
+                <source>LLM configuration</source>
+                <target>LLM konfiguracija</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language" xml:space="preserve">
+                <source>Source language (override)</source>
+                <target>Izvorni jezik (zamjena)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.source_language.description" xml:space="preserve">
+                <source>Only needed when the source texts are not written in the default language of the site. Empty = derive the name from the site locale.</source>
+                <target>Potrebno samo kada izvorni tekstovi nisu napisani na zadanom jeziku web-mjesta. Prazno = naziv se izvodi iz lokalizacije web-mjesta.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality" xml:space="preserve">
+                <source>Formality</source>
+                <target>Razina formalnosti</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.default" xml:space="preserve">
+                <source>Default</source>
+                <target>Zadano</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.formal" xml:space="preserve">
+                <source>Formal</source>
+                <target>Formalno (Vi)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.formality.informal" xml:space="preserve">
+                <source>Informal</source>
+                <target>Neformalno (ti)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint" xml:space="preserve">
+                <source>Style / glossary hint</source>
+                <target>Napomena o stilu / pojmovniku</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.style_hint.description" xml:space="preserve">
+                <source>Free-text guidance for the system prompt (tone, brand terms to keep, …).</source>
+                <target>Slobodan tekst za sistemsku uputu (ton, nazivi robnih marki koje treba zadržati, …).</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables" xml:space="preserve">
+                <source>Translatable tables (allowlist)</source>
+                <target>Tablice za prijevod (popis dopuštenih)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.translate_tables.description" xml:space="preserve">
+                <source>Table names, separated by commas or one per line. Empty = allow every localizable table.</source>
+                <target>Nazivi tablica odvojeni zarezom ili jedan po retku. Prazno = dopusti svaku tablicu koja se može lokalizirati.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields" xml:space="preserve">
+                <source>Additional fields (table.column)</source>
+                <target>Dodatna polja (tablica.stupac)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.additional_fields.description" xml:space="preserve">
+                <source>One per line or comma-separated. Text, RTE and FlexForm columns are supported. Standard page SEO fields are translated automatically.</source>
+                <target>Jedno po retku ili odvojeno zarezom. Podržani su tekstualni, RTE i FlexForm stupci. Standardna SEO polja stranica prevode se automatski.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Pojmovnik</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.description" xml:space="preserve">
+                <source>Term pairs injected into the system prompt for consistent terminology.</source>
+                <target>Parovi pojmova koji se umeću u sistemsku uputu radi ujednačene terminologije.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary" xml:space="preserve">
+                <source>Glossary entry</source>
+                <target>Unos u pojmovniku</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
+                <source>Applies to target language</source>
+                <target>Vrijedi za ciljni jezik</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
+                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
+                <target>Ograničava pojam na jedan jezik web-mjesta ili ga pušta da vrijedi za sve ciljne jezike.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">
+                <source>All target languages</source>
+                <target>Svi ciljni jezici</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.source_term" xml:space="preserve">
+                <source>Source term</source>
+                <target>Izvorni pojam</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_term" xml:space="preserve">
+                <source>Target term (translation / keep as is)</source>
+                <target>Ciljni pojam (prijevod / zadrži nepromijenjeno)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.note" xml:space="preserve">
+                <source>Note</source>
+                <target>Bilješka</target>
+            </trans-unit>
+            <trans-unit id="tabs.language" xml:space="preserve">
+                <source>Language</source>
+                <target>Jezik</target>
+            </trans-unit>
+            <trans-unit id="tabs.glossary" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Pojmovnik</target>
+            </trans-unit>
+            <trans-unit id="tabs.scope" xml:space="preserve">
+                <source>Scope</source>
+                <target>Opseg</target>
+            </trans-unit>
+            <trans-unit id="tabs.access" xml:space="preserve">
+                <source>Access</source>
+                <target>Pristup</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

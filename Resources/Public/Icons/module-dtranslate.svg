@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Back sheet of TYPO3's "translate" icon, unchanged. -->
+  <g fill="currentColor" opacity=".5">
+    <path d="M14.8 1H5.3c-.2 0-.3.1-.3.3V5h5.6l.5-1H7V3h2V2h2v1h2v1h-.8L11 6.4v.8l.9.9-.7.7-.2-.1V11h3.8c.1 0 .3-.1.3-.3V1.3c-.1-.2-.2-.3-.3-.3z"/>
+  </g>
+  <!-- Front sheet: same shape, but without the punched-out "A" so the mark below shows on top of it. -->
+  <path fill="currentColor" d="M10.8 5H1.3c-.2 0-.3.1-.3.3v9.5c0 .1.1.2.3.2h9.5c.1 0 .3-.1.3-.3V5.3c-.1-.2-.2-.3-.3-.3z"/>
+  <!-- The "d" of the dAi logo (Resources/Public/Images/logo-dai.svg), scaled into the sheet. -->
+  <g transform="translate(3 7.35) scale(.028)">
+    <path fill="#ff5c1c" fill-rule="nonzero" d="M172,0 H214 V200 H34 A34,34 0 0 1 0,166 V88 A34,34 0 0 1 34,54 H172 Z M58,96 A16,16 0 0 0 42,112 V142 A16,16 0 0 0 58,158 H156 A16,16 0 0 0 172,142 V112 A16,16 0 0 0 156,96 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+# cat=Behaviour//10; type=boolean; label=Publish translated page immediately: Default state of the module checkbox. Off = a newly created page translation is created disabled, for review.
+behaviour.publishPages = 0
+
+# cat=Behaviour//15; type=boolean; label=Process in the background by default: Pre-selects the module checkbox that hands the run to the worker instead of the browser.
+behaviour.backgroundDefault = 0
+
+# cat=Behaviour//16; type=int+; label=Ask before large foreground runs: Number of units above which a run that is *not* processed in the background asks for confirmation first — that browser tab has to stay open until the run has finished (0 = never ask).
+behaviour.confirmAboveUnits = 50
+
+# cat=Behaviour//18; type=int+; label=Maximum LLM calls per run: Stops a run once it has spent this many calls (0 = no limit). A guard against an accidentally huge selection.
+behaviour.maxCallsPerJob = 0
+
+# cat=Behaviour//20; type=int+; label=LLM request timeout (seconds): Total budget for one call to the provider. A stuck response is aborted after this time instead of blocking the whole run. Non-streaming providers stay silent for the whole generation, and a long article on a large model takes minutes — do not set this below 120.
+behaviour.requestTimeout = 180
+
+# cat=Behaviour//30; type=int+; label=LLM connect timeout (seconds): Time allowed for establishing the connection to the provider.
+behaviour.connectTimeout = 10
+
+# cat=Anthropic//10; type=string; label=API Key: Anthropic API key (https://console.anthropic.com)
+anthropic.apiKey =
+
+# cat=Anthropic//20; type=string; label=API Base URL
+anthropic.apiBase = https://api.anthropic.com/v1
+
+# cat=Anthropic//30; type=string; label=Chat Model: e.g. claude-sonnet-4-6, claude-opus-4-8, claude-haiku-4-5-20251001
+anthropic.chatModel = claude-sonnet-4-6
+
+# cat=Anthropic//40; type=int+; label=Timeout (seconds)
+anthropic.timeout = 180
+
+# cat=Fallbacks//10; type=string; label=Fallback source language: Last resort only. The source language normally comes from the site locale, or from the profile override. Leave empty to have runs report a missing language instead of guessing.
+fallback.sourceLanguage =
+
+# cat=Fallbacks//20; type=string; label=Fallback target language: Used only when a site language has neither a usable locale nor a title.
+fallback.targetLanguage =

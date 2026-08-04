@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Python (translation tooling in Build/i18n)
+__pycache__/
+*.pyc
+
+# Editors
+.idea/
+.vscode/
+
+# Composer
+/vendor/
+composer.lock

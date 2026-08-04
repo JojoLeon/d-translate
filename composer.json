@@ -1,0 +1,32 @@
+{
+    "name": "dreistein/d-translate",
+    "type": "typo3-cms-extension",
+    "description": "LLM-based translation for TYPO3: translates pages and records into your site languages through TYPO3's own localize path (Anthropic Claude, OpenAI, Mistral or Google Gemini).",
+    "homepage": "https://dreistein.de",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS", "AI", "translation", "localization", "Anthropic", "Claude"],
+    "version": "0.1.0",
+    "require": {
+        "php": "^8.2",
+        "typo3/cms-core": "^12.4 || ^13.4 || ^14.0",
+        "typo3/cms-backend": "^12.4 || ^13.4 || ^14.0"
+    },
+    "suggest": {
+        "typo3/cms-scheduler": "Run the translation queue as a scheduler task instead of a cron entry."
+    },
+    "autoload": {
+        "psr-4": {
+            "Dreistein\\DTranslate\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dreistein\\DTranslate\\Tests\\": "Tests/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "d_translate"
+        }
+    }
+}
