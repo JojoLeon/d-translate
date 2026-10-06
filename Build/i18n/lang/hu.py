@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'A használt LLM-konfigurációhoz nincs beállítva API-kulcs.',
     'llm.keyRejected': 'A(z) %s elutasította az API-kulcsot (HTTP %s). Ellenőrizze a kulcsot az LLM-konfigurációban, és adja meg újra.',
     'llm.unknownModel': 'A(z) %s nem ismeri ezt a modellt vagy végpontot (HTTP 404). Ellenőrizze a modell nevét („%s”) és az API alap-URL-jét (%s).',
+    'llm.requestedUrl': 'Meghívott URL: %s.',
     'llm.rateLimit': 'A(z) %s sebességkorlát miatt utasította el a kérést (HTTP 429).',
     'llm.quota': 'A(z) %s fiók kerete elfogyott (HTTP %s). Ellenőrizze a számlázást és az egyenleget.',
     'llm.badRequest': 'A(z) %s elutasította a kérést (HTTP %s) — általában ismeretlen modellnév („%s”) vagy nem támogatott paraméter az ok.',

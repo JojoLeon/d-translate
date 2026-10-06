@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Nid oes allwedd API wedi’i gosod ar gyfer y ffurfweddiad LLM sydd yn cael ei ddefnyddio.',
     'llm.keyRejected': 'Gwrthododd %s yr allwedd API (HTTP %s). Gwiriwch yr allwedd yn y ffurfweddiad LLM a’i rhoi eto.',
     'llm.unknownModel': 'Nid yw %s yn adnabod y model na’r pwynt terfyn hwnnw (HTTP 404). Gwiriwch enw’r model („%s”) a URL sylfaen yr API (%s).',
+    'llm.requestedUrl': 'URL a alwyd: %s.',
     'llm.rateLimit': 'Gwrthododd %s y cais oherwydd terfyn cyfradd (HTTP 429).',
     'llm.quota': 'Mae cwota’r cyfrif %s wedi’i ddefnyddio (HTTP %s). Gwiriwch y bilio a’r balans.',
     'llm.badRequest': 'Gwrthododd %s y cais (HTTP %s) — fel arfer enw model anhysbys („%s”) neu baramedr nas cefnogir.',

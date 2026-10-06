@@ -31,10 +31,16 @@ final class LlmErrorFormatter
 {
     private const MAX_DETAIL = 240;
 
+    /**
+     * @param string $baseUrl    the configured API base URL, as the editor knows it
+     * @param string $requestUrl the URL actually called — named on a 404, where
+     *                           base URL and operation path are the usual suspects
+     */
     public static function fromStatus(
         string $provider,
         string $model,
-        string $url,
+        string $baseUrl,
+        string $requestUrl,
         int $status,
         string $body,
         ?int $retryAfter = null,
@@ -48,7 +54,11 @@ final class LlmErrorFormatter
             // bad-request branch below would send the editor hunting for a
             // wrong model name instead of the key they just mistyped.
             self::indicatesBadKey($body) => [Messages::tr('llm.keyRejected', $provider, $status), true],
-            $status === 404 => [Messages::tr('llm.unknownModel', $provider, $model, $url), true],
+            $status === 404 => [
+                Messages::tr('llm.unknownModel', $provider, $model, $baseUrl)
+                    . ' ' . Messages::tr('llm.requestedUrl', $requestUrl),
+                true,
+            ],
             $status === 429 => [Messages::tr('llm.rateLimit', $provider), false],
             $status === 402 || self::indicatesQuota($body) => [Messages::tr('llm.quota', $provider, $status), true],
             $status === 400 || $status === 422 => [Messages::tr('llm.badRequest', $provider, $status, $model), true],

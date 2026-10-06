@@ -399,6 +399,10 @@
                 <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
                 <target>%s nuk e njeh këtë model ose pikë fundore (HTTP 404). Kontrolloni emrin e modelit („%s”) dhe URL-në bazë të API-t (%s).</target>
             </trans-unit>
+            <trans-unit id="llm.requestedUrl" xml:space="preserve">
+                <source>Requested URL: %s.</source>
+                <target>URL-ja e kërkuar: %s.</target>
+            </trans-unit>
             <trans-unit id="llm.rateLimit" xml:space="preserve">
                 <source>%s declined the request because of a rate limit (HTTP 429).</source>
                 <target>%s e refuzoi kërkesën për shkak të një kufiri shpeshtësie (HTTP 429).</target>

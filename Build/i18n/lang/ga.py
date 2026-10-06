@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Níl aon eochair API socraithe don chumraíocht LLM atá in úsáid.',
     'llm.keyRejected': 'Dhiúltaigh %s don eochair API (HTTP %s). Seiceáil an eochair sa chumraíocht LLM agus cuir isteach arís í.',
     'llm.unknownModel': 'Níl aithne ag %s ar an tsamhail nó ar an gcríochphointe sin (HTTP 404). Seiceáil ainm na samhla („%s”) agus bun-URL an API (%s).',
+    'llm.requestedUrl': 'URL a iarradh: %s.',
     'llm.rateLimit': 'Dhiúltaigh %s don iarratas mar gheall ar theorainn ráta (HTTP 429).',
     'llm.quota': 'Tá cuóta an chuntais %s ídithe (HTTP %s). Seiceáil an billeáil agus an t-iarmhéid.',
     'llm.badRequest': 'Dhiúltaigh %s don iarratas (HTTP %s) — de ghnáth ainm samhla anaithnid („%s”) nó paraiméadar nach dtacaítear leis.',

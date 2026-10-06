@@ -399,6 +399,10 @@
                 <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
                 <target>%s känner inte till modellen eller endpointen (HTTP 404). Kontrollera modellnamnet (”%s”) och API-bas-URL:en (%s).</target>
             </trans-unit>
+            <trans-unit id="llm.requestedUrl" xml:space="preserve">
+                <source>Requested URL: %s.</source>
+                <target>Anropad URL: %s.</target>
+            </trans-unit>
             <trans-unit id="llm.rateLimit" xml:space="preserve">
                 <source>%s declined the request because of a rate limit (HTTP 429).</source>
                 <target>%s avvisade begäran på grund av en hastighetsgräns (HTTP 429).</target>

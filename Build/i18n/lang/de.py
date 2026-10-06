@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Für die verwendete LLM-Konfiguration ist kein API-Key hinterlegt.',
     'llm.keyRejected': '%s hat den API-Key abgelehnt (HTTP %s). Bitte den Schlüssel in der LLM-Konfiguration prüfen und neu eintragen.',
     'llm.unknownModel': '%s kennt dieses Modell oder diesen Endpunkt nicht (HTTP 404). Bitte Modellname („%s“) und API-Basis-URL (%s) prüfen.',
+    'llm.requestedUrl': 'Aufgerufene URL: %s.',
     'llm.rateLimit': '%s hat die Anfrage wegen eines Rate-Limits abgewiesen (HTTP 429).',
     'llm.quota': 'Das Kontingent des %s-Kontos ist erschöpft (HTTP %s). Bitte Abrechnung und Guthaben prüfen.',
     'llm.badRequest': '%s hat die Anfrage abgelehnt (HTTP %s) — meist ein unbekannter Modellname („%s“) oder ein nicht unterstützter Parameter.',

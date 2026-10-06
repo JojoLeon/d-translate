@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Nu este setată nicio cheie API pentru configurația LLM folosită.',
     'llm.keyRejected': '%s a respins cheia API (HTTP %s). Verificați cheia în configurația LLM și introduceți-o din nou.',
     'llm.unknownModel': '%s nu cunoaște acest model sau endpoint (HTTP 404). Verificați numele modelului („%s”) și URL-ul de bază al API-ului (%s).',
+    'llm.requestedUrl': 'URL apelat: %s.',
     'llm.rateLimit': '%s a refuzat cererea din cauza unei limite de frecvență (HTTP 429).',
     'llm.quota': 'Cota contului %s este epuizată (HTTP %s). Verificați facturarea și creditul.',
     'llm.badRequest': '%s a respins cererea (HTTP %s) — de regulă un nume de model necunoscut („%s”) sau un parametru nesuportat.',

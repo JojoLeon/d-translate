@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Käytössä olevalle LLM-määritykselle ei ole asetettu API-avainta.',
     'llm.keyRejected': '%s hylkäsi API-avaimen (HTTP %s). Tarkista avain LLM-määrityksestä ja syötä se uudelleen.',
     'llm.unknownModel': '%s ei tunne kyseistä mallia tai päätepistettä (HTTP 404). Tarkista mallin nimi (”%s”) ja API:n perus-URL (%s).',
+    'llm.requestedUrl': 'Pyydetty URL: %s.',
     'llm.rateLimit': '%s hylkäsi pyynnön nopeusrajoituksen vuoksi (HTTP 429).',
     'llm.quota': 'Tilin %s kiintiö on käytetty loppuun (HTTP %s). Tarkista laskutus ja saldo.',
     'llm.badRequest': '%s hylkäsi pyynnön (HTTP %s) — yleensä tuntematon mallin nimi (”%s”) tai tukematon parametri.',

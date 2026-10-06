@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Naudojamai LLM konfigūracijai nenustatytas API raktas.',
     'llm.keyRejected': '%s atmetė API raktą (HTTP %s). Patikrinkite raktą LLM konfigūracijoje ir įveskite jį iš naujo.',
     'llm.unknownModel': '%s nežino tokio modelio ar galinio taško (HTTP 404). Patikrinkite modelio pavadinimą („%s“) ir API bazinį URL (%s).',
+    'llm.requestedUrl': 'Užklausos URL: %s.',
     'llm.rateLimit': '%s atmetė užklausą dėl dažnio ribojimo (HTTP 429).',
     'llm.quota': 'Paskyros %s kvota išnaudota (HTTP %s). Patikrinkite atsiskaitymus ir likutį.',
     'llm.badRequest': '%s atmetė užklausą (HTTP %s) — dažniausiai tai nežinomas modelio pavadinimas („%s“) arba nepalaikomas parametras.',

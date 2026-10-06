@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Dla używanej konfiguracji LLM nie ustawiono klucza API.',
     'llm.keyRejected': '%s odrzucił klucz API (HTTP %s). Sprawdź klucz w konfiguracji LLM i wprowadź go ponownie.',
     'llm.unknownModel': '%s nie zna tego modelu ani punktu końcowego (HTTP 404). Sprawdź nazwę modelu („%s”) i bazowy adres URL API (%s).',
+    'llm.requestedUrl': 'Wywołany adres URL: %s.',
     'llm.rateLimit': '%s odrzucił żądanie z powodu limitu częstotliwości (HTTP 429).',
     'llm.quota': 'Limit konta %s został wyczerpany (HTTP %s). Sprawdź rozliczenia i saldo.',
     'llm.badRequest': '%s odrzucił żądanie (HTTP %s) — zwykle to nieznana nazwa modelu („%s”) lub nieobsługiwany parametr.',

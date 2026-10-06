@@ -399,6 +399,10 @@
                 <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
                 <target>%s zerbitzuak ez du eredu edo amaiera-puntu hori ezagutzen (HTTP 404). Egiaztatu ereduaren izena («%s») eta APIaren oinarrizko URLa (%s).</target>
             </trans-unit>
+            <trans-unit id="llm.requestedUrl" xml:space="preserve">
+                <source>Requested URL: %s.</source>
+                <target>Eskatutako URLa: %s.</target>
+            </trans-unit>
             <trans-unit id="llm.rateLimit" xml:space="preserve">
                 <source>%s declined the request because of a rate limit (HTTP 429).</source>
                 <target>%s zerbitzuak eskaera baztertu du maiztasun-mugagatik (HTTP 429).</target>

@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'No hi ha cap clau API definida per a la configuració d’LLM utilitzada.',
     'llm.keyRejected': '%s ha rebutjat la clau API (HTTP %s). Reviseu la clau a la configuració d’LLM i torneu-la a introduir.',
     'llm.unknownModel': '%s no coneix aquest model ni aquest punt final (HTTP 404). Comproveu el nom del model («%s») i l’URL base de l’API (%s).',
+    'llm.requestedUrl': 'URL sol·licitat: %s.',
     'llm.rateLimit': '%s ha rebutjat la sol·licitud per un límit de freqüència (HTTP 429).',
     'llm.quota': 'La quota del compte de %s s’ha esgotat (HTTP %s). Comproveu la facturació i el saldo.',
     'llm.badRequest': '%s ha rebutjat la sol·licitud (HTTP %s): normalment un nom de model desconegut («%s») o un paràmetre no admès.',

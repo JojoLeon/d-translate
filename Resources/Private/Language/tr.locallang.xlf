@@ -399,6 +399,10 @@
                 <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
                 <target>%s bu modeli veya uç noktayı tanımıyor (HTTP 404). Model adını (“%s”) ve API temel URL’sini (%s) kontrol edin.</target>
             </trans-unit>
+            <trans-unit id="llm.requestedUrl" xml:space="preserve">
+                <source>Requested URL: %s.</source>
+                <target>İstek gönderilen URL: %s.</target>
+            </trans-unit>
             <trans-unit id="llm.rateLimit" xml:space="preserve">
                 <source>%s declined the request because of a rate limit (HTTP 429).</source>
                 <target>%s hız sınırı nedeniyle isteği reddetti (HTTP 429).</target>

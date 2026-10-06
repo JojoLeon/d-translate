@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Për konfigurimin LLM në përdorim nuk është caktuar asnjë çelës API.',
     'llm.keyRejected': '%s e refuzoi çelësin API (HTTP %s). Kontrolloni çelësin në konfigurimin LLM dhe vendoseni sërish.',
     'llm.unknownModel': '%s nuk e njeh këtë model ose pikë fundore (HTTP 404). Kontrolloni emrin e modelit („%s”) dhe URL-në bazë të API-t (%s).',
+    'llm.requestedUrl': 'URL-ja e kërkuar: %s.',
     'llm.rateLimit': '%s e refuzoi kërkesën për shkak të një kufiri shpeshtësie (HTTP 429).',
     'llm.quota': 'Kuota e llogarisë %s ka mbaruar (HTTP %s). Kontrolloni faturimin dhe bilancin.',
     'llm.badRequest': '%s e refuzoi kërkesën (HTTP %s) — zakonisht një emër modeli i panjohur („%s”) ose një parametër i pambështetur.',

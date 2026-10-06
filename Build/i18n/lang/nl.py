@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Voor de gebruikte LLM-configuratie is geen API-sleutel ingesteld.',
     'llm.keyRejected': '%s heeft de API-sleutel geweigerd (HTTP %s). Controleer de sleutel in de LLM-configuratie en voer hem opnieuw in.',
     'llm.unknownModel': '%s kent dat model of endpoint niet (HTTP 404). Controleer de modelnaam (“%s”) en de API-basis-URL (%s).',
+    'llm.requestedUrl': 'Aangeroepen URL: %s.',
     'llm.rateLimit': '%s heeft het verzoek geweigerd vanwege een rate limit (HTTP 429).',
     'llm.quota': 'Het tegoed van het %s-account is op (HTTP %s). Controleer facturatie en saldo.',
     'llm.badRequest': '%s heeft het verzoek geweigerd (HTTP %s) — meestal een onbekende modelnaam (“%s”) of een niet-ondersteunde parameter.',

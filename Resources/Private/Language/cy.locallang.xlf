@@ -399,6 +399,10 @@
                 <source>%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).</source>
                 <target>Nid yw %s yn adnabod y model na’r pwynt terfyn hwnnw (HTTP 404). Gwiriwch enw’r model („%s”) a URL sylfaen yr API (%s).</target>
             </trans-unit>
+            <trans-unit id="llm.requestedUrl" xml:space="preserve">
+                <source>Requested URL: %s.</source>
+                <target>URL a alwyd: %s.</target>
+            </trans-unit>
             <trans-unit id="llm.rateLimit" xml:space="preserve">
                 <source>%s declined the request because of a rate limit (HTTP 429).</source>
                 <target>Gwrthododd %s y cais oherwydd terfyn cyfradd (HTTP 429).</target>

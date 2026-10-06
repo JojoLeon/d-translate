@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Pre použitú konfiguráciu LLM nie je nastavený kľúč API.',
     'llm.keyRejected': '%s odmietol kľúč API (HTTP %s). Skontrolujte kľúč v konfigurácii LLM a zadajte ho znovu.',
     'llm.unknownModel': '%s tento model ani koncový bod nepozná (HTTP 404). Skontrolujte názov modelu („%s“) a základnú URL API (%s).',
+    'llm.requestedUrl': 'Volaná URL: %s.',
     'llm.rateLimit': '%s odmietol požiadavku pre limit frekvencie (HTTP 429).',
     'llm.quota': 'Kredit účtu %s je vyčerpaný (HTTP %s). Skontrolujte fakturáciu a zostatok.',
     'llm.badRequest': '%s odmietol požiadavku (HTTP %s) — zvyčajne ide o neznámy názov modelu („%s“) alebo nepodporovaný parameter.',

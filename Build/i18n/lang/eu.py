@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Erabilitako LLM konfiguraziorako ez dago API gakorik ezarrita.',
     'llm.keyRejected': '%s zerbitzuak API gakoa baztertu du (HTTP %s). Egiaztatu gakoa LLM konfigurazioan eta sartu berriro.',
     'llm.unknownModel': '%s zerbitzuak ez du eredu edo amaiera-puntu hori ezagutzen (HTTP 404). Egiaztatu ereduaren izena («%s») eta APIaren oinarrizko URLa (%s).',
+    'llm.requestedUrl': 'Eskatutako URLa: %s.',
     'llm.rateLimit': '%s zerbitzuak eskaera baztertu du maiztasun-mugagatik (HTTP 429).',
     'llm.quota': '%s kontuaren kuota agortu da (HTTP %s). Egiaztatu fakturazioa eta saldoa.',
     'llm.badRequest': '%s zerbitzuak eskaera baztertu du (HTTP %s) — normalean eredu-izen ezezaguna («%s») edo onartzen ez den parametro bat.',

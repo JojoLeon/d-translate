@@ -123,6 +123,7 @@ FILES = {
         'llm.noApiKey': 'No API key is set for the LLM configuration in use.',
         'llm.keyRejected': '%s rejected the API key (HTTP %s). Please check the key in the LLM configuration and enter it again.',
         'llm.unknownModel': '%s does not know that model or endpoint (HTTP 404). Please check the model name ("%s") and the API base URL (%s).',
+        'llm.requestedUrl': 'Requested URL: %s.',
         'llm.rateLimit': '%s declined the request because of a rate limit (HTTP 429).',
         'llm.quota': 'The quota of the %s account is used up (HTTP %s). Please check billing and credit.',
         'llm.badRequest': '%s rejected the request (HTTP %s) — usually an unknown model name ("%s") or an unsupported parameter.',

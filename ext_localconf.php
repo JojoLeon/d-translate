@@ -18,6 +18,7 @@ defined('TYPO3') or die();
 
 use Dreistein\DTranslate\Backend\FormEngine\LlmEndpointDefaultWizard;
 use Dreistein\DTranslate\Hook\CommandMapHook;
+use Dreistein\DTranslate\Hook\LlmConfigEndpointHook;
 use Dreistein\DTranslate\Hook\TranslateFieldHook;
 use Dreistein\DTranslate\Task\WorkQueueTask;
 
@@ -55,6 +56,11 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['proc
 // receive the table name in its arguments.
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass'][]
     = CommandMapHook::class;
+
+// Datamap: an LLM configuration's API base URL is saved without a pasted
+// operation path ("/chat/completions"), the way the clients call it.
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][]
+    = LlmConfigEndpointHook::class;
 
 // Background worker as a scheduler task, for installations that run the
 // scheduler anyway. Equivalent to the console command `dtranslate:work`; use

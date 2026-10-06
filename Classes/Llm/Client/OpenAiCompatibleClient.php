@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace Dreistein\DTranslate\Llm\Client;
 
 use Dreistein\DTranslate\Exception\LlmRequestException;
+use Dreistein\DTranslate\Llm\EndpointUrl;
 use Dreistein\DTranslate\Llm\LlmErrorFormatter;
 use Dreistein\DTranslate\Localization\Messages;
 use Psr\Log\LoggerInterface;
@@ -147,7 +148,8 @@ final class OpenAiCompatibleClient
         if (trim($apiKey) === '') {
             throw new LlmRequestException(Messages::tr('llm.noApiKey'), true, null, 1718500030);
         }
-        $url = rtrim($baseUrl, '/') . $endpoint;
+        $baseUrl = EndpointUrl::normalize($baseUrl);
+        $url = EndpointUrl::join($baseUrl, $endpoint);
 
         try {
             $response = $this->requestFactory->request($url, 'POST', array_merge([
@@ -167,7 +169,7 @@ final class OpenAiCompatibleClient
         $body = (string)$response->getBody();
         if ($status < 200 || $status >= 300) {
             $this->logger->error('OpenAI-compatible non-success status', ['status' => $status, 'url' => $url, 'body' => $body]);
-            throw LlmErrorFormatter::fromStatus($provider, $model, $baseUrl, $status, $body, $this->retryAfter($response));
+            throw LlmErrorFormatter::fromStatus($provider, $model, $baseUrl, $url, $status, $body, $this->retryAfter($response));
         }
 
         $decoded = json_decode($body, true);

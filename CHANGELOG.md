@@ -4,6 +4,22 @@ All notable changes to this extension are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- An API base URL pasted with its operation path (`…/v1/chat/completions`, as
+  the Azure AI Foundry and OpenAI consoles show it) no longer leads to a 404:
+  the clients append the path themselves and used to call
+  `…/chat/completions/chat/completions`. The path is cut off at request time
+  and when the LLM configuration is saved; a query string such as
+  `?api-version=…` stays at the end of the URL
+
+### Changed
+
+- The "does not know that model or endpoint" error (HTTP 404) now also names
+  the URL that was actually requested, in all 39 interface languages
+
 ## [0.1.1] — 2026-08-04
 
 ### Changed

@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Non hai ningunha chave de API definida para a configuración de LLM empregada.',
     'llm.keyRejected': '%s rexeitou a chave de API (HTTP %s). Revise a chave na configuración de LLM e introdúzaa de novo.',
     'llm.unknownModel': '%s non coñece ese modelo nin ese punto final (HTTP 404). Comprobe o nome do modelo («%s») e o URL base da API (%s).',
+    'llm.requestedUrl': 'URL solicitado: %s.',
     'llm.rateLimit': '%s rexeitou a solicitude por un límite de frecuencia (HTTP 429).',
     'llm.quota': 'A cota da conta de %s esgotouse (HTTP %s). Comprobe a facturación e o saldo.',
     'llm.badRequest': '%s rexeitou a solicitude (HTTP %s): normalmente un nome de modelo descoñecido («%s») ou un parámetro non admitido.',

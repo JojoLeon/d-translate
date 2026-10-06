@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Der er ikke angivet nogen API-nøgle for den anvendte LLM-konfiguration.',
     'llm.keyRejected': '%s afviste API-nøglen (HTTP %s). Tjek nøglen i LLM-konfigurationen, og indtast den igen.',
     'llm.unknownModel': '%s kender ikke den model eller det endpoint (HTTP 404). Tjek modelnavnet (“%s”) og API-basis-URL’en (%s).',
+    'llm.requestedUrl': 'Kaldt URL: %s.',
     'llm.rateLimit': '%s afviste anmodningen på grund af en hastighedsgrænse (HTTP 429).',
     'llm.quota': 'Kvoten på %s-kontoen er opbrugt (HTTP %s). Tjek fakturering og saldo.',
     'llm.badRequest': '%s afviste anmodningen (HTTP %s) — oftest et ukendt modelnavn (“%s”) eller en ikke-understøttet parameter.',

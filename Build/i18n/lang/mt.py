@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Għall-konfigurazzjoni LLM li qed tintuża m’hemm l-ebda ċavetta API.',
     'llm.keyRejected': '%s irrifjuta ċ-ċavetta API (HTTP %s). Iċċekkja ċ-ċavetta fil-konfigurazzjoni LLM u daħħalha mill-ġdid.',
     'llm.unknownModel': '%s ma jafx dan il-mudell jew endpoint (HTTP 404). Iċċekkja l-isem tal-mudell („%s”) u l-URL bażi tal-API (%s).',
+    'llm.requestedUrl': 'URL mitlub: %s.',
     'llm.rateLimit': '%s irrifjuta t-talba minħabba limitu tar-rata (HTTP 429).',
     'llm.quota': 'Il-kwota tal-kont %s intemmet (HTTP %s). Iċċekkja l-fatturazzjoni u l-bilanċ.',
     'llm.badRequest': '%s irrifjuta t-talba (HTTP %s) — normalment isem ta’ mudell mhux magħruf („%s”) jew parametru mhux appoġġjat.',

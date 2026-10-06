@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Za uporabljeno konfiguracijo LLM ni nastavljen ključ API.',
     'llm.keyRejected': '%s je zavrnil ključ API (HTTP %s). Preverite ključ v konfiguraciji LLM in ga vnesite znova.',
     'llm.unknownModel': '%s ne pozna tega modela ali končne točke (HTTP 404). Preverite ime modela (»%s«) in osnovni URL API (%s).',
+    'llm.requestedUrl': 'Klicani URL: %s.',
     'llm.rateLimit': '%s je zavrnil zahtevo zaradi omejitve pogostosti (HTTP 429).',
     'llm.quota': 'Kvota računa %s je porabljena (HTTP %s). Preverite obračun in dobroimetje.',
     'llm.badRequest': '%s je zavrnil zahtevo (HTTP %s) — običajno gre za neznano ime modela (»%s«) ali nepodprt parameter.',

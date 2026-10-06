@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Kasutatava LLM-i seadistuse jaoks pole API-võtit määratud.',
     'llm.keyRejected': '%s lükkas API-võtme tagasi (HTTP %s). Kontrollige võtit LLM-i seadistuses ja sisestage see uuesti.',
     'llm.unknownModel': '%s ei tunne seda mudelit ega lõpp-punkti (HTTP 404). Kontrollige mudeli nime („%s“) ja API baas-URL-i (%s).',
+    'llm.requestedUrl': 'Päringu URL: %s.',
     'llm.rateLimit': '%s keeldus päringust päringupiirangu tõttu (HTTP 429).',
     'llm.quota': 'Konto %s kvoot on ammendatud (HTTP %s). Kontrollige arveldust ja jääki.',
     'llm.badRequest': '%s lükkas päringu tagasi (HTTP %s) — tavaliselt tundmatu mudeli nimi („%s“) või toetamata parameeter.',

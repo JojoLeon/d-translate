@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace Dreistein\DTranslate\Llm\Client;
 
 use Dreistein\DTranslate\Exception\LlmRequestException;
+use Dreistein\DTranslate\Llm\EndpointUrl;
 use Dreistein\DTranslate\Llm\LlmErrorFormatter;
 use Dreistein\DTranslate\Localization\Messages;
 use Psr\Log\LoggerInterface;
@@ -110,8 +111,7 @@ final class AnthropicClient
             $payload['temperature'] = (float)$options['temperature'];
         }
 
-        $url = rtrim($baseUrl, '/') . '/messages';
-        $decoded = $this->post($url, $apiKey, $payload, $httpTimeout);
+        $decoded = $this->post(EndpointUrl::normalize($baseUrl), $apiKey, $payload, $httpTimeout);
 
         $text = '';
         foreach ($decoded['content'] ?? [] as $block) {
@@ -143,13 +143,13 @@ final class AnthropicClient
      * @param array<string, mixed> $payload
      * @return array<string, mixed>
      */
-    private function post(string $url, string $apiKey, array $payload, ?int $httpTimeout): array
+    private function post(string $baseUrl, string $apiKey, array $payload, ?int $httpTimeout): array
     {
         $attempt = 0;
         while (true) {
             $attempt++;
             try {
-                return $this->postOnce($url, $apiKey, $payload, $httpTimeout);
+                return $this->postOnce($baseUrl, $apiKey, $payload, $httpTimeout);
             } catch (LlmRequestException $e) {
                 if ($e->fatal || $attempt >= $this->httpOptions->maxAttempts()) {
                     throw $e;
@@ -169,8 +169,9 @@ final class AnthropicClient
      * @param array<string, mixed> $payload
      * @return array<string, mixed>
      */
-    private function postOnce(string $url, string $apiKey, array $payload, ?int $httpTimeout): array
+    private function postOnce(string $baseUrl, string $apiKey, array $payload, ?int $httpTimeout): array
     {
+        $url = EndpointUrl::join($baseUrl, '/messages');
         try {
             $response = $this->requestFactory->request($url, 'POST', array_merge([
                 'headers' => [
@@ -194,6 +195,7 @@ final class AnthropicClient
             throw LlmErrorFormatter::fromStatus(
                 'Anthropic',
                 (string)$payload['model'],
+                $baseUrl,
                 $url,
                 $status,
                 $body,

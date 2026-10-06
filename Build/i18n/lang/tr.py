@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Kullanılan LLM yapılandırması için API anahtarı tanımlı değil.',
     'llm.keyRejected': '%s API anahtarını reddetti (HTTP %s). Anahtarı LLM yapılandırmasında kontrol edip yeniden girin.',
     'llm.unknownModel': '%s bu modeli veya uç noktayı tanımıyor (HTTP 404). Model adını (“%s”) ve API temel URL’sini (%s) kontrol edin.',
+    'llm.requestedUrl': 'İstek gönderilen URL: %s.',
     'llm.rateLimit': '%s hız sınırı nedeniyle isteği reddetti (HTTP 429).',
     'llm.quota': '%s hesabının kotası tükendi (HTTP %s). Faturalandırmayı ve bakiyeyi kontrol edin.',
     'llm.badRequest': '%s isteği reddetti (HTTP %s) — genellikle bilinmeyen bir model adı (“%s”) ya da desteklenmeyen bir parametre.',

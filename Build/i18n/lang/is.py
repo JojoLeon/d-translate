@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Enginn API-lykill er skráður fyrir LLM-stillinguna sem er notuð.',
     'llm.keyRejected': '%s hafnaði API-lyklinum (HTTP %s). Athugaðu lykilinn í LLM-stillingunni og sláðu hann inn að nýju.',
     'llm.unknownModel': '%s þekkir ekki þetta líkan eða endapunkt (HTTP 404). Athugaðu heiti líkansins („%s“) og grunnslóð API (%s).',
+    'llm.requestedUrl': 'Slóð beiðninnar: %s.',
     'llm.rateLimit': '%s hafnaði beiðninni vegna hraðatakmarkana (HTTP 429).',
     'llm.quota': 'Kvóti %s-reikningsins er uppurinn (HTTP %s). Athugaðu reikningsfærslur og inneign.',
     'llm.badRequest': '%s hafnaði beiðninni (HTTP %s) — oftast óþekkt heiti líkans („%s“) eða óstudd færibreyta.',

@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'Izmantotajai LLM konfigurācijai nav iestatīta API atslēga.',
     'llm.keyRejected': '%s noraidīja API atslēgu (HTTP %s). Pārbaudiet atslēgu LLM konfigurācijā un ievadiet to no jauna.',
     'llm.unknownModel': '%s nepazīst šo modeli vai galapunktu (HTTP 404). Pārbaudiet modeļa nosaukumu („%s”) un API bāzes URL (%s).',
+    'llm.requestedUrl': 'Pieprasītais URL: %s.',
     'llm.rateLimit': '%s noraidīja pieprasījumu biežuma ierobežojuma dēļ (HTTP 429).',
     'llm.quota': 'Konta %s kvota ir izsmelta (HTTP %s). Pārbaudiet norēķinus un atlikumu.',
     'llm.badRequest': '%s noraidīja pieprasījumu (HTTP %s) — parasti tas ir nezināms modeļa nosaukums („%s”) vai neatbalstīts parametrs.',

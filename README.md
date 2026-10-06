@@ -23,7 +23,10 @@ Activate the extension and run the database comparison.
 Both are plain records on the root level (*Web → Records*, page id 0):
 
 1. **LLM configuration** — provider, model and API key. The API base URL fills
-   in by itself when you pick the provider.
+   in by itself when you pick the provider. For OpenAI-compatible gateways such
+   as Azure AI Foundry, enter the base URL (`https://<resource>.services.ai.azure.com/openai/v1`)
+   and the deployment name as model; a pasted full URL ending in
+   `/chat/completions` is shortened to the base URL on save.
 2. **Translation profile** — the LLM configuration to use, the register
    (formal/informal), an optional style hint and glossary. Assign it to a site,
    or leave the site empty to make it the default for every site.

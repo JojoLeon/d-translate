@@ -106,6 +106,7 @@ MESSAGES = {
     'llm.noApiKey': 'No hay ninguna clave de API definida para la configuración de LLM utilizada.',
     'llm.keyRejected': '%s ha rechazado la clave de API (HTTP %s). Revise la clave en la configuración de LLM y vuelva a introducirla.',
     'llm.unknownModel': '%s no conoce ese modelo o endpoint (HTTP 404). Compruebe el nombre del modelo («%s») y la URL base de la API (%s).',
+    'llm.requestedUrl': 'URL solicitada: %s.',
     'llm.rateLimit': '%s ha rechazado la solicitud por un límite de frecuencia (HTTP 429).',
     'llm.quota': 'La cuota de la cuenta de %s está agotada (HTTP %s). Compruebe la facturación y el saldo.',
     'llm.badRequest': '%s ha rechazado la solicitud (HTTP %s): normalmente un nombre de modelo desconocido («%s») o un parámetro no admitido.',
