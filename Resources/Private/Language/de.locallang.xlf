@@ -36,8 +36,8 @@
                 <target>Mehr unter</target>
             </trans-unit>
             <trans-unit id="module.intro" xml:space="preserve">
-                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind a site to an LLM configuration.</source>
-                <target>LLM-gestützte Übersetzung über den DataHandler-Localize-Pfad. Profile binden eine Site an eine LLM-Konfiguration.</target>
+                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind sites to an LLM configuration.</source>
+                <target>LLM-gestützte Übersetzung über den DataHandler-Localize-Pfad. Profile binden Sites an eine LLM-Konfiguration.</target>
             </trans-unit>
             <trans-unit id="module.translatePage" xml:space="preserve">
                 <source>Translate page</source>

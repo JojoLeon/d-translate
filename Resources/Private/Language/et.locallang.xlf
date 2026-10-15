@@ -36,7 +36,7 @@
                 <target>Lisateave:</target>
             </trans-unit>
             <trans-unit id="module.intro" xml:space="preserve">
-                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind a site to an LLM configuration.</source>
+                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind sites to an LLM configuration.</source>
                 <target>Keelemudelipõhine tõlkimine DataHandleri localize-raja kaudu. Profiilid seovad saidi LLM-i seadistusega.</target>
             </trans-unit>
             <trans-unit id="module.translatePage" xml:space="preserve">

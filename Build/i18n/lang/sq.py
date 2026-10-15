@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Titulli',
     'tx_dtranslate_profile.site_identifier': 'Identifikuesi i sajtit',
     'tx_dtranslate_profile.site_identifier.description': 'Sajti TYPO3 për të cilin vlen ky profil. Bosh = profil i parazgjedhur, vlen për çdo sajt pa profil të vetin.',
-    'tx_dtranslate_profile.site_identifier.all': '[të gjithë sajtet — profil i parazgjedhur]',
     'tx_dtranslate_profile.llm_config': 'Konfigurim LLM',
     'tx_dtranslate_profile.source_language': 'Gjuha burimore (mbivendosje)',
     'tx_dtranslate_profile.source_language.description': 'E nevojshme vetëm kur tekstet burimore nuk janë shkruar në gjuhën e parazgjedhur të sajtit. Bosh = emri nxirret nga lokalja e sajtit.',

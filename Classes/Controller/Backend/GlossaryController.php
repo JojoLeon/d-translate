@@ -60,11 +60,15 @@ final class GlossaryController
         // Hidden profiles are listed too: their glossary is still worth editing.
         // The entries shared by every profile (profile 0) are listed like a
         // profile of their own, first in the list.
-        $profiles = $this->profileStore->listAll();
+        $profiles = array_map(
+            static fn (array $p): array => $p + ['sites' => ProfileStore::sitesLabel($p)],
+            $this->profileStore->listAll(),
+        );
         array_unshift($profiles, [
             'uid' => GlossaryStore::SHARED_PROFILE,
             'title' => Messages::tr('glossary.sharedProfile'),
             'site_identifier' => '',
+            'sites' => '',
             'hidden' => 0,
         ]);
         $requested = isset($query['profile']) ? (int)$query['profile'] : null;

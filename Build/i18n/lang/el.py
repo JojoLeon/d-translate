@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Τίτλος',
     'tx_dtranslate_profile.site_identifier': 'Αναγνωριστικό ιστότοπου',
     'tx_dtranslate_profile.site_identifier.description': 'Ο ιστότοπος TYPO3 στον οποίο ισχύει αυτό το προφίλ. Κενό = προεπιλεγμένο προφίλ, ισχύει για κάθε ιστότοπο χωρίς δικό του.',
-    'tx_dtranslate_profile.site_identifier.all': '[όλοι οι ιστότοποι — προεπιλεγμένο προφίλ]',
     'tx_dtranslate_profile.llm_config': 'Διαμόρφωση LLM',
     'tx_dtranslate_profile.source_language': 'Γλώσσα προέλευσης (παράκαμψη)',
     'tx_dtranslate_profile.source_language.description': 'Χρειάζεται μόνο όταν τα κείμενα προέλευσης δεν είναι γραμμένα στην προεπιλεγμένη γλώσσα του ιστότοπου. Κενό = το όνομα προκύπτει από την τοπική ρύθμιση του ιστότοπου.',

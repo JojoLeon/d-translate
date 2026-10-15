@@ -29,10 +29,15 @@ return [
         'site_identifier' => [
             'label' => 'LLL:EXT:d_translate/Resources/Private/Language/locallang_db.xlf:tx_dtranslate_profile.site_identifier',
             'description' => 'LLL:EXT:d_translate/Resources/Private/Language/locallang_db.xlf:tx_dtranslate_profile.site_identifier.description',
+            // Several sites per profile, stored comma-separated; a single site
+            // stored before 0.1.3 is a list of one and keeps working. None
+            // ticked = the default profile for every site without its own.
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingle',
+                'renderType' => 'selectCheckBox',
                 'itemsProcFunc' => \Dreistein\DTranslate\Backend\ItemsProc\SiteItemsProc::class . '->populate',
+                'maxitems' => 999,
+                'default' => '',
             ],
         ],
         'llm_config' => [

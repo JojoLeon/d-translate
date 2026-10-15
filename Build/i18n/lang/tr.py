@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Başlık',
     'tx_dtranslate_profile.site_identifier': 'Site tanımlayıcısı',
     'tx_dtranslate_profile.site_identifier.description': 'Bu profilin geçerli olduğu TYPO3 sitesi. Boş = varsayılan profil, kendi profili olmayan her site için kullanılır.',
-    'tx_dtranslate_profile.site_identifier.all': '[tüm siteler — varsayılan profil]',
     'tx_dtranslate_profile.llm_config': 'LLM yapılandırması',
     'tx_dtranslate_profile.source_language': 'Kaynak dil (geçersiz kıl)',
     'tx_dtranslate_profile.source_language.description': 'Yalnızca kaynak metinler sitenin varsayılan dilinde yazılmadığında gerekir. Boş = ad, sitenin yerel ayarından türetilir.',

@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Tytuł',
     'tx_dtranslate_profile.site_identifier': 'Identyfikator witryny',
     'tx_dtranslate_profile.site_identifier.description': 'Witryna TYPO3, której dotyczy ten profil. Puste = profil domyślny, używany dla każdej witryny bez własnego.',
-    'tx_dtranslate_profile.site_identifier.all': '[wszystkie witryny — profil domyślny]',
     'tx_dtranslate_profile.llm_config': 'Konfiguracja LLM',
     'tx_dtranslate_profile.source_language': 'Język źródłowy (nadpisanie)',
     'tx_dtranslate_profile.source_language.description': 'Potrzebne tylko wtedy, gdy teksty źródłowe nie są napisane w domyślnym języku witryny. Puste = nazwa zostanie ustalona z lokalizacji witryny.',

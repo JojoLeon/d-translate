@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Titolo',
     'tx_dtranslate_profile.site_identifier': 'Identificatore del sito',
     'tx_dtranslate_profile.site_identifier.description': 'Il sito TYPO3 a cui si applica questo profilo. Vuoto = profilo predefinito, usato per ogni sito senza uno proprio.',
-    'tx_dtranslate_profile.site_identifier.all': '[tutti i siti — profilo predefinito]',
     'tx_dtranslate_profile.llm_config': 'Configurazione LLM',
     'tx_dtranslate_profile.source_language': 'Lingua di origine (sovrascrivi)',
     'tx_dtranslate_profile.source_language.description': 'Serve solo quando i testi di origine non sono scritti nella lingua predefinita del sito. Vuoto = ricava il nome dalla locale del sito.',

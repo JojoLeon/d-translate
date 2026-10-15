@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Titel',
     'tx_dtranslate_profile.site_identifier': 'Webbplatsidentifierare',
     'tx_dtranslate_profile.site_identifier.description': 'Den TYPO3-webbplats profilen gäller för. Tomt = standardprofil, används för alla webbplatser utan egen.',
-    'tx_dtranslate_profile.site_identifier.all': '[alla webbplatser — standardprofil]',
     'tx_dtranslate_profile.llm_config': 'LLM-konfiguration',
     'tx_dtranslate_profile.source_language': 'Källspråk (åsidosätt)',
     'tx_dtranslate_profile.source_language.description': 'Behövs bara när källtexterna inte är skrivna på webbplatsens standardspråk. Tomt = härled namnet från webbplatsens locale.',

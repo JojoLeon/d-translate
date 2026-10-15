@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Títol',
     'tx_dtranslate_profile.site_identifier': 'Identificador del lloc',
     'tx_dtranslate_profile.site_identifier.description': 'El lloc TYPO3 al qual s’aplica aquest perfil. Buit = perfil predeterminat, s’usa per a tots els llocs sense perfil propi.',
-    'tx_dtranslate_profile.site_identifier.all': '[tots els llocs — perfil predeterminat]',
     'tx_dtranslate_profile.llm_config': 'Configuració d’LLM',
     'tx_dtranslate_profile.source_language': 'Llengua d’origen (substitució)',
     'tx_dtranslate_profile.source_language.description': 'Només cal quan els textos d’origen no estan escrits en la llengua per defecte del lloc. Buit = deduir el nom de la configuració regional del lloc.',

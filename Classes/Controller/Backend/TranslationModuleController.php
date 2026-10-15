@@ -93,7 +93,10 @@ final class TranslationModuleController
             'recordGroups' => $this->orchestrator->recordGroupsForPage($currentPageId),
             // Profiles and LLM configurations are edited as records on the root
             // level; the module only picks which profile a run uses.
-            'profiles' => $this->profileStore->listSelectable(),
+            'profiles' => array_map(
+                static fn (array $p): array => $p + ['sites' => ProfileStore::sitesLabel($p)],
+                $this->profileStore->listSelectable(),
+            ),
             'activeProfile' => $this->resolver->defaultProfileUid($currentPageId),
             'glossaryUrl' => (string)$this->uriBuilder->buildUriFromRoute(
                 'dtranslate.glossary',

@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Nosaukums',
     'tx_dtranslate_profile.site_identifier': 'Vietnes identifikators',
     'tx_dtranslate_profile.site_identifier.description': 'TYPO3 vietne, uz kuru attiecas šis profils. Tukšs = noklusējuma profils, tiek izmantots katrai vietnei bez sava profila.',
-    'tx_dtranslate_profile.site_identifier.all': '[visas vietnes — noklusējuma profils]',
     'tx_dtranslate_profile.llm_config': 'LLM konfigurācija',
     'tx_dtranslate_profile.source_language': 'Avota valoda (aizstāšana)',
     'tx_dtranslate_profile.source_language.description': 'Nepieciešams tikai tad, ja avota teksti nav rakstīti vietnes noklusējuma valodā. Tukšs = nosaukumu atvasina no vietnes lokalizācijas.',

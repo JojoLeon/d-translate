@@ -56,16 +56,12 @@
                 <target>Izenburua</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.site_identifier" xml:space="preserve">
-                <source>Site identifier</source>
+                <source>Sites</source>
                 <target>Gunearen identifikatzailea</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.site_identifier.description" xml:space="preserve">
-                <source>The TYPO3 site this profile applies to. Empty = default profile, used for every site without one of its own.</source>
+                <source>The TYPO3 sites this profile applies to. None ticked = default profile, used for every site without one of its own.</source>
                 <target>Profil hau aplikatzen zaion TYPO3 gunea. Hutsik = profil lehenetsia, bere profilik ez duen gune orori aplikatzen zaio.</target>
-            </trans-unit>
-            <trans-unit id="tx_dtranslate_profile.site_identifier.all" xml:space="preserve">
-                <source>[all sites — default profile]</source>
-                <target>[gune guztiak — profil lehenetsia]</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.llm_config" xml:space="preserve">
                 <source>LLM configuration</source>

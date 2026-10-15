@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Titel',
     'tx_dtranslate_profile.site_identifier': 'Site-identifier',
     'tx_dtranslate_profile.site_identifier.description': 'De TYPO3-site waarvoor dit profiel geldt. Leeg = standaardprofiel, geldt voor elke site zonder eigen profiel.',
-    'tx_dtranslate_profile.site_identifier.all': '[alle sites — standaardprofiel]',
     'tx_dtranslate_profile.llm_config': 'LLM-configuratie',
     'tx_dtranslate_profile.source_language': 'Brontaal (overschrijven)',
     'tx_dtranslate_profile.source_language.description': 'Alleen nodig als de brontekst niet in de standaardtaal van de site is geschreven. Leeg = naam afleiden uit de locale van de site.',

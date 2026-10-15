@@ -135,7 +135,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Наслов',
     'tx_dtranslate_profile.site_identifier': 'Идентификатор веб-сајта',
     'tx_dtranslate_profile.site_identifier.description': 'TYPO3 веб-сајт на који се овај профил односи. Празно = подразумевани профил, користи се за сваки веб-сајт без сопственог.',
-    'tx_dtranslate_profile.site_identifier.all': '[сви веб-сајтови — подразумевани профил]',
     'tx_dtranslate_profile.llm_config': 'LLM конфигурација',
     'tx_dtranslate_profile.source_language': 'Изворни језик (замена)',
     'tx_dtranslate_profile.source_language.description': 'Потребно само када изворни текстови нису написани подразумеваним језиком веб-сајта. Празно = назив се изводи из локализације веб-сајта.',

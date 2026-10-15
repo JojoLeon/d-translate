@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Naslov',
     'tx_dtranslate_profile.site_identifier': 'Identifikator spletnega mesta',
     'tx_dtranslate_profile.site_identifier.description': 'Spletno mesto TYPO3, za katero velja ta profil. Prazno = privzeti profil, uporabi se za vsako spletno mesto brez lastnega.',
-    'tx_dtranslate_profile.site_identifier.all': '[vsa spletna mesta — privzeti profil]',
     'tx_dtranslate_profile.llm_config': 'Konfiguracija LLM',
     'tx_dtranslate_profile.source_language': 'Izvorni jezik (preglasitev)',
     'tx_dtranslate_profile.source_language.description': 'Potrebno le, kadar izvorna besedila niso napisana v privzetem jeziku spletnega mesta. Prazno = ime izpelji iz lokalizacije spletnega mesta.',

@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Titel',
     'tx_dtranslate_profile.site_identifier': 'Site-identifikator',
     'tx_dtranslate_profile.site_identifier.description': 'Det TYPO3-site, som denne profil gælder for. Tom = standardprofil, bruges til alle sites uden egen profil.',
-    'tx_dtranslate_profile.site_identifier.all': '[alle sites — standardprofil]',
     'tx_dtranslate_profile.llm_config': 'LLM-konfiguration',
     'tx_dtranslate_profile.source_language': 'Kildesprog (tilsidesæt)',
     'tx_dtranslate_profile.source_language.description': 'Kun nødvendigt, når kildeteksterne ikke er skrevet på sitets standardsprog. Tom = udled navnet fra sitets locale.',

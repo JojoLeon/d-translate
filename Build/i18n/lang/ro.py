@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Titlu',
     'tx_dtranslate_profile.site_identifier': 'Identificator de site',
     'tx_dtranslate_profile.site_identifier.description': 'Site-ul TYPO3 pentru care se aplică acest profil. Gol = profil implicit, folosit pentru orice site fără profil propriu.',
-    'tx_dtranslate_profile.site_identifier.all': '[toate site-urile — profil implicit]',
     'tx_dtranslate_profile.llm_config': 'Configurație LLM',
     'tx_dtranslate_profile.source_language': 'Limbă sursă (suprascriere)',
     'tx_dtranslate_profile.source_language.description': 'Necesar doar când textele sursă nu sunt scrise în limba implicită a site-ului. Gol = numele se deduce din locala site-ului.',

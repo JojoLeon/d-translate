@@ -56,16 +56,12 @@
                 <target>Título</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.site_identifier" xml:space="preserve">
-                <source>Site identifier</source>
+                <source>Sites</source>
                 <target>Identificador do site</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.site_identifier.description" xml:space="preserve">
-                <source>The TYPO3 site this profile applies to. Empty = default profile, used for every site without one of its own.</source>
+                <source>The TYPO3 sites this profile applies to. None ticked = default profile, used for every site without one of its own.</source>
                 <target>O site TYPO3 a que este perfil se aplica. Vazio = perfil predefinido, usado para todos os sites sem um próprio.</target>
-            </trans-unit>
-            <trans-unit id="tx_dtranslate_profile.site_identifier.all" xml:space="preserve">
-                <source>[all sites — default profile]</source>
-                <target>[todos os sites — perfil predefinido]</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.llm_config" xml:space="preserve">
                 <source>LLM configuration</source>

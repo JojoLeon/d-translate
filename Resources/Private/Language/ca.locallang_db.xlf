@@ -56,16 +56,12 @@
                 <target>Títol</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.site_identifier" xml:space="preserve">
-                <source>Site identifier</source>
+                <source>Sites</source>
                 <target>Identificador del lloc</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.site_identifier.description" xml:space="preserve">
-                <source>The TYPO3 site this profile applies to. Empty = default profile, used for every site without one of its own.</source>
+                <source>The TYPO3 sites this profile applies to. None ticked = default profile, used for every site without one of its own.</source>
                 <target>El lloc TYPO3 al qual s’aplica aquest perfil. Buit = perfil predeterminat, s’usa per a tots els llocs sense perfil propi.</target>
-            </trans-unit>
-            <trans-unit id="tx_dtranslate_profile.site_identifier.all" xml:space="preserve">
-                <source>[all sites — default profile]</source>
-                <target>[tots els llocs — perfil predeterminat]</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.llm_config" xml:space="preserve">
                 <source>LLM configuration</source>

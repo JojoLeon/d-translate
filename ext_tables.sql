@@ -11,7 +11,7 @@ CREATE TABLE tx_dtranslate_llm_config (
 CREATE TABLE tx_dtranslate_profile (
     uid int(11) unsigned NOT NULL auto_increment,
     title varchar(255) DEFAULT '' NOT NULL,
-    site_identifier varchar(128) DEFAULT '' NOT NULL,
+    site_identifier varchar(512) DEFAULT '' NOT NULL,
     llm_config int(11) unsigned DEFAULT 0 NOT NULL,
     source_language varchar(64) DEFAULT '' NOT NULL,
     formality varchar(16) DEFAULT 'default' NOT NULL,

@@ -36,7 +36,7 @@
                 <target>Подробнее на</target>
             </trans-unit>
             <trans-unit id="module.intro" xml:space="preserve">
-                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind a site to an LLM configuration.</source>
+                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind sites to an LLM configuration.</source>
                 <target>Перевод с помощью языковой модели через путь localize в DataHandler. Профили связывают сайт с конфигурацией LLM.</target>
             </trans-unit>
             <trans-unit id="module.translatePage" xml:space="preserve">

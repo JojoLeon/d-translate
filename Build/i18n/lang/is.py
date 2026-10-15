@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Titill',
     'tx_dtranslate_profile.site_identifier': 'Auðkenni vefsvæðis',
     'tx_dtranslate_profile.site_identifier.description': 'TYPO3-vefsvæðið sem þetta snið gildir fyrir. Tómt = sjálfgefið snið, gildir fyrir öll vefsvæði án eigin sniðs.',
-    'tx_dtranslate_profile.site_identifier.all': '[öll vefsvæði — sjálfgefið snið]',
     'tx_dtranslate_profile.llm_config': 'LLM-stilling',
     'tx_dtranslate_profile.source_language': 'Upprunamál (yfirskrifa)',
     'tx_dtranslate_profile.source_language.description': 'Aðeins nauðsynlegt þegar frumtextarnir eru ekki á sjálfgefnu máli vefsvæðisins. Tómt = leiða heitið af staðfærslu vefsvæðisins.',

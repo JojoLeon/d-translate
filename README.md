@@ -28,8 +28,8 @@ Both are plain records on the root level (*Web → Records*, page id 0):
    and the deployment name as model; a pasted full URL ending in
    `/chat/completions` is shortened to the base URL on save.
 2. **Translation profile** — the LLM configuration to use, the register
-   (formal/informal), an optional style hint and glossary. Assign it to a site,
-   or leave the site empty to make it the default for every site.
+   (formal/informal), an optional style hint and glossary. Tick the sites it
+   applies to, or tick none to make it the default for every site.
 
 For background runs, call the worker from cron (every minute is fine):
 

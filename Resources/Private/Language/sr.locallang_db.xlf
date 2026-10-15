@@ -56,16 +56,12 @@
                 <target>Наслов</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.site_identifier" xml:space="preserve">
-                <source>Site identifier</source>
+                <source>Sites</source>
                 <target>Идентификатор веб-сајта</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.site_identifier.description" xml:space="preserve">
-                <source>The TYPO3 site this profile applies to. Empty = default profile, used for every site without one of its own.</source>
+                <source>The TYPO3 sites this profile applies to. None ticked = default profile, used for every site without one of its own.</source>
                 <target>TYPO3 веб-сајт на који се овај профил односи. Празно = подразумевани профил, користи се за сваки веб-сајт без сопственог.</target>
-            </trans-unit>
-            <trans-unit id="tx_dtranslate_profile.site_identifier.all" xml:space="preserve">
-                <source>[all sites — default profile]</source>
-                <target>[сви веб-сајтови — подразумевани профил]</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_profile.llm_config" xml:space="preserve">
                 <source>LLM configuration</source>

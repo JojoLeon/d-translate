@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Título',
     'tx_dtranslate_profile.site_identifier': 'Identificador do sitio',
     'tx_dtranslate_profile.site_identifier.description': 'O sitio TYPO3 ao que se aplica este perfil. Baleiro = perfil predeterminado, úsase para calquera sitio sen un propio.',
-    'tx_dtranslate_profile.site_identifier.all': '[todos os sitios — perfil predeterminado]',
     'tx_dtranslate_profile.llm_config': 'Configuración de LLM',
     'tx_dtranslate_profile.source_language': 'Idioma de orixe (substituír)',
     'tx_dtranslate_profile.source_language.description': 'Só é necesario cando os textos de orixe non están escritos no idioma predeterminado do sitio. Baleiro = deducir o nome da configuración rexional do sitio.',

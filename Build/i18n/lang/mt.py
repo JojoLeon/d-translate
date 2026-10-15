@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Titlu',
     'tx_dtranslate_profile.site_identifier': 'Identifikatur tas-sit',
     'tx_dtranslate_profile.site_identifier.description': 'Is-sit TYPO3 li għalih japplika dan il-profil. Vojt = profil awtomatiku, jintuża għal kull sit li m’għandux tiegħu.',
-    'tx_dtranslate_profile.site_identifier.all': '[is-siti kollha — profil awtomatiku]',
     'tx_dtranslate_profile.llm_config': 'Konfigurazzjoni LLM',
     'tx_dtranslate_profile.source_language': 'Lingwa sors (issostitwixxi)',
     'tx_dtranslate_profile.source_language.description': 'Meħtieġ biss meta t-testi sors ma jkunux miktuba bil-lingwa awtomatika tas-sit. Vojt = l-isem jinsilet mil-lokal tas-sit.',

@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Заглавие',
     'tx_dtranslate_profile.site_identifier': 'Идентификатор на сайта',
     'tx_dtranslate_profile.site_identifier.description': 'Сайтът в TYPO3, за който важи този профил. Празно = основен профил, използва се за всеки сайт без собствен.',
-    'tx_dtranslate_profile.site_identifier.all': '[всички сайтове — основен профил]',
     'tx_dtranslate_profile.llm_config': 'LLM конфигурация',
     'tx_dtranslate_profile.source_language': 'Изходен език (замяна)',
     'tx_dtranslate_profile.source_language.description': 'Необходимо само когато изходните текстове не са написани на езика по подразбиране на сайта. Празно = името се извежда от локала на сайта.',

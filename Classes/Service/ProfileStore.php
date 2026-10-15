@@ -31,6 +31,12 @@ final class ProfileStore
     ) {
     }
 
+    /** "weinig-deals, holzher-deals" — the sites of a profile row as a label; '' for the default profile. */
+    public static function sitesLabel(array $row): string
+    {
+        return implode(', ', array_filter(array_map('trim', explode(',', (string)($row['site_identifier'] ?? '')))));
+    }
+
     /** @return list<array<string, mixed>> */
     public function listAll(): array
     {
@@ -122,7 +128,12 @@ final class ProfileStore
         return $row !== false ? $row : null;
     }
 
-    /** @return array<string, mixed>|null */
+    /**
+     * The profile that lists the site. A profile may name several sites,
+     * comma-separated; one stored before 0.1.3 names exactly one.
+     *
+     * @return array<string, mixed>|null
+     */
     public function findBySiteIdentifier(string $siteIdentifier): ?array
     {
         if ($siteIdentifier === '') {
@@ -133,7 +144,7 @@ final class ProfileStore
         $row = $qb->select('*')
             ->from(self::TABLE)
             ->where(
-                $qb->expr()->eq('site_identifier', $qb->createNamedParameter($siteIdentifier)),
+                $qb->expr()->inSet('site_identifier', $qb->createNamedParameter($siteIdentifier)),
                 $qb->expr()->eq('deleted', 0),
                 $qb->expr()->eq('hidden', 0),
             )

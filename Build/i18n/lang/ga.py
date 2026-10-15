@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Teideal',
     'tx_dtranslate_profile.site_identifier': 'Aitheantóir an tsuímh',
     'tx_dtranslate_profile.site_identifier.description': 'An suíomh TYPO3 lena mbaineann an phróifíl seo. Folamh = próifíl réamhshocraithe, in úsáid do gach suíomh nach bhfuil ceann dá chuid féin aige.',
-    'tx_dtranslate_profile.site_identifier.all': '[gach suíomh — próifíl réamhshocraithe]',
     'tx_dtranslate_profile.llm_config': 'Cumraíocht LLM',
     'tx_dtranslate_profile.source_language': 'Bunteanga (sáraigh)',
     'tx_dtranslate_profile.source_language.description': 'Ní gá ach nuair nach bhfuil na buntéacsanna scríofa i dteanga réamhshocraithe an tsuímh. Folamh = díorthaítear an t-ainm ó logán an tsuímh.',

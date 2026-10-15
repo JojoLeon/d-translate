@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Pavadinimas',
     'tx_dtranslate_profile.site_identifier': 'Svetainės identifikatorius',
     'tx_dtranslate_profile.site_identifier.description': 'TYPO3 svetainė, kuriai taikomas šis profilis. Tuščia = numatytasis profilis, taikomas kiekvienai svetainei be savo profilio.',
-    'tx_dtranslate_profile.site_identifier.all': '[visos svetainės — numatytasis profilis]',
     'tx_dtranslate_profile.llm_config': 'LLM konfigūracija',
     'tx_dtranslate_profile.source_language': 'Originalo kalba (perrašymas)',
     'tx_dtranslate_profile.source_language.description': 'Reikia tik tada, kai originalo tekstai parašyti ne numatytąja svetainės kalba. Tuščia = pavadinimas nustatomas iš svetainės lokalės.',

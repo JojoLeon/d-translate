@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Název',
     'tx_dtranslate_profile.site_identifier': 'Identifikátor webu',
     'tx_dtranslate_profile.site_identifier.description': 'Web TYPO3, pro který tento profil platí. Prázdné = výchozí profil, použije se pro každý web bez vlastního.',
-    'tx_dtranslate_profile.site_identifier.all': '[všechny weby — výchozí profil]',
     'tx_dtranslate_profile.llm_config': 'Konfigurace LLM',
     'tx_dtranslate_profile.source_language': 'Zdrojový jazyk (přepsat)',
     'tx_dtranslate_profile.source_language.description': 'Potřeba jen tehdy, když zdrojové texty nejsou psány výchozím jazykem webu. Prázdné = název se odvodí z locale webu.',

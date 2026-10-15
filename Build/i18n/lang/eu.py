@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Izenburua',
     'tx_dtranslate_profile.site_identifier': 'Gunearen identifikatzailea',
     'tx_dtranslate_profile.site_identifier.description': 'Profil hau aplikatzen zaion TYPO3 gunea. Hutsik = profil lehenetsia, bere profilik ez duen gune orori aplikatzen zaio.',
-    'tx_dtranslate_profile.site_identifier.all': '[gune guztiak — profil lehenetsia]',
     'tx_dtranslate_profile.llm_config': 'LLM konfigurazioa',
     'tx_dtranslate_profile.source_language': 'Jatorrizko hizkuntza (gainidatzi)',
     'tx_dtranslate_profile.source_language.description': 'Jatorrizko testuak guneko hizkuntza lehenetsian idatzita ez daudenean baino ez da beharrezkoa. Hutsik = izena guneko lokaletik ondorioztatzen da.',

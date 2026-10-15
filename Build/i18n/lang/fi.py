@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Otsikko',
     'tx_dtranslate_profile.site_identifier': 'Sivuston tunniste',
     'tx_dtranslate_profile.site_identifier.description': 'TYPO3-sivusto, jota tämä profiili koskee. Tyhjä = oletusprofiili, käytetään kaikille sivustoille joilla ei ole omaa.',
-    'tx_dtranslate_profile.site_identifier.all': '[kaikki sivustot — oletusprofiili]',
     'tx_dtranslate_profile.llm_config': 'LLM-määritys',
     'tx_dtranslate_profile.source_language': 'Lähdekieli (ohitus)',
     'tx_dtranslate_profile.source_language.description': 'Tarvitaan vain, kun lähdetekstit eivät ole sivuston oletuskielellä. Tyhjä = nimi johdetaan sivuston localesta.',

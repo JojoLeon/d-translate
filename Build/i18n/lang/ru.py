@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Заголовок',
     'tx_dtranslate_profile.site_identifier': 'Идентификатор сайта',
     'tx_dtranslate_profile.site_identifier.description': 'Сайт TYPO3, к которому относится этот профиль. Пусто = профиль по умолчанию, применяется ко всем сайтам без собственного профиля.',
-    'tx_dtranslate_profile.site_identifier.all': '[все сайты — профиль по умолчанию]',
     'tx_dtranslate_profile.llm_config': 'Конфигурация LLM',
     'tx_dtranslate_profile.source_language': 'Исходный язык (переопределить)',
     'tx_dtranslate_profile.source_language.description': 'Нужно только тогда, когда исходные тексты написаны не на языке сайта по умолчанию. Пусто = определить название по локали сайта.',

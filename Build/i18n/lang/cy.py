@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Teitl',
     'tx_dtranslate_profile.site_identifier': 'Dynodwr y safle',
     'tx_dtranslate_profile.site_identifier.description': 'Y safle TYPO3 y mae’r proffil hwn yn berthnasol iddo. Gwag = proffil diofyn, a ddefnyddir ar gyfer pob safle heb un ei hun.',
-    'tx_dtranslate_profile.site_identifier.all': '[pob safle — proffil diofyn]',
     'tx_dtranslate_profile.llm_config': 'Ffurfweddiad LLM',
     'tx_dtranslate_profile.source_language': 'Iaith ffynhonnell (diystyru)',
     'tx_dtranslate_profile.source_language.description': 'Dim ond pan nad yw’r testunau ffynhonnell wedi’u hysgrifennu yn iaith ddiofyn y safle. Gwag = deillio’r enw o locale y safle.',

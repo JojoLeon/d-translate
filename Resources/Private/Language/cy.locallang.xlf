@@ -36,7 +36,7 @@
                 <target>Rhagor yn</target>
             </trans-unit>
             <trans-unit id="module.intro" xml:space="preserve">
-                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind a site to an LLM configuration.</source>
+                <source>LLM-assisted translation through the DataHandler localize path. Profiles bind sites to an LLM configuration.</source>
                 <target>Cyfieithu gyda model iaith drwy lwybr localize y DataHandler. Mae proffiliau’n cysylltu safle â ffurfweddiad LLM.</target>
             </trans-unit>
             <trans-unit id="module.translatePage" xml:space="preserve">

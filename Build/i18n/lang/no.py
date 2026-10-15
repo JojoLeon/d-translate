@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Tittel',
     'tx_dtranslate_profile.site_identifier': 'Nettstedsidentifikator',
     'tx_dtranslate_profile.site_identifier.description': 'TYPO3-nettstedet denne profilen gjelder for. Tomt = standardprofil, brukes for alle nettsteder uten egen.',
-    'tx_dtranslate_profile.site_identifier.all': '[alle nettsteder — standardprofil]',
     'tx_dtranslate_profile.llm_config': 'LLM-konfigurasjon',
     'tx_dtranslate_profile.source_language': 'Kildespråk (overstyr)',
     'tx_dtranslate_profile.source_language.description': 'Bare nødvendig når kildetekstene ikke er skrevet på standardspråket til nettstedet. Tomt = utled navnet fra nettstedets locale.',

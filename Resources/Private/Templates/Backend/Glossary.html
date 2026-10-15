@@ -34,7 +34,7 @@
                         <label class="form-label" for="dtr-glossary-profile"><f:translate key="{ll}glossary.profile" /></label>
                         <select class="form-select" name="profile" id="dtr-glossary-profile" data-glossary-autosubmit>
                             <f:for each="{profiles}" as="p">
-                                <option value="{p.uid}"<f:if condition="{p.uid} == {profileUid}"> selected="selected"</f:if>>{p.title}<f:if condition="{p.site_identifier}"> ({p.site_identifier})</f:if><f:if condition="{p.hidden}"> — <f:translate key="{ll}glossary.hidden" /></f:if></option>
+                                <option value="{p.uid}"<f:if condition="{p.uid} == {profileUid}"> selected="selected"</f:if>>{p.title}<f:if condition="{p.sites}"> ({p.sites})</f:if><f:if condition="{p.hidden}"> — <f:translate key="{ll}glossary.hidden" /></f:if></option>
                             </f:for>
                         </select>
                     </div>

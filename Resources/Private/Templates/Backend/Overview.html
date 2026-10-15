@@ -86,7 +86,7 @@
                                 <f:then>
                                     <select class="form-select" name="profile" id="dtranslate-profile" style="max-width: 32rem;">
                                         <f:for each="{profiles}" as="p">
-                                            <option value="{p.uid}"<f:if condition="{p.uid} == {activeProfile}"> selected="selected"</f:if>>{p.title} (<f:if condition="{p.site_identifier}"><f:then>{p.site_identifier}</f:then><f:else><f:translate key="{ll}module.allSites" /></f:else></f:if>)</option>
+                                            <option value="{p.uid}"<f:if condition="{p.uid} == {activeProfile}"> selected="selected"</f:if>>{p.title} (<f:if condition="{p.sites}"><f:then>{p.sites}</f:then><f:else><f:translate key="{ll}module.allSites" /></f:else></f:if>)</option>
                                         </f:for>
                                     </select>
                                 </f:then>

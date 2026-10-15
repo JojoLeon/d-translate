@@ -4,6 +4,16 @@ All notable changes to this extension are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.1.3] — 2026-10-15
+
+### Changed
+
+- A translation profile can apply to **several sites**: the site field is a
+  checkbox list now, and a page is matched against every site the profile
+  lists. A profile that named one site before keeps working as it is; the
+  column only grows (run the database schema update once). A profile with no
+  site ticked remains the default for every site without one of its own
+
 ## [0.1.2] — 2026-10-15
 
 ### Added

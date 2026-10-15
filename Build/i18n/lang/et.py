@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Pealkiri',
     'tx_dtranslate_profile.site_identifier': 'Saidi identifikaator',
     'tx_dtranslate_profile.site_identifier.description': 'TYPO3 sait, mille kohta see profiil kehtib. Tühi = vaikeprofiil, kasutatakse iga saidi jaoks, millel oma pole.',
-    'tx_dtranslate_profile.site_identifier.all': '[kõik saidid — vaikeprofiil]',
     'tx_dtranslate_profile.llm_config': 'LLM-i seadistus',
     'tx_dtranslate_profile.source_language': 'Lähtekeel (alistamine)',
     'tx_dtranslate_profile.source_language.description': 'Vajalik ainult siis, kui lähtetekstid pole kirjutatud saidi vaikekeeles. Tühi = nimi tuletatakse saidi lokaadist.',

@@ -16,23 +16,19 @@ declare(strict_types=1);
 
 namespace Dreistein\DTranslate\Backend\ItemsProc;
 
-use Dreistein\DTranslate\Localization\Messages;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Populates the profile's site_identifier select with the configured TYPO3
- * sites, so editors pick a site instead of typing its identifier. The empty
- * entry marks a profile as the default for sites without their own.
+ * Populates the profile's site checkbox list with the configured TYPO3
+ * sites, so editors tick sites instead of typing identifiers. A profile with
+ * no site ticked is the default for every site without one of its own.
  */
 final class SiteItemsProc
 {
     /** @param array{items: array<int, array<int, mixed>>} $params */
     public function populate(array &$params): void
     {
-        // Empty = the profile applies wherever no site-specific one exists.
-        $params['items'][] = ['label' => Messages::db('tx_dtranslate_profile.site_identifier.all'), 'value' => ''];
-
         $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
         foreach ($siteFinder->getAllSites() as $site) {
             $identifier = $site->getIdentifier();

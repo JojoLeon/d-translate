@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Titre',
     'tx_dtranslate_profile.site_identifier': 'Identifiant du site',
     'tx_dtranslate_profile.site_identifier.description': 'Le site TYPO3 auquel ce profil s’applique. Vide = profil par défaut, utilisé pour tout site sans profil propre.',
-    'tx_dtranslate_profile.site_identifier.all': '[tous les sites — profil par défaut]',
     'tx_dtranslate_profile.llm_config': 'Configuration LLM',
     'tx_dtranslate_profile.source_language': 'Langue source (remplacement)',
     'tx_dtranslate_profile.source_language.description': 'Nécessaire uniquement si les textes sources ne sont pas rédigés dans la langue par défaut du site. Vide = déduire le nom de la locale du site.',

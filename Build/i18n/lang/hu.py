@@ -134,7 +134,6 @@ MESSAGES = {
     'tx_dtranslate_profile.title': 'Cím',
     'tx_dtranslate_profile.site_identifier': 'Webhely azonosítója',
     'tx_dtranslate_profile.site_identifier.description': 'A TYPO3-webhely, amelyre ez a profil vonatkozik. Üres = alapértelmezett profil, minden saját profil nélküli webhelyre érvényes.',
-    'tx_dtranslate_profile.site_identifier.all': '[minden webhely — alapértelmezett profil]',
     'tx_dtranslate_profile.llm_config': 'LLM-konfiguráció',
     'tx_dtranslate_profile.source_language': 'Forrásnyelv (felülírás)',
     'tx_dtranslate_profile.source_language.description': 'Csak akkor szükséges, ha a forrásszövegek nem a webhely alapértelmezett nyelvén készültek. Üres = a név a webhely területi beállításából származik.',
