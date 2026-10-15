@@ -10,7 +10,7 @@
         "issues": "https://github.com/JojoLeon/d-translate/issues",
         "source": "https://github.com/JojoLeon/d-translate"
     },
-    "version": "0.1.1",
+    "version": "0.1.2",
     "require": {
         "php": "^8.2",
         "typo3/cms-core": "^12.4 || ^13.4 || ^14.0",
