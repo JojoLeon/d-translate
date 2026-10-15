@@ -67,3 +67,10 @@ services:
         command: 'dtranslate:page'
         description: 'Translate all default-language content of a page into a target language.'
         schedulable: false
+
+  Dreistein\DTranslate\Command\RemapAnchorsCommand:
+    tags:
+      - name: 'console.command'
+        command: 'dtranslate:remap-anchors'
+        description: 'Point page-link anchors in existing translations at the translated elements; --slugs rebuilds copied page slugs.'
+        schedulable: false

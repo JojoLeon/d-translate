@@ -39,6 +39,10 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
  * link target is the container or element itself, so a child's
  * tx_container_parent has nothing to add here. An anchor whose element has no
  * translation in the target language is left alone.
+ *
+ * remapPage() runs after every translation run; remapOnPages() is the one-off
+ * repair of everything on a set of pages (`dtranslate:remap-anchors`). Both
+ * can run dry and report what they found through takeChanges().
  */
 final class AnchorLinkRemapper
 {
@@ -58,6 +62,21 @@ final class AnchorLinkRemapper
     /** @var array<int, array<string, mixed>|null> */
     private array $rowCache = [];
 
+    /**
+     * What remapRecords() changed (or, in a dry run, would change) since the
+     * report was last taken: one entry per record, the remapped anchors per
+     * column as [old, new] pairs — and, per column, the anchors it had to
+     * leave alone because the element has no translation in the language
+     * ('untranslated') or does not exist ('missing'). A record with nothing
+     * but anchors left alone is listed too; it does not count as changed.
+     *
+     * `page` is the default-language page the record is rendered on (its pid,
+     * or the page it translates): the page cache to clear after a direct write.
+     *
+     * @var list<array{table: string, uid: int, pid: int, page: int, language: int, columns: array<string, list<array{0: string, 1: string}>>, unresolved: array<string, list<array{0: string, 1: string}>>}>
+     */
+    private array $changes = [];
+
     public function __construct(
         private readonly ConnectionPool $connectionPool,
         private readonly LoggerInterface $logger,
@@ -72,9 +91,10 @@ final class AnchorLinkRemapper
      * the records elsewhere that link to an anchor on this page.
      *
      * @param list<string> $tables localizable tables whose records live on the page
+     * @param bool $dryRun report the changes (see takeChanges()) but write nothing
      * @return int number of records changed
      */
-    public function remapPage(int $pageId, int $targetLanguageId, array $tables): int
+    public function remapPage(int $pageId, int $targetLanguageId, array $tables, bool $dryRun = false): int
     {
         if ($pageId <= 0 || $targetLanguageId <= 0) {
             return 0;
@@ -82,19 +102,59 @@ final class AnchorLinkRemapper
         $tables = array_values(array_unique(array_merge(['pages', self::CONTENT_TABLE], $tables)));
         $changed = 0;
         foreach ($tables as $table) {
-            $changed += $this->remapRecords($table, $this->translationsOnPage($table, $pageId, $targetLanguageId), $targetLanguageId);
+            $changed += $this->remapRecords($table, $this->translationsOnPage($table, $pageId, $targetLanguageId), $targetLanguageId, $dryRun);
         }
-        $changed += $this->remapLinksToPage($pageId, $targetLanguageId, $tables);
+        $changed += $this->remapLinksToPage($pageId, $targetLanguageId, $tables, $dryRun);
         return $changed;
+    }
+
+    /**
+     * Remap the anchors of every record in the target language on the given
+     * pages, whatever its table: the one-off repair of translations made
+     * before the remapper existed, or of a site filled by an import. One query
+     * per table and chunk of pages instead of one per page.
+     *
+     * @param list<int> $pageIds default-language page uids
+     * @param bool $dryRun report the changes (see takeChanges()) but write nothing
+     * @return int number of records changed
+     */
+    public function remapOnPages(array $pageIds, int $targetLanguageId, bool $dryRun = false): int
+    {
+        $pageIds = array_values(array_unique(array_filter(array_map('intval', $pageIds), static fn (int $id): bool => $id > 0)));
+        if ($pageIds === [] || $targetLanguageId <= 0) {
+            return 0;
+        }
+        $changed = 0;
+        foreach ($this->linkBearingTables() as $table) {
+            foreach (array_chunk($pageIds, 1000) as $chunk) {
+                $uids = $this->linkingRecordsOnPages($table, $chunk, $targetLanguageId);
+                $changed += $this->remapRecords($table, $uids, $targetLanguageId, $dryRun);
+            }
+        }
+        return $changed;
+    }
+
+    /**
+     * The changes made (or, in a dry run, found) since the last call; the
+     * report starts afresh afterwards.
+     *
+     * @return list<array{table: string, uid: int, pid: int, page: int, language: int, columns: array<string, list<array{0: string, 1: string}>>, unresolved: array<string, list<array{0: string, 1: string}>>}>
+     */
+    public function takeChanges(): array
+    {
+        $changes = $this->changes;
+        $this->changes = [];
+        return $changes;
     }
 
     /**
      * Rewrite the anchors in every TCA column of the given translation records.
      *
      * @param list<int> $uids records of $table in the target language
+     * @param bool $dryRun report the changes (see takeChanges()) but write nothing
      * @return int number of records changed
      */
-    public function remapRecords(string $table, array $uids, int $targetLanguageId): int
+    public function remapRecords(string $table, array $uids, int $targetLanguageId, bool $dryRun = false): int
     {
         $columns = array_keys($GLOBALS['TCA'][$table]['columns'] ?? []);
         if ($uids === [] || $columns === [] || $targetLanguageId <= 0) {
@@ -108,6 +168,8 @@ final class AnchorLinkRemapper
                 continue;
             }
             $update = [];
+            $anchors = [];
+            $unresolved = [];
             // Only TCA columns: the diff source (l10n_diffsource) is a serialized
             // copy of the source record whose string lengths must not change.
             foreach ($columns as $column) {
@@ -115,16 +177,38 @@ final class AnchorLinkRemapper
                 if (!is_string($value) || !str_contains($value, 't3://page?uid=')) {
                     continue;
                 }
-                $rewritten = $this->rewrite($value, $targetLanguageId);
+                $pairs = [];
+                $leftAlone = [];
+                $rewritten = $this->rewriteCollecting($value, $targetLanguageId, $pairs, $leftAlone);
                 if ($rewritten !== $value) {
                     $update[$column] = $rewritten;
+                    $anchors[$column] = $pairs;
+                }
+                if ($leftAlone !== []) {
+                    $unresolved[$column] = $leftAlone;
                 }
             }
+            if ($update === [] && $unresolved === []) {
+                continue;
+            }
+            $parentField = (string)($GLOBALS['TCA'][$table]['ctrl']['transOrigPointerField'] ?? '');
+            $this->changes[] = [
+                'table' => $table,
+                'uid' => (int)$uid,
+                'pid' => (int)($row['pid'] ?? 0),
+                'page' => $table === 'pages' && $parentField !== '' ? (int)($row[$parentField] ?? 0) : (int)($row['pid'] ?? 0),
+                'language' => $targetLanguageId,
+                'columns' => $anchors,
+                'unresolved' => $unresolved,
+            ];
             if ($update === []) {
                 continue;
             }
-            $connection->update($table, $update, ['uid' => (int)$uid]);
             $changed++;
+            if ($dryRun) {
+                continue;
+            }
+            $connection->update($table, $update, ['uid' => (int)$uid]);
             $this->logger->info('d-translate: page link anchors pointed at the translated elements', [
                 'table' => $table,
                 'uid' => (int)$uid,
@@ -141,18 +225,63 @@ final class AnchorLinkRemapper
      */
     public function rewrite(string $value, int $targetLanguageId): string
     {
+        $pairs = [];
+        $leftAlone = [];
+        return $this->rewriteCollecting($value, $targetLanguageId, $pairs, $leftAlone);
+    }
+
+    /**
+     * rewrite(), collecting each distinct replacement as an [old, new] pair of
+     * anchors ("#c12" → "#c34") in $pairs, and each distinct anchor it had to
+     * leave alone as [anchor, reason] in $leftAlone — 'untranslated' when the
+     * element has no translation in the language, 'missing' when there is no
+     * such element. An anchor already naming an element of the language is
+     * neither.
+     *
+     * @param list<array{0: string, 1: string}> $pairs
+     * @param list<array{0: string, 1: string}> $leftAlone
+     */
+    private function rewriteCollecting(string $value, int $targetLanguageId, array &$pairs, array &$leftAlone): string
+    {
         if ($targetLanguageId <= 0 || !str_contains($value, 't3://page?uid=')) {
             return $value;
         }
         $result = preg_replace_callback(
             self::PATTERN,
-            function (array $match) use ($targetLanguageId): string {
+            function (array $match) use ($targetLanguageId, &$pairs, &$leftAlone): string {
+                $anchor = '#' . $match[2] . $match[3];
                 $translated = $this->translatedElement((int)$match[3], $targetLanguageId);
-                return $translated > 0 ? $match[1] . $match[2] . $translated : $match[0];
+                if ($translated <= 0) {
+                    $reason = $this->reasonLeftAlone((int)$match[3], $targetLanguageId);
+                    if ($reason !== '' && !in_array([$anchor, $reason], $leftAlone, true)) {
+                        $leftAlone[] = [$anchor, $reason];
+                    }
+                    return $match[0];
+                }
+                $pair = [$anchor, '#' . $match[2] . $translated];
+                if (!in_array($pair, $pairs, true)) {
+                    $pairs[] = $pair;
+                }
+                return $match[1] . $match[2] . $translated;
             },
             $value
         );
         return is_string($result) ? $result : $value;
+    }
+
+    /**
+     * Why an anchor stays as it is: '' when it names an element of the target
+     * language already (nothing to do), 'missing' when there is no such
+     * element, 'untranslated' when the element has no translation there.
+     */
+    private function reasonLeftAlone(int $uid, int $targetLanguageId): string
+    {
+        $row = $this->row(self::CONTENT_TABLE, $uid);
+        if ($row === null || (int)($row['deleted'] ?? 0) === 1) {
+            return 'missing';
+        }
+        $languageField = (string)($GLOBALS['TCA'][self::CONTENT_TABLE]['ctrl']['languageField'] ?? '');
+        return (int)($row[$languageField] ?? 0) === $targetLanguageId ? '' : 'untranslated';
     }
 
     /**
@@ -197,7 +326,7 @@ final class AnchorLinkRemapper
      *
      * @param list<string> $tables
      */
-    private function remapLinksToPage(int $pageId, int $targetLanguageId, array $tables): int
+    private function remapLinksToPage(int $pageId, int $targetLanguageId, array $tables, bool $dryRun): int
     {
         $changed = 0;
         foreach ($tables as $table) {
@@ -227,9 +356,72 @@ final class AnchorLinkRemapper
                 ->where(...$constraints)
                 ->executeQuery()
                 ->fetchFirstColumn();
-            $changed += $this->remapRecords($table, array_map('intval', $uids), $targetLanguageId);
+            $changed += $this->remapRecords($table, array_map('intval', $uids), $targetLanguageId, $dryRun);
         }
         return $changed;
+    }
+
+    /**
+     * Records of the target language on the given pages that hold a page link
+     * at all; the regex sorts out which of them carry an element anchor.
+     *
+     * @param list<int> $pageIds default-language page uids
+     * @return list<int>
+     */
+    private function linkingRecordsOnPages(string $table, array $pageIds, int $targetLanguageId): array
+    {
+        $ctrl = $GLOBALS['TCA'][$table]['ctrl'] ?? [];
+        $languageField = (string)($ctrl['languageField'] ?? '');
+        $parentField = (string)($ctrl['transOrigPointerField'] ?? '');
+        $columns = $this->linkBearingColumns($table);
+        if ($languageField === '' || $columns === [] || ($table === 'pages' && $parentField === '')) {
+            return [];
+        }
+        $qb = $this->connectionPool->getQueryBuilderForTable($table);
+        $qb->getRestrictions()->removeAll();
+        $likes = [];
+        foreach ($columns as $column) {
+            $likes[] = $qb->expr()->like($column, $qb->createNamedParameter('%t3://page?uid=%'));
+        }
+        $constraints = [
+            $qb->expr()->eq($languageField, $qb->createNamedParameter($targetLanguageId, ParameterType::INTEGER)),
+            // The page's own translation hangs off its translation pointer,
+            // everything else off its pid.
+            $table === 'pages'
+                ? $qb->expr()->in($parentField, $qb->createNamedParameter($pageIds, Connection::PARAM_INT_ARRAY))
+                : $qb->expr()->in('pid', $qb->createNamedParameter($pageIds, Connection::PARAM_INT_ARRAY)),
+            $qb->expr()->or(...$likes),
+        ];
+        if (($ctrl['delete'] ?? '') !== '') {
+            $constraints[] = $qb->expr()->eq((string)$ctrl['delete'], 0);
+        }
+        $uids = $qb->select('uid')
+            ->from($table)
+            ->where(...$constraints)
+            ->orderBy('uid')
+            ->executeQuery()
+            ->fetchFirstColumn();
+        return array_map('intval', $uids);
+    }
+
+    /**
+     * Localizable tables with at least one column that can hold a typolink.
+     *
+     * @return list<string>
+     */
+    private function linkBearingTables(): array
+    {
+        $tables = [];
+        foreach ($GLOBALS['TCA'] ?? [] as $table => $definition) {
+            $ctrl = $definition['ctrl'] ?? [];
+            if ((string)($ctrl['languageField'] ?? '') === '' || (string)($ctrl['transOrigPointerField'] ?? '') === '') {
+                continue;
+            }
+            if ($this->linkBearingColumns((string)$table) !== []) {
+                $tables[] = (string)$table;
+            }
+        }
+        return $tables;
     }
 
     /**

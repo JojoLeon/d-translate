@@ -66,6 +66,29 @@ Links to content elements (`t3://page?uid=…#…`) are pointed at the translate
 element, so jump links work on sites that render their translations in free
 mode too.
 
+### Repairing translations made earlier
+
+Translations that exist already — from an earlier version, an editor's
+*Translate* click or an import — keep their source-language anchors and
+copied slugs until a run touches their page. The repair for a whole site needs
+no LLM:
+
+```bash
+vendor/bin/typo3 dtranslate:remap-anchors --dry-run           # every site, list only
+vendor/bin/typo3 dtranslate:remap-anchors --site=main --slugs  # one site, slugs too
+vendor/bin/typo3 dtranslate:remap-anchors --page=42 --slugs    # one page
+```
+
+Without `--dry-run` the anchors are written straight to the records (the page
+cache is cleared). `--slugs` rebuilds the slug of every page translation whose
+slug is still byte-identical to the source page's, from its translated title;
+a title not translated yet (`[Translate to …]`) is left alone and reported.
+The slugs go through the DataHandler, so EXT:redirects — if installed and
+allowed by the site's settings — creates its redirects from the old URLs and
+moves subpages along, exactly as for a change in the page properties.
+`--language` limits a run to one language id, `--site` and `--page` take
+several values.
+
 ## Glossary
 
 Term pairs of a profile ("keep *Streamer* as *Streamer*") are handed to the

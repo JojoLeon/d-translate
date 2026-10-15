@@ -26,8 +26,6 @@ use TYPO3\CMS\Backend\View\BackendLayoutView;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
-use TYPO3\CMS\Core\DataHandling\Model\RecordStateFactory;
-use TYPO3\CMS\Core\DataHandling\SlugHelper;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -56,6 +54,7 @@ final class TranslationOrchestrator
         private readonly ExtensionSettings $settings,
         private readonly LanguageNameResolver $languageNames,
         private readonly AnchorLinkRemapper $anchorRemapper,
+        private readonly SlugGenerator $slugGenerator,
     ) {
     }
 
@@ -1067,36 +1066,6 @@ final class TranslationOrchestrator
     }
 
     /**
-     * Build a slug from a record whose generator fields carry the translated
-     * values already.
-     *
-     * @param array<string, mixed> $record full record
-     */
-    private function generateSlug(string $table, string $field, array $record): string
-    {
-        $fieldConfig = $GLOBALS['TCA'][$table]['columns'][$field]['config'] ?? [];
-        $slugHelper = GeneralUtility::makeInstance(SlugHelper::class, $table, $field, $fieldConfig);
-        $pid = (int)($record['pid'] ?? 0);
-        $slug = $slugHelper->generate($record, $pid);
-        $state = RecordStateFactory::forName($table)->fromArray($record, $pid, (int)($record['uid'] ?? 0));
-
-        // The scope a slug has to be unique in is part of its TCA eval:
-        // pages are unique per site, news and the rest per table.
-        $evals = GeneralUtility::trimExplode(',', (string)($fieldConfig['eval'] ?? ''), true);
-        if (in_array('uniqueInSite', $evals, true)) {
-            return $slugHelper->isUniqueInSite($slug, $state) ? $slug : $slugHelper->buildSlugForUniqueInSite($slug, $state);
-        }
-        if (in_array('uniqueInPid', $evals, true)) {
-            return $slugHelper->isUniqueInPid($slug, $state) ? $slug : $slugHelper->buildSlugForUniqueInPid($slug, $state);
-        }
-        if (in_array('unique', $evals, true)) {
-            return $slugHelper->isUniqueInTable($slug, $state) ? $slug : $slugHelper->buildSlugForUniqueInTable($slug, $state);
-        }
-
-        return $slug;
-    }
-
-    /**
      * Rebuild the slug fields of a translated record.
      *
      * A slug is not prose. Handing "sobocan-doo-kroatien-effiziente-…" to the
@@ -1143,7 +1112,7 @@ final class TranslationOrchestrator
             if (!$force && $current !== '' && !$copiedFromSource) {
                 continue;
             }
-            $slug = $this->generateSlug($table, $column, $translation);
+            $slug = $this->slugGenerator->generate($table, $column, $translation);
             if ($slug !== '' && $slug !== $current) {
                 $update[$column] = $slug;
             }

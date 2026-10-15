@@ -6,6 +6,18 @@ versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- `dtranslate:remap-anchors`: the one-off repair of translations that exist
+  already. Points the element anchors of page links in every translation of
+  a site (or of the pages given with `--page`) at the translated elements,
+  and with `--slugs` rebuilds the slug of page translations still carrying
+  the source page's slug — written through the DataHandler, so EXT:redirects
+  creates its redirects and moves subpages along. `--dry-run` lists every
+  record, anchor and slug that would change, plus the anchors that have to
+  stay because their element is not translated in that language. No LLM
+  call is involved
+
 ### Fixed
 
 - A page translation (`dtranslate:page`, or any run that localizes a
