@@ -132,11 +132,11 @@
                 <target>Woordenlijstitem</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
-                <source>Applies to target language</source>
+                <source>Applies to</source>
                 <target>Geldt voor doeltaal</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
-                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
+                <source>A language covers every regional variant and every site that has it; a regional variant or a single site language id narrows it down. The most specific entry wins when several name the same term.</source>
                 <target>Beperkt de term tot één taal van een site, of laat hem voor alle doeltalen gelden.</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">

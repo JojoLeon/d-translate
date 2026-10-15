@@ -18,13 +18,12 @@ namespace Dreistein\DTranslate\Controller\Backend;
 
 use Dreistein\DTranslate\Localization\Messages;
 use Dreistein\DTranslate\Service\GlossaryStore;
-use Dreistein\DTranslate\Service\LanguageNameResolver;
+use Dreistein\DTranslate\Service\LanguageCatalog;
 use Dreistein\DTranslate\Service\ProfileStore;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
-use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -49,8 +48,7 @@ final class GlossaryController
         private readonly ModuleTemplateFactory $moduleTemplateFactory,
         private readonly ProfileStore $profileStore,
         private readonly GlossaryStore $glossaryStore,
-        private readonly SiteFinder $siteFinder,
-        private readonly LanguageNameResolver $languageNames,
+        private readonly LanguageCatalog $languageCatalog,
         private readonly UriBuilder $uriBuilder,
     ) {
     }
@@ -60,53 +58,56 @@ final class GlossaryController
         $query = $request->getQueryParams();
 
         // Hidden profiles are listed too: their glossary is still worth editing.
+        // The entries shared by every profile (profile 0) are listed like a
+        // profile of their own, first in the list.
         $profiles = $this->profileStore->listAll();
-        $profileUid = (int)($query['profile'] ?? 0);
+        array_unshift($profiles, [
+            'uid' => GlossaryStore::SHARED_PROFILE,
+            'title' => Messages::tr('glossary.sharedProfile'),
+            'site_identifier' => '',
+            'hidden' => 0,
+        ]);
+        $requested = isset($query['profile']) ? (int)$query['profile'] : null;
         $profile = null;
         foreach ($profiles as $row) {
-            if ((int)$row['uid'] === $profileUid) {
+            if ($requested !== null && (int)$row['uid'] === $requested) {
                 $profile = $row;
                 break;
             }
         }
-        if ($profile === null && $profiles !== []) {
-            $profile = $profiles[0];
-        }
-        $profileUid = $profile !== null ? (int)$profile['uid'] : 0;
+        // Default: the first real profile; the shared list only when there is none.
+        $profile ??= $profiles[1] ?? $profiles[0];
+        $profileUid = (int)$profile['uid'];
 
-        // '' = every entry, '-1' = the ones for all target languages, else one language.
+        // '' = every entry, otherwise entries stored with exactly this key
+        // ('-1' every language, 'en', 'en-GB' or a site language id).
         $languageParam = trim((string)($query['language'] ?? ''));
-        $languageId = $languageParam !== '' && is_numeric($languageParam) ? (int)$languageParam : null;
-        $languageParam = $languageId === null ? '' : (string)$languageId;
+        $languageKey = $languageParam !== '' ? $languageParam : null;
         $search = trim((string)($query['search'] ?? ''));
         $size = (int)($query['size'] ?? self::DEFAULT_PAGE_SIZE);
         if (!in_array($size, self::PAGE_SIZES, true)) {
             $size = self::DEFAULT_PAGE_SIZE;
         }
 
-        $total = $profileUid > 0 ? $this->glossaryStore->count($profileUid, $languageId, $search) : 0;
+        $total = $this->glossaryStore->count($profileUid, $languageKey, $search);
         $pageCount = max(1, (int)ceil($total / $size));
         $page = min(max(1, (int)($query['page'] ?? 1)), $pageCount);
         $offset = ($page - 1) * $size;
-        $rows = $profileUid > 0 ? $this->glossaryStore->page($profileUid, $languageId, $search, $offset, $size) : [];
+        $rows = $this->glossaryStore->page($profileUid, $languageKey, $search, $offset, $size);
 
         $filters = ['profile' => $profileUid, 'language' => $languageParam, 'search' => $search, 'size' => $size];
         $listUrl = $this->listUrl($filters + ['page' => $page]);
-        $languageNames = $this->languageNames($profile);
 
         $entries = [];
         foreach ($rows as $row) {
             $uid = (int)$row['uid'];
-            $language = (int)$row['target_language'];
             $entries[] = [
                 'uid' => $uid,
                 'sourceTerm' => (string)$row['source_term'],
                 'targetTerm' => (string)$row['target_term'],
                 'note' => (string)$row['note'],
                 'hidden' => (bool)$row['hidden'],
-                'language' => $language === -1
-                    ? Messages::tr('glossary.languageAll')
-                    : ($languageNames[$language] ?? sprintf('#%d', $language)),
+                'language' => $this->keyLabel((string)$row['target_language']),
                 'confirm' => Messages::tr('glossary.deleteConfirm', (string)$row['source_term'], (string)$row['target_term']),
                 'editUrl' => (string)$this->uriBuilder->buildUriFromRoute('record_edit', [
                     'edit' => [self::TABLE => [$uid => 'edit']],
@@ -121,8 +122,8 @@ final class GlossaryController
         }
 
         $defaults = [self::TABLE => ['profile' => $profileUid]];
-        if ($languageId !== null) {
-            $defaults[self::TABLE]['target_language'] = $languageId;
+        if ($languageKey !== null) {
+            $defaults[self::TABLE]['target_language'] = $languageKey;
         }
 
         $view = $this->moduleTemplateFactory->create($request);
@@ -132,7 +133,7 @@ final class GlossaryController
             'profiles' => $profiles,
             'profile' => $profile,
             'profileUid' => $profileUid,
-            'languageOptions' => $this->languageOptions($profileUid, $languageNames, $languageParam),
+            'languageOptions' => $this->languageOptions($profileUid, $languageParam),
             'language' => $languageParam,
             'search' => $search,
             'sizeOptions' => array_map(static fn (int $s): array => ['value' => $s, 'selected' => $s === $size], self::PAGE_SIZES),
@@ -146,11 +147,11 @@ final class GlossaryController
             'pagination' => $this->pagination($filters, $page, $pageCount),
             'resetUrl' => $this->listUrl(['profile' => $profileUid]),
             'backUrl' => (string)$this->uriBuilder->buildUriFromRoute('dtranslate'),
-            'newUrl' => $profileUid > 0 ? (string)$this->uriBuilder->buildUriFromRoute('record_edit', [
+            'newUrl' => (string)$this->uriBuilder->buildUriFromRoute('record_edit', [
                 'edit' => [self::TABLE => [0 => 'new']],
                 'defVals' => $defaults,
                 'returnUrl' => $listUrl,
-            ]) : '',
+            ]),
             'profileEditUrl' => $profileUid > 0 ? (string)$this->uriBuilder->buildUriFromRoute('record_edit', [
                 'edit' => ['tx_dtranslate_profile' => [$profileUid => 'edit']],
                 'returnUrl' => $listUrl,
@@ -161,76 +162,58 @@ final class GlossaryController
     }
 
     /**
-     * Filter options: every entry, the ones for all target languages, then the
-     * languages of the profile's site — each with its number of entries, so an
-     * editor sees at a glance where the glossary is thin. Languages that only
-     * exist in old entries (removed from the site since) stay selectable.
+     * Filter options in groups: every entry and "every target language" first,
+     * then the languages, the regional variants and the single site language
+     * ids the installation has — each with its number of entries — plus the
+     * keys only old entries still carry (a site language removed since).
      *
-     * @param array<int, string> $languageNames
-     * @return list<array{value: string, label: string, selected: bool}>
+     * @return list<array{label: string, options: list<array{value: string, label: string, selected: bool}>}>
      */
-    private function languageOptions(int $profileUid, array $languageNames, string $current): array
+    private function languageOptions(int $profileUid, string $current): array
     {
-        $counts = $profileUid > 0 ? $this->glossaryStore->countByLanguage($profileUid) : [];
-        $options = [
-            ['value' => '', 'label' => sprintf('%s (%d)', Messages::tr('glossary.languageAny'), array_sum($counts))],
-            ['value' => '-1', 'label' => sprintf('%s (%d)', Messages::tr('glossary.languageAll'), $counts[-1] ?? 0)],
+        $counts = $this->glossaryStore->countByLanguage($profileUid);
+        $option = static fn (string $value, string $label, int $count): array => [
+            'value' => $value,
+            'label' => sprintf('%s · %d', $label, $count),
+            'selected' => $value === $current,
         ];
-        foreach ($languageNames as $id => $name) {
-            $options[] = ['value' => (string)$id, 'label' => sprintf('%s · %d', $name, $counts[$id] ?? 0)];
-        }
-        foreach ($counts as $id => $count) {
-            if ($id > 0 && !isset($languageNames[$id])) {
-                $options[] = ['value' => (string)$id, 'label' => sprintf('#%d · %d', $id, $count)];
+        $groups = [['label' => '', 'options' => [
+            $option('', Messages::tr('glossary.languageAny'), array_sum($counts)),
+            $option(LanguageCatalog::ALL, Messages::tr('glossary.languageAll'), $counts[LanguageCatalog::ALL] ?? 0),
+        ]]];
+        $known = ['', LanguageCatalog::ALL];
+        $catalogue = $this->languageCatalog->catalogue();
+        foreach ([['glossary.group.languages', 'languages'], ['glossary.group.variants', 'variants'], ['glossary.group.ids', 'ids']] as [$labelKey, $part]) {
+            $options = [];
+            foreach (array_keys($catalogue[$part]) as $key) {
+                $key = (string)$key;
+                $options[] = $option($key, $this->languageCatalog->label($key), $counts[$key] ?? 0);
+                $known[] = $key;
+            }
+            if ($options !== []) {
+                $groups[] = ['label' => Messages::tr($labelKey), 'options' => $options];
             }
         }
-        foreach ($options as &$option) {
-            $option['selected'] = $option['value'] === $current;
+        $other = [];
+        foreach ($counts as $key => $count) {
+            if (!in_array((string)$key, $known, true)) {
+                $other[] = $option((string)$key, $this->keyLabel((string)$key), $count);
+            }
         }
-        unset($option);
-        return $options;
+        if ($other !== []) {
+            $groups[] = ['label' => Messages::tr('glossary.group.other'), 'options' => $other];
+        }
+        return $groups;
     }
 
-    /**
-     * Target languages of the profile's site, id => label; every site's
-     * languages (deduplicated) for the default profile without a site. The
-     * label is the title from the site configuration ("Englisch/USA") plus
-     * the id: four English variants named "English" would be indistinguishable.
-     *
-     * @param array<string, mixed>|null $profile
-     * @return array<int, string>
-     */
-    private function languageNames(?array $profile): array
+    /** What an entry applies to, as the list shows it. */
+    private function keyLabel(string $key): string
     {
-        $sites = [];
-        $identifier = (string)($profile['site_identifier'] ?? '');
-        if ($identifier !== '') {
-            try {
-                $sites = [$this->siteFinder->getSiteByIdentifier($identifier)];
-            } catch (\Throwable) {
-                // Site gone — fall through to every site.
-            }
+        if (LanguageCatalog::specificity($key) === 0) {
+            return Messages::tr('glossary.languageAll');
         }
-        if ($sites === []) {
-            $sites = $this->siteFinder->getAllSites();
-        }
-        $names = [];
-        foreach ($sites as $site) {
-            $defaultId = $site->getDefaultLanguage()->getLanguageId();
-            foreach ($site->getAllLanguages() as $language) {
-                $id = $language->getLanguageId();
-                if ($id === $defaultId || isset($names[$id])) {
-                    continue;
-                }
-                $title = trim($language->getTitle());
-                if ($title === '') {
-                    $title = $this->languageNames->nameOf($language);
-                }
-                $names[$id] = sprintf('%s (#%d)', $title, $id);
-            }
-        }
-        ksort($names);
-        return $names;
+        $label = $this->languageCatalog->label($key);
+        return $label !== '' ? $label : $key;
     }
 
     /**

@@ -17,8 +17,8 @@
         <a class="btn btn-default" href="{backUrl}">← <f:translate key="{ll}glossary.back" /></a>
         <f:if condition="{profileUid} > 0">
             <a class="btn btn-default" href="{profileEditUrl}"><f:translate key="{ll}glossary.editProfile" /></a>
-            <a class="btn btn-primary" href="{newUrl}"><f:translate key="{ll}glossary.new" /></a>
         </f:if>
+        <a class="btn btn-primary" href="{newUrl}"><f:translate key="{ll}glossary.new" /></a>
     </div>
 
     <f:if condition="{profiles}">
@@ -41,8 +41,21 @@
                     <div>
                         <label class="form-label" for="dtr-glossary-language"><f:translate key="{ll}glossary.language" /></label>
                         <select class="form-select" name="language" id="dtr-glossary-language" data-glossary-autosubmit>
-                            <f:for each="{languageOptions}" as="o">
-                                <option value="{o.value}"<f:if condition="{o.selected}"> selected="selected"</f:if>>{o.label}</option>
+                            <f:for each="{languageOptions}" as="group">
+                                <f:if condition="{group.label}">
+                                    <f:then>
+                                        <optgroup label="{group.label}">
+                                            <f:for each="{group.options}" as="o">
+                                                <option value="{o.value}"<f:if condition="{o.selected}"> selected="selected"</f:if>>{o.label}</option>
+                                            </f:for>
+                                        </optgroup>
+                                    </f:then>
+                                    <f:else>
+                                        <f:for each="{group.options}" as="o">
+                                            <option value="{o.value}"<f:if condition="{o.selected}"> selected="selected"</f:if>>{o.label}</option>
+                                        </f:for>
+                                    </f:else>
+                                </f:if>
                             </f:for>
                         </select>
                     </div>

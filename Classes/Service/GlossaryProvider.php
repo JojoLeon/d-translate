@@ -17,21 +17,21 @@ declare(strict_types=1);
 namespace Dreistein\DTranslate\Service;
 
 /**
- * Builds the glossary section of the system prompt for a profile + target
- * language. Full-inject strategy: small glossaries are cheap, especially with
- * Anthropic prompt caching (cache_system). A pgvector retrieval mode for very
- * large glossaries can replace glossaryBlock() later without touching callers.
+ * Renders the glossary block of the system prompt: the term pairs of the
+ * profile (and the ones shared by every profile) that apply to the target
+ * language of the page being translated.
  */
 final class GlossaryProvider
 {
     public function __construct(
         private readonly GlossaryStore $glossaryStore,
+        private readonly LanguageCatalog $languageCatalog,
     ) {
     }
 
-    public function glossaryBlock(int $profileUid, int $targetLanguageId): string
+    public function glossaryBlock(int $profileUid, int $pageId, int $targetLanguageId): string
     {
-        $terms = $this->glossaryStore->findForProfile($profileUid, $targetLanguageId);
+        $terms = $this->glossaryStore->findForProfile($profileUid, $this->languageCatalog->keysForTarget($pageId, $targetLanguageId));
         if ($terms === []) {
             return '';
         }

@@ -676,7 +676,7 @@ final class TranslationOrchestrator
         $retranslate = $titleNeedsTranslation || $metaNeedsTranslation;
         if ($titleNeedsTranslation) {
             $targetLanguage = $this->resolveTargetLanguage($pageId, $targetLanguageId);
-            $translatedTitle = $this->translatePlain($profile, $sourceTitle, $targetLanguageId, $targetLanguage, $pageContext);
+            $translatedTitle = $this->translatePlain($profile, $sourceTitle, $pageId, $targetLanguageId, $targetLanguage, $pageContext);
             // pages.title is varchar(255); a rejected write would abort the whole
             // run, so an over-long translation loses to the source title.
             $titleMax = (int)($GLOBALS['TCA']['pages']['columns']['title']['config']['max'] ?? 0);
@@ -716,7 +716,7 @@ final class TranslationOrchestrator
                 array_merge(self::PAGE_META_FIELDS, $profile->additionalColumnsFor('pages')),
                 $profile,
                 $this->resolveTargetLanguage($pageId, $targetLanguageId),
-                $this->glossaryProvider->glossaryBlock($profile->profileUid, $targetLanguageId),
+                $this->glossaryProvider->glossaryBlock($profile->profileUid, $pageId, $targetLanguageId),
                 $pageContext,
             );
         }
@@ -810,7 +810,7 @@ final class TranslationOrchestrator
         $this->syncMissingFileReferences($table, $translationUids, $targetLanguageId);
 
         $targetLanguage = $this->resolveTargetLanguage($pageId, $targetLanguageId);
-        $glossaryBlock = $this->glossaryProvider->glossaryBlock($profile->profileUid, $targetLanguageId);
+        $glossaryBlock = $this->glossaryProvider->glossaryBlock($profile->profileUid, $pageId, $targetLanguageId);
         // Every auto-translatable column (text/RTE; safe input) plus the
         // profile-configured extra columns (which may also be FlexForm).
         $columns = array_values(array_unique(array_merge(
@@ -1010,12 +1010,12 @@ final class TranslationOrchestrator
         return '';
     }
 
-    private function translatePlain(ResolvedProfile $profile, string $text, int $targetLanguageId, string $targetLanguage, string $pageContext = ''): string
+    private function translatePlain(ResolvedProfile $profile, string $text, int $pageId, int $targetLanguageId, string $targetLanguage, string $pageContext = ''): string
     {
         if (trim($text) === '') {
             return $text;
         }
-        $glossaryBlock = $this->glossaryProvider->glossaryBlock($profile->profileUid, $targetLanguageId);
+        $glossaryBlock = $this->glossaryProvider->glossaryBlock($profile->profileUid, $pageId, $targetLanguageId);
         return $this->translationService->translateField($text, $profile, $targetLanguage, $glossaryBlock, $pageContext, false);
     }
 
@@ -1167,7 +1167,7 @@ final class TranslationOrchestrator
             $before[$table] = $this->existingTranslations($table, $uids, $targetLanguageId);
         }
 
-        $glossaryBlock = $this->glossaryProvider->glossaryBlock($profile->profileUid, $targetLanguageId);
+        $glossaryBlock = $this->glossaryProvider->glossaryBlock($profile->profileUid, $pageId, $targetLanguageId);
         $this->context->arm($profile, $targetLanguage, $glossaryBlock, $pageContext);
         try {
             $dataHandler = GeneralUtility::makeInstance(DataHandler::class);

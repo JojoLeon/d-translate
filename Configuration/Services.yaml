@@ -68,6 +68,13 @@ services:
         description: 'Translate all default-language content of a page into a target language.'
         schedulable: false
 
+  Dreistein\DTranslate\Command\GlossaryConsolidateCommand:
+    tags:
+      - name: 'console.command'
+        command: 'dtranslate:glossary-consolidate'
+        description: 'Collapse glossary entries kept per regional variant into one entry per language; --merge-profiles shares entries identical in every profile.'
+        schedulable: false
+
   Dreistein\DTranslate\Command\RemapAnchorsCommand:
     tags:
       - name: 'console.command'

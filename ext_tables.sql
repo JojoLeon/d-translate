@@ -26,7 +26,7 @@ CREATE TABLE tx_dtranslate_profile (
 CREATE TABLE tx_dtranslate_glossary (
     uid int(11) unsigned NOT NULL auto_increment,
     profile int(11) unsigned DEFAULT 0 NOT NULL,
-    target_language int(11) DEFAULT -1 NOT NULL,
+    target_language varchar(16) DEFAULT '-1' NOT NULL,
     source_term varchar(255) DEFAULT '' NOT NULL,
     target_term varchar(255) DEFAULT '' NOT NULL,
     note varchar(255) DEFAULT '' NOT NULL,

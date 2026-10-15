@@ -132,11 +132,11 @@
                 <target>Запись глоссария</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
-                <source>Applies to target language</source>
+                <source>Applies to</source>
                 <target>Относится к целевому языку</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
-                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
+                <source>A language covers every regional variant and every site that has it; a regional variant or a single site language id narrows it down. The most specific entry wins when several name the same term.</source>
                 <target>Ограничивает термин одним языком сайта или оставляет его действующим для всех целевых языков.</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">

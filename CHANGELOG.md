@@ -17,6 +17,11 @@ versions follow [Semantic Versioning](https://semver.org/).
   record, anchor and slug that would change, plus the anchors that have to
   stay because their element is not translated in that language. No LLM
   call is involved
+- `dtranslate:glossary-consolidate`: collapses a glossary kept once per
+  regional variant or site language id into one entry per language, and with
+  `--merge-profiles` turns entries identical in every profile into shared
+  ones. Variants that disagree on a translation are left alone and listed;
+  entries that give way land in the recycler. `--dry-run` reports only
 
 ### Fixed
 
@@ -61,6 +66,16 @@ versions follow [Semantic Versioning](https://semver.org/).
   ages to open once a glossary had grown to thousands of terms; it now shows
   the entry count and a button into the list. A glossary entry carries its
   profile as a plain select field
+- A glossary entry now applies to a **language** rather than to one site
+  language id: "Applies to" offers every target language, the languages
+  (`en` covers every English variant on every site), the regional variants
+  (`en-GB`) and — as before — single site language ids, each listed once
+  however many sites share it. The most specific entry wins when several name
+  the same term. Existing entries keep their ids and their meaning; the column
+  only changes from a number to a key (run the database schema update once)
+- An entry can belong to **every profile** ("Every profile (shared)") instead
+  of one, so a glossary used by several profiles is maintained once. The
+  module's glossary list shows the shared entries as a list of their own
 
 ## [0.1.1] — 2026-08-04
 

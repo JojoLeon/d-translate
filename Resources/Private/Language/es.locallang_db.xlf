@@ -132,11 +132,11 @@
                 <target>Entrada de glosario</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
-                <source>Applies to target language</source>
+                <source>Applies to</source>
                 <target>Se aplica al idioma de destino</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
-                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
+                <source>A language covers every regional variant and every site that has it; a regional variant or a single site language id narrows it down. The most specific entry wins when several name the same term.</source>
                 <target>Limita el término a un único idioma de un sitio, o deja que se aplique a todos los idiomas de destino.</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">

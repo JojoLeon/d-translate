@@ -283,6 +283,26 @@
                 <source>Cancel</source>
                 <target>Abbrechen</target>
             </trans-unit>
+            <trans-unit id="glossary.sharedProfile" xml:space="preserve">
+                <source>Shared by every profile</source>
+                <target>Für alle Profile</target>
+            </trans-unit>
+            <trans-unit id="glossary.group.languages" xml:space="preserve">
+                <source>Languages (every regional variant)</source>
+                <target>Sprachen (alle regionalen Varianten)</target>
+            </trans-unit>
+            <trans-unit id="glossary.group.variants" xml:space="preserve">
+                <source>Regional variants</source>
+                <target>Regionale Varianten</target>
+            </trans-unit>
+            <trans-unit id="glossary.group.ids" xml:space="preserve">
+                <source>Single site language (id)</source>
+                <target>Einzelne Site-Sprache (ID)</target>
+            </trans-unit>
+            <trans-unit id="glossary.group.other" xml:space="preserve">
+                <source>Keys no site knows any more</source>
+                <target>Schlüssel, die keine Site mehr kennt</target>
+            </trans-unit>
             <trans-unit id="js.pageMeta" xml:space="preserve">
                 <source>Page metadata</source>
                 <target>Seiten-Metadaten</target>

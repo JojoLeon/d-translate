@@ -111,14 +111,29 @@
             <trans-unit id="tx_dtranslate_glossary.profile" xml:space="preserve">
                 <source>Profile</source>
             </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.profile.description" xml:space="preserve">
+                <source>The profile this entry belongs to — or every profile, so one entry serves them all.</source>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.profile.all" xml:space="preserve">
+                <source>Every profile (shared)</source>
+            </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
-                <source>Applies to target language</source>
+                <source>Applies to</source>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
-                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
+                <source>A language covers every regional variant and every site that has it; a regional variant or a single site language id narrows it down. The most specific entry wins when several name the same term.</source>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">
                 <source>All target languages</source>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.languages" xml:space="preserve">
+                <source>Languages (every regional variant)</source>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.variants" xml:space="preserve">
+                <source>Regional variants</source>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.ids" xml:space="preserve">
+                <source>Single site language (id)</source>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.source_term" xml:space="preserve">
                 <source>Source term</source>

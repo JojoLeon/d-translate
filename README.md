@@ -91,12 +91,23 @@ several values.
 
 ## Glossary
 
-Term pairs of a profile ("keep *Streamer* as *Streamer*") are handed to the
-model with every request — either for all target languages or for one. They
-are managed in **Web → Translation → Glossary**: a paged list per profile with
-search and a language filter; each entry opens in the standard record form.
-The profile form only links there, so it opens quickly however many terms a
-glossary has.
+Term pairs ("keep *Streamer* as *Streamer*") are handed to the model with
+every request. An entry belongs to a profile or to every profile, and applies
+to every target language, to a **language** (`en` — every English variant on
+every site), to a regional variant (`en-GB`) or to a single site language id.
+The most specific entry wins when several name the same term.
+
+Entries are managed in **Web → Translation → Glossary**: a paged list per
+profile (plus one for the shared entries) with search and a language filter;
+each entry opens in the standard record form. The profile form only links
+there, so it opens quickly however many terms a glossary has.
+
+A glossary that grew one entry per regional variant can be collapsed:
+
+```bash
+vendor/bin/typo3 dtranslate:glossary-consolidate --dry-run
+vendor/bin/typo3 dtranslate:glossary-consolidate --merge-profiles
+```
 
 ## Languages
 

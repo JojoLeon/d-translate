@@ -17,52 +17,39 @@ declare(strict_types=1);
 namespace Dreistein\DTranslate\Backend\ItemsProc;
 
 use Dreistein\DTranslate\Localization\Messages;
-use Dreistein\DTranslate\Service\LanguageNameResolver;
+use Dreistein\DTranslate\Service\LanguageCatalog;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Populates the glossary's "applies to target language" select with every
- * language of every configured site.
- *
- * A glossary entry is scoped by sys_language_uid, and that number is only
- * meaningful together with a site — the same id can be Spanish in one site and
- * Polish in another. The list therefore groups by site and spells out both the
- * language name and its id, instead of asking editors to know the number.
+ * Populates the glossary's "applies to" select: every target language, then
+ * the languages (one entry covers every regional variant), the regional
+ * variants, and finally the single site language ids — each listed once,
+ * however many sites share it. Ids are what entries were scoped by before
+ * 0.2; they stay selectable so nothing an editor set up changes meaning.
  */
 final class SiteLanguageItemsProc
 {
-    /** @param array{items: array<int, array<int, mixed>>} $params */
+    /** @param array{items: array<int, array<string, mixed>>} $params */
     public function populate(array &$params): void
     {
-        $params['items'][] = ['label' => Messages::db('tx_dtranslate_glossary.target_language.all'), 'value' => -1];
+        $catalog = GeneralUtility::makeInstance(LanguageCatalog::class, GeneralUtility::makeInstance(SiteFinder::class));
+        $catalogue = $catalog->catalogue();
 
-        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
-        $names = GeneralUtility::makeInstance(LanguageNameResolver::class, $siteFinder);
-        $sites = $siteFinder->getAllSites();
+        $params['items'][] = ['label' => Messages::db('tx_dtranslate_glossary.target_language.all'), 'value' => LanguageCatalog::ALL];
 
-        foreach ($sites as $site) {
-            $languages = [];
-            foreach ($site->getAllLanguages() as $language) {
-                // The default language is the source, never a translation target.
-                if ($language->getLanguageId() === 0) {
-                    continue;
-                }
-                $languages[] = $language;
-            }
-            if ($languages === []) {
+        $groups = [
+            ['tx_dtranslate_glossary.target_language.languages', $catalogue['languages']],
+            ['tx_dtranslate_glossary.target_language.variants', $catalogue['variants']],
+            ['tx_dtranslate_glossary.target_language.ids', $catalogue['ids']],
+        ];
+        foreach ($groups as [$labelKey, $entries]) {
+            if ($entries === []) {
                 continue;
             }
-            // Only worth a header when more than one site is configured.
-            if (count($sites) > 1) {
-                $params['items'][] = ['label' => $site->getIdentifier(), 'value' => '--div--'];
-            }
-            foreach ($languages as $language) {
-                $name = $names->nameOf($language);
-                $params['items'][] = [
-                    'label' => sprintf('%s (#%d)', $name !== '' ? $name : $language->getTitle(), $language->getLanguageId()),
-                    'value' => $language->getLanguageId(),
-                ];
+            $params['items'][] = ['label' => Messages::db($labelKey), 'value' => '--div--'];
+            foreach (array_keys($entries) as $key) {
+                $params['items'][] = ['label' => $catalog->label((string)$key), 'value' => (string)$key];
             }
         }
     }

@@ -88,6 +88,11 @@ FILES = {
         'glossary.delete': 'Delete',
         'glossary.deleteConfirm': 'Delete the entry "%s → %s"?',
         'glossary.deleteCancel': 'Cancel',
+        'glossary.sharedProfile': 'Shared by every profile',
+        'glossary.group.languages': 'Languages (every regional variant)',
+        'glossary.group.variants': 'Regional variants',
+        'glossary.group.ids': 'Single site language (id)',
+        'glossary.group.other': 'Keys no site knows any more',
 
         # Progress list (rendered by translate-form.js)
         'js.pageMeta': 'Page metadata',
@@ -208,9 +213,14 @@ FILES = {
 
         'tx_dtranslate_glossary': 'Glossary entry',
         'tx_dtranslate_glossary.profile': 'Profile',
-        'tx_dtranslate_glossary.target_language': 'Applies to target language',
-        'tx_dtranslate_glossary.target_language.description': 'Restrict this term to a single language of a site, or let it apply to every target language.',
+        'tx_dtranslate_glossary.profile.description': 'The profile this entry belongs to — or every profile, so one entry serves them all.',
+        'tx_dtranslate_glossary.profile.all': 'Every profile (shared)',
+        'tx_dtranslate_glossary.target_language': 'Applies to',
+        'tx_dtranslate_glossary.target_language.description': 'A language covers every regional variant and every site that has it; a regional variant or a single site language id narrows it down. The most specific entry wins when several name the same term.',
         'tx_dtranslate_glossary.target_language.all': 'All target languages',
+        'tx_dtranslate_glossary.target_language.languages': 'Languages (every regional variant)',
+        'tx_dtranslate_glossary.target_language.variants': 'Regional variants',
+        'tx_dtranslate_glossary.target_language.ids': 'Single site language (id)',
         'tx_dtranslate_glossary.source_term': 'Source term',
         'tx_dtranslate_glossary.target_term': 'Target term (translation / keep as is)',
         'tx_dtranslate_glossary.note': 'Note',

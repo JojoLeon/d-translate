@@ -42,7 +42,9 @@ final class GlossaryManagerElement extends AbstractFormElement
             $html = '<p class="text-muted mb-0">' . htmlspecialchars(Messages::db('tx_dtranslate_profile.glossary.saveFirst')) . '</p>';
         } else {
             $store = GeneralUtility::makeInstance(GlossaryStore::class, GeneralUtility::makeInstance(ConnectionPool::class));
-            $count = $store->count((int)$uid);
+            // The profile's own entries plus the ones shared by every profile —
+            // both reach the prompt, so both count.
+            $count = $store->count((int)$uid) + $store->count(GlossaryStore::SHARED_PROFILE);
             $url = (string)GeneralUtility::makeInstance(UriBuilder::class)
                 ->buildUriFromRoute('dtranslate.glossary', ['profile' => (int)$uid]);
             $html = '<p>' . htmlspecialchars(Messages::db('tx_dtranslate_profile.glossary.hint')) . '</p>'

@@ -213,6 +213,21 @@
             <trans-unit id="glossary.deleteCancel" xml:space="preserve">
                 <source>Cancel</source>
             </trans-unit>
+            <trans-unit id="glossary.sharedProfile" xml:space="preserve">
+                <source>Shared by every profile</source>
+            </trans-unit>
+            <trans-unit id="glossary.group.languages" xml:space="preserve">
+                <source>Languages (every regional variant)</source>
+            </trans-unit>
+            <trans-unit id="glossary.group.variants" xml:space="preserve">
+                <source>Regional variants</source>
+            </trans-unit>
+            <trans-unit id="glossary.group.ids" xml:space="preserve">
+                <source>Single site language (id)</source>
+            </trans-unit>
+            <trans-unit id="glossary.group.other" xml:space="preserve">
+                <source>Keys no site knows any more</source>
+            </trans-unit>
             <trans-unit id="js.pageMeta" xml:space="preserve">
                 <source>Page metadata</source>
             </trans-unit>

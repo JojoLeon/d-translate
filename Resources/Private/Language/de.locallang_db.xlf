@@ -147,17 +147,37 @@
                 <source>Profile</source>
                 <target>Profil</target>
             </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.profile.description" xml:space="preserve">
+                <source>The profile this entry belongs to — or every profile, so one entry serves them all.</source>
+                <target>Das Profil, zu dem der Eintrag gehört — oder alle Profile, dann gilt ein Eintrag für alle.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.profile.all" xml:space="preserve">
+                <source>Every profile (shared)</source>
+                <target>Alle Profile (gemeinsam)</target>
+            </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
-                <source>Applies to target language</source>
-                <target>Gilt für Zielsprache</target>
+                <source>Applies to</source>
+                <target>Gilt für</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.description" xml:space="preserve">
-                <source>Restrict this term to a single language of a site, or let it apply to every target language.</source>
-                <target>Beschränkt den Begriff auf eine einzelne Sprache einer Site — oder lässt ihn für alle Zielsprachen gelten.</target>
+                <source>A language covers every regional variant and every site that has it; a regional variant or a single site language id narrows it down. The most specific entry wins when several name the same term.</source>
+                <target>Eine Sprache deckt alle regionalen Varianten und jede Site ab, die sie hat; eine regionale Variante oder eine einzelne Site-Sprach-ID grenzt ein. Nennen mehrere Einträge denselben Begriff, gewinnt der speziellste.</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language.all" xml:space="preserve">
                 <source>All target languages</source>
                 <target>Alle Zielsprachen</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.languages" xml:space="preserve">
+                <source>Languages (every regional variant)</source>
+                <target>Sprachen (alle regionalen Varianten)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.variants" xml:space="preserve">
+                <source>Regional variants</source>
+                <target>Regionale Varianten</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.target_language.ids" xml:space="preserve">
+                <source>Single site language (id)</source>
+                <target>Einzelne Site-Sprache (ID)</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.source_term" xml:space="preserve">
                 <source>Source term</source>
