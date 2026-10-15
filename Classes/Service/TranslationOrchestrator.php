@@ -187,11 +187,31 @@ final class TranslationOrchestrator
                 if ($table === 'tt_content') {
                     // Container-first ordering: b13 drops a child's localize command
                     // while its container is untranslated.
+                    $translated = $beforeMap;
                     foreach ($this->orderByContainerLevels($newTopLevel, $records) as $levelUids) {
-                        $result = $this->run($profile, $pageId, $targetLanguageId, ['tt_content' => $levelUids], $pageContext);
+                        // b13 localizes a container's children together with the
+                        // container (connected mode), so by the time their own
+                        // level comes up they exist already — and DataHandler
+                        // refuses a second localize of each one ("There already
+                        // are localizations …"). Localize only what is still
+                        // missing; what came along with its container is this
+                        // run's work all the same and counts as created.
+                        $missing = [];
+                        foreach ($levelUids as $uid) {
+                            if (!isset($translated[$uid])) {
+                                $missing[] = $uid;
+                            } elseif (!isset($beforeMap[$uid])) {
+                                $createdUids[] = $translated[$uid];
+                            }
+                        }
+                        if ($missing === []) {
+                            continue;
+                        }
+                        $result = $this->run($profile, $pageId, $targetLanguageId, ['tt_content' => $missing], $pageContext);
                         $createdUids = array_merge($createdUids, $result->createdUids);
                         $errors = array_merge($errors, $result->errors);
                         $requested += $result->requested;
+                        $translated = $this->tableTranslationsBySource($table, $pageId, $targetLanguageId);
                     }
                 } else {
                     $result = $this->run($profile, $pageId, $targetLanguageId, [$table => $newTopLevel], $pageContext);

@@ -8,6 +8,15 @@ versions follow [Semantic Versioning](https://semver.org/).
 
 ### Fixed
 
+- A page translation (`dtranslate:page`, or any run that localizes a
+  container and its children in one selection) no longer reports
+  "Localization failed: There already are localizations (…)" once per b13
+  container child. b13/container localizes the children together with their
+  container, so the pass that followed for the children asked DataHandler for
+  translations that existed already; the run now checks what exists before
+  each container level and localizes only what is still missing. The children
+  are counted as created records of the run, which they always were — the
+  "created" figure used to leave them out
 - A page link to a content element (`t3://page?uid=…#…`) in a translation now
   jumps to the translated element: once the element exists in the target
   language, the anchor is pointed at its translation. It used to keep naming
