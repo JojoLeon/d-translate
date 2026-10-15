@@ -8,6 +8,20 @@ versions follow [Semantic Versioning](https://semver.org/).
 
 ### Fixed
 
+- A page link to a content element (`t3://page?uid=…#…`) in a translation now
+  jumps to the translated element: once the element exists in the target
+  language, the anchor is pointed at its translation. It used to keep naming
+  the source-language element, which a site rendering its translations in
+  free mode (`fallbackType: free`) does not show on the translated page at
+  all — the link ended at the top of the page. Every translation on the page
+  is covered, as are records elsewhere that link to an anchor on it, each
+  time the page is translated
+- A page translation that an editor or an import created before dTRANSLATE
+  ran no longer keeps the source slug: a title and slug still identical to
+  the source are treated as the untouched copy they are — the title is
+  translated and the slug rebuilt from it. A slug that alone is still the
+  source's copy (the title was translated by hand) is rebuilt as well. The
+  slug is now built after all page fields have been translated
 - An API base URL pasted with its operation path (`…/v1/chat/completions`, as
   the Azure AI Foundry and OpenAI consoles show it) no longer leads to a 404:
   the clients append the path themselves and used to call

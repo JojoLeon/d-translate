@@ -59,6 +59,13 @@ plus a cancel link while it is still open.
 
 Running a translation again refreshes it; nothing is ever deleted by a run.
 
+The page record travels with its content: title and SEO fields are translated,
+the slug is rebuilt from the translated title (not translated) — also for a
+translation created by hand or by an import that still carries the source slug.
+Links to content elements (`t3://page?uid=…#…`) are pointed at the translated
+element, so jump links work on sites that render their translations in free
+mode too.
+
 ## Glossary
 
 Term pairs in the profile ("keep *Streamer* as *Streamer*") are handed to the

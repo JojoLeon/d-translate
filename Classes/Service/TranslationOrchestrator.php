@@ -55,6 +55,7 @@ final class TranslationOrchestrator
         private readonly SiteFinder $siteFinder,
         private readonly ExtensionSettings $settings,
         private readonly LanguageNameResolver $languageNames,
+        private readonly AnchorLinkRemapper $anchorRemapper,
     ) {
     }
 
@@ -111,6 +112,7 @@ final class TranslationOrchestrator
         $pageContext = $this->buildPageContext($pid);
         $result = $this->run($profile, $pid, $targetLanguageId, [$table => [$uid]], $pageContext);
         $this->runInlineOn($table, $result->createdUids, $profile, $pid, $targetLanguageId, $pageContext);
+        $this->anchorRemapper->remapPage($pid, $targetLanguageId, [$table]);
         return $result;
     }
 
@@ -170,7 +172,8 @@ final class TranslationOrchestrator
         $requested = 0;
         $retranslated = 0;
 
-        foreach ($this->selectableRecords($pageId, $profile) as $table => $records) {
+        $selectable = $this->selectableRecords($pageId, $profile);
+        foreach ($selectable as $table => $records) {
             $checked = array_map('intval', $selectedByTable[$table] ?? []);
             if ($checked === []) {
                 continue;
@@ -226,6 +229,12 @@ final class TranslationOrchestrator
                 $retranslated += count($retranslateTrans);
             }
         }
+
+        // Page links keep their element anchors through every path above —
+        // DataHandler copies them verbatim, the model leaves URLs alone. Point
+        // them at the translated elements now that those exist; this also
+        // catches translations made before dTranslate ran on the page.
+        $this->anchorRemapper->remapPage($pageId, $targetLanguageId, array_keys($selectable));
 
         if ($createdUids === [] && $retranslated === 0) {
             return new TranslationRunResult(
@@ -583,7 +592,8 @@ final class TranslationOrchestrator
      * DataHandler localize if missing, translate the title, generate a fitting
      * slug, and create it hidden (hidden = 1) for editorial review. Idempotent —
      * an existing translation's hidden state is left untouched; only a still
-     * "[Translate to …]"-prefixed title is repaired.
+     * "[Translate to …]"-prefixed title, or one that is still the untouched copy
+     * of the source (title and slug), is repaired.
      *
      * @return string what happened, for the run report: created|updated|unchanged
      */
@@ -636,26 +646,35 @@ final class TranslationOrchestrator
         );
         // A translated title identical to the source is NOT a reason to redo it —
         // brand names and short labels ("KI", "Team") legitimately stay the same,
-        // and re-translating them on every run would never end.
-        $titleNeedsTranslation = $justCreated || str_contains($title, '[Translate to');
+        // and re-translating them on every run would never end. The exception is
+        // a translation nobody has touched yet: title AND slug still byte-identical
+        // to the source. That is DataHandler's plain copy — an editor's "Translate"
+        // click, an import — not a translator's decision; left alone, such a page
+        // would keep its source title and slug for good.
+        $untouchedCopy = $title !== '' && $title === $sourceTitle
+            && (string)($record['slug'] ?? '') === (string)($default['slug'] ?? '');
+        $titleNeedsTranslation = $justCreated || str_contains($title, '[Translate to') || $untouchedCopy;
         $retranslate = $titleNeedsTranslation || $metaNeedsTranslation;
         if ($titleNeedsTranslation) {
             $targetLanguage = $this->resolveTargetLanguage($pageId, $targetLanguageId);
-            $title = $this->translatePlain($profile, $sourceTitle, $targetLanguageId, $targetLanguage, $pageContext);
+            $translatedTitle = $this->translatePlain($profile, $sourceTitle, $targetLanguageId, $targetLanguage, $pageContext);
             // pages.title is varchar(255); a rejected write would abort the whole
             // run, so an over-long translation loses to the source title.
             $titleMax = (int)($GLOBALS['TCA']['pages']['columns']['title']['config']['max'] ?? 0);
-            if ($titleMax > 0 && mb_strlen($title) > $titleMax) {
-                $this->context->addError(Messages::tr('field.tooLong', 'pages.title', (string)mb_strlen($title), (string)$titleMax));
-                $title = $sourceTitle;
+            if ($titleMax > 0 && mb_strlen($translatedTitle) > $titleMax) {
+                $this->context->addError(Messages::tr('field.tooLong', 'pages.title', (string)mb_strlen($translatedTitle), (string)$titleMax));
+                $translatedTitle = $sourceTitle;
             }
-            $record['title'] = $title;
-            $update['title'] = $title;
-            $update['slug'] = $this->generateSlug('pages', 'slug', $record);
-            $update['tstamp'] = time();
+            // Only a changed title is written: the model answering with the
+            // source title again ("Team") must not bump tstamp — a publishing
+            // workflow would read that as a change.
+            if ($translatedTitle !== $title) {
+                $update['title'] = $translatedTitle;
+            }
         }
 
         if ($update !== []) {
+            $update['tstamp'] = time();
             $this->connectionPool->getConnectionForTable('pages')->update('pages', $update, ['uid' => $uid]);
         }
 
@@ -683,9 +702,16 @@ final class TranslationOrchestrator
             );
         }
 
+        // The slug is built last, after every page column has been translated —
+        // it is generated from those fields. A slug still identical to the
+        // source's is the copy DataHandler made and is rebuilt even when this
+        // run left the title alone: a translation created by hand or by an
+        // import would otherwise keep the source slug for good.
+        $slugChanged = $this->regenerateSlugs('pages', $uid, $titleNeedsTranslation);
+
         return match (true) {
             $justCreated => self::PAGE_CREATED,
-            $retranslate, $mediaSynced => self::PAGE_UPDATED,
+            $retranslate, $mediaSynced, $slugChanged => self::PAGE_UPDATED,
             default => self::PAGE_UNCHANGED,
         };
     }
@@ -1063,8 +1089,10 @@ final class TranslationOrchestrator
      * an editor's own wording or the result of an earlier run, and overwriting
      * it would break links that are already out there. A forced re-translation
      * rebuilds it regardless.
+     *
+     * @return bool whether a slug was changed
      */
-    private function regenerateSlugs(string $table, int $uid, bool $force): void
+    private function regenerateSlugs(string $table, int $uid, bool $force): bool
     {
         $slugColumns = [];
         foreach ($GLOBALS['TCA'][$table]['columns'] ?? [] as $column => $definition) {
@@ -1075,12 +1103,12 @@ final class TranslationOrchestrator
             }
         }
         if ($slugColumns === []) {
-            return;
+            return false;
         }
 
         $translation = $this->row($table, $uid);
         if ($translation === null) {
-            return;
+            return false;
         }
         $parentField = (string)($GLOBALS['TCA'][$table]['ctrl']['transOrigPointerField'] ?? '');
         $sourceUid = $parentField !== '' ? (int)($translation[$parentField] ?? 0) : 0;
@@ -1101,9 +1129,11 @@ final class TranslationOrchestrator
             }
         }
 
-        if ($update !== []) {
-            $this->connectionPool->getConnectionForTable($table)->update($table, $update, ['uid' => $uid]);
+        if ($update === []) {
+            return false;
         }
+        $this->connectionPool->getConnectionForTable($table)->update($table, $update, ['uid' => $uid]);
+        return true;
     }
 
     /** @return array<string, mixed>|null */
