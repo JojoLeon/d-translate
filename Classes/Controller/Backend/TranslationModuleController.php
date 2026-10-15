@@ -95,6 +95,10 @@ final class TranslationModuleController
             // level; the module only picks which profile a run uses.
             'profiles' => $this->profileStore->listSelectable(),
             'activeProfile' => $this->resolver->defaultProfileUid($currentPageId),
+            'glossaryUrl' => (string)$this->uriBuilder->buildUriFromRoute(
+                'dtranslate.glossary',
+                $this->resolver->defaultProfileUid($currentPageId) > 0 ? ['profile' => $this->resolver->defaultProfileUid($currentPageId)] : [],
+            ),
             'languages' => $this->languageOptions($currentPageId),
             'translateUrl' => (string)$this->uriBuilder->buildUriFromRoute('dtranslate.translate'),
         ]);

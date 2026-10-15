@@ -96,8 +96,20 @@
             <trans-unit id="tx_dtranslate_profile.glossary.description" xml:space="preserve">
                 <source>Term pairs injected into the system prompt for consistent terminology.</source>
             </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.hint" xml:space="preserve">
+                <source>The entries are managed in Web → Translation → Glossary: a paged list with search and language filter. This form stays quick to open however many terms there are.</source>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.manage" xml:space="preserve">
+                <source>Manage glossary (%s entries)</source>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.saveFirst" xml:space="preserve">
+                <source>Save the profile first — its glossary can be filled afterwards.</source>
+            </trans-unit>
             <trans-unit id="tx_dtranslate_glossary" xml:space="preserve">
                 <source>Glossary entry</source>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.profile" xml:space="preserve">
+                <source>Profile</source>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
                 <source>Applies to target language</source>

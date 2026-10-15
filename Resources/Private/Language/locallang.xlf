@@ -120,6 +120,99 @@
             <trans-unit id="column.endpoint" xml:space="preserve">
                 <source>Endpoint</source>
             </trans-unit>
+            <trans-unit id="glossary.open" xml:space="preserve">
+                <source>Manage glossary</source>
+            </trans-unit>
+            <trans-unit id="glossary.title" xml:space="preserve">
+                <source>Glossary</source>
+            </trans-unit>
+            <trans-unit id="glossary.intro" xml:space="preserve">
+                <source>Term pairs handed to the model with every request of a profile. One page at a time — search, filter by language, and open an entry to edit it.</source>
+            </trans-unit>
+            <trans-unit id="glossary.profile" xml:space="preserve">
+                <source>Profile</source>
+            </trans-unit>
+            <trans-unit id="glossary.language" xml:space="preserve">
+                <source>Language</source>
+            </trans-unit>
+            <trans-unit id="glossary.languageAny" xml:space="preserve">
+                <source>All entries</source>
+            </trans-unit>
+            <trans-unit id="glossary.languageAll" xml:space="preserve">
+                <source>All target languages</source>
+            </trans-unit>
+            <trans-unit id="glossary.search" xml:space="preserve">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="glossary.searchPlaceholder" xml:space="preserve">
+                <source>Source term, target term or note</source>
+            </trans-unit>
+            <trans-unit id="glossary.perPage" xml:space="preserve">
+                <source>Per page</source>
+            </trans-unit>
+            <trans-unit id="glossary.filter" xml:space="preserve">
+                <source>Filter</source>
+            </trans-unit>
+            <trans-unit id="glossary.reset" xml:space="preserve">
+                <source>Reset</source>
+            </trans-unit>
+            <trans-unit id="glossary.new" xml:space="preserve">
+                <source>+ New entry</source>
+            </trans-unit>
+            <trans-unit id="glossary.back" xml:space="preserve">
+                <source>Translation</source>
+            </trans-unit>
+            <trans-unit id="glossary.editProfile" xml:space="preserve">
+                <source>Edit profile</source>
+            </trans-unit>
+            <trans-unit id="glossary.column.source" xml:space="preserve">
+                <source>Source term</source>
+            </trans-unit>
+            <trans-unit id="glossary.column.target" xml:space="preserve">
+                <source>Target term</source>
+            </trans-unit>
+            <trans-unit id="glossary.column.language" xml:space="preserve">
+                <source>Language</source>
+            </trans-unit>
+            <trans-unit id="glossary.column.note" xml:space="preserve">
+                <source>Note</source>
+            </trans-unit>
+            <trans-unit id="glossary.count" xml:space="preserve">
+                <source>%s–%s of %s entries</source>
+            </trans-unit>
+            <trans-unit id="glossary.page" xml:space="preserve">
+                <source>Page %s of %s</source>
+            </trans-unit>
+            <trans-unit id="glossary.first" xml:space="preserve">
+                <source>First page</source>
+            </trans-unit>
+            <trans-unit id="glossary.prev" xml:space="preserve">
+                <source>Previous page</source>
+            </trans-unit>
+            <trans-unit id="glossary.next" xml:space="preserve">
+                <source>Next page</source>
+            </trans-unit>
+            <trans-unit id="glossary.last" xml:space="preserve">
+                <source>Last page</source>
+            </trans-unit>
+            <trans-unit id="glossary.empty" xml:space="preserve">
+                <source>No entries match the filter.</source>
+            </trans-unit>
+            <trans-unit id="glossary.emptyProfile" xml:space="preserve">
+                <source>This profile has no glossary entries yet.</source>
+            </trans-unit>
+            <trans-unit id="glossary.hidden" xml:space="preserve">
+                <source>disabled</source>
+            </trans-unit>
+            <trans-unit id="glossary.delete" xml:space="preserve">
+                <source>Delete</source>
+            </trans-unit>
+            <trans-unit id="glossary.deleteConfirm" xml:space="preserve">
+                <source>Delete the entry "%s → %s"?</source>
+            </trans-unit>
+            <trans-unit id="glossary.deleteCancel" xml:space="preserve">
+                <source>Cancel</source>
+            </trans-unit>
             <trans-unit id="js.pageMeta" xml:space="preserve">
                 <source>Page metadata</source>
             </trans-unit>

@@ -68,8 +68,12 @@ mode too.
 
 ## Glossary
 
-Term pairs in the profile ("keep *Streamer* as *Streamer*") are handed to the
-model with every request — either for all target languages or for one.
+Term pairs of a profile ("keep *Streamer* as *Streamer*") are handed to the
+model with every request — either for all target languages or for one. They
+are managed in **Web → Translation → Glossary**: a paged list per profile with
+search and a language filter; each entry opens in the standard record form.
+The profile form only links there, so it opens quickly however many terms a
+glossary has.
 
 ## Languages
 

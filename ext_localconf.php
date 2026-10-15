@@ -16,6 +16,7 @@ declare(strict_types=1);
 
 defined('TYPO3') or die();
 
+use Dreistein\DTranslate\Backend\FormEngine\GlossaryManagerElement;
 use Dreistein\DTranslate\Backend\FormEngine\LlmEndpointDefaultWizard;
 use Dreistein\DTranslate\Hook\CommandMapHook;
 use Dreistein\DTranslate\Hook\LlmConfigEndpointHook;
@@ -44,6 +45,14 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1785600000] = [
     'nodeName' => 'dtranslateLlmEndpointDefault',
     'priority' => 40,
     'class' => LlmEndpointDefaultWizard::class,
+];
+
+// The profile's "Glossary" field: entry count plus a button into the module's
+// paged glossary list, instead of an inline field rendering every entry.
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1785600001] = [
+    'nodeName' => 'dtranslateGlossaryManager',
+    'priority' => 40,
+    'class' => GlossaryManagerElement::class,
 ];
 
 // Per-field translation: DataHandler calls this for every translatable field

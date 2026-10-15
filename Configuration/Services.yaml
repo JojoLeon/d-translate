@@ -34,6 +34,9 @@ services:
   Dreistein\DTranslate\Controller\Backend\TranslationModuleController:
     tags: ['backend.controller']
 
+  Dreistein\DTranslate\Controller\Backend\GlossaryController:
+    tags: ['backend.controller']
+
   # The segment cache is a named TYPO3 cache, so it cannot be autowired.
   cache.dtranslate_segments:
     class: TYPO3\CMS\Core\Cache\Frontend\FrontendInterface

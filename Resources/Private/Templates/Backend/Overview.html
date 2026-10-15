@@ -23,7 +23,12 @@
             <img class="dtr-brand__logo" src="{f:uri.resource(path: 'EXT:d_translate/Resources/Public/Images/logo-dtranslate.svg')}" alt="dTRANSLATE">
         </button>
     </h1>
-    <p class="text-muted"><f:translate key="{ll}module.intro" /></p>
+    <p class="text-muted">
+        <f:translate key="{ll}module.intro" />
+        <!-- The glossary has its own paged list (the profile form only links
+             there); reachable without a page selected in the tree. -->
+        <a href="{glossaryUrl}"><f:translate key="{ll}glossary.open" /> →</a>
+    </p>
 
     <dialog class="dtr-about" data-about-dialog aria-labelledby="dtr-about-title">
         <div class="dtr-about__body">

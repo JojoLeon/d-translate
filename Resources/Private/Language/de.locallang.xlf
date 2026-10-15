@@ -159,6 +159,130 @@
                 <source>Endpoint</source>
                 <target>Endpunkt</target>
             </trans-unit>
+            <trans-unit id="glossary.open" xml:space="preserve">
+                <source>Manage glossary</source>
+                <target>Glossar verwalten</target>
+            </trans-unit>
+            <trans-unit id="glossary.title" xml:space="preserve">
+                <source>Glossary</source>
+                <target>Glossar</target>
+            </trans-unit>
+            <trans-unit id="glossary.intro" xml:space="preserve">
+                <source>Term pairs handed to the model with every request of a profile. One page at a time — search, filter by language, and open an entry to edit it.</source>
+                <target>Begriffspaare, die dem Modell bei jeder Anfrage eines Profils mitgegeben werden. Seitenweise — suchen, nach Sprache filtern und einen Eintrag zum Bearbeiten öffnen.</target>
+            </trans-unit>
+            <trans-unit id="glossary.profile" xml:space="preserve">
+                <source>Profile</source>
+                <target>Profil</target>
+            </trans-unit>
+            <trans-unit id="glossary.language" xml:space="preserve">
+                <source>Language</source>
+                <target>Sprache</target>
+            </trans-unit>
+            <trans-unit id="glossary.languageAny" xml:space="preserve">
+                <source>All entries</source>
+                <target>Alle Einträge</target>
+            </trans-unit>
+            <trans-unit id="glossary.languageAll" xml:space="preserve">
+                <source>All target languages</source>
+                <target>Alle Zielsprachen</target>
+            </trans-unit>
+            <trans-unit id="glossary.search" xml:space="preserve">
+                <source>Search</source>
+                <target>Suche</target>
+            </trans-unit>
+            <trans-unit id="glossary.searchPlaceholder" xml:space="preserve">
+                <source>Source term, target term or note</source>
+                <target>Ausgangsbegriff, Zielbegriff oder Notiz</target>
+            </trans-unit>
+            <trans-unit id="glossary.perPage" xml:space="preserve">
+                <source>Per page</source>
+                <target>Pro Seite</target>
+            </trans-unit>
+            <trans-unit id="glossary.filter" xml:space="preserve">
+                <source>Filter</source>
+                <target>Filtern</target>
+            </trans-unit>
+            <trans-unit id="glossary.reset" xml:space="preserve">
+                <source>Reset</source>
+                <target>Zurücksetzen</target>
+            </trans-unit>
+            <trans-unit id="glossary.new" xml:space="preserve">
+                <source>+ New entry</source>
+                <target>+ Neuer Eintrag</target>
+            </trans-unit>
+            <trans-unit id="glossary.back" xml:space="preserve">
+                <source>Translation</source>
+                <target>Übersetzung</target>
+            </trans-unit>
+            <trans-unit id="glossary.editProfile" xml:space="preserve">
+                <source>Edit profile</source>
+                <target>Profil bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="glossary.column.source" xml:space="preserve">
+                <source>Source term</source>
+                <target>Ausgangsbegriff</target>
+            </trans-unit>
+            <trans-unit id="glossary.column.target" xml:space="preserve">
+                <source>Target term</source>
+                <target>Zielbegriff</target>
+            </trans-unit>
+            <trans-unit id="glossary.column.language" xml:space="preserve">
+                <source>Language</source>
+                <target>Sprache</target>
+            </trans-unit>
+            <trans-unit id="glossary.column.note" xml:space="preserve">
+                <source>Note</source>
+                <target>Notiz</target>
+            </trans-unit>
+            <trans-unit id="glossary.count" xml:space="preserve">
+                <source>%s–%s of %s entries</source>
+                <target>%s–%s von %s Einträgen</target>
+            </trans-unit>
+            <trans-unit id="glossary.page" xml:space="preserve">
+                <source>Page %s of %s</source>
+                <target>Seite %s von %s</target>
+            </trans-unit>
+            <trans-unit id="glossary.first" xml:space="preserve">
+                <source>First page</source>
+                <target>Erste Seite</target>
+            </trans-unit>
+            <trans-unit id="glossary.prev" xml:space="preserve">
+                <source>Previous page</source>
+                <target>Vorherige Seite</target>
+            </trans-unit>
+            <trans-unit id="glossary.next" xml:space="preserve">
+                <source>Next page</source>
+                <target>Nächste Seite</target>
+            </trans-unit>
+            <trans-unit id="glossary.last" xml:space="preserve">
+                <source>Last page</source>
+                <target>Letzte Seite</target>
+            </trans-unit>
+            <trans-unit id="glossary.empty" xml:space="preserve">
+                <source>No entries match the filter.</source>
+                <target>Keine Einträge passen zum Filter.</target>
+            </trans-unit>
+            <trans-unit id="glossary.emptyProfile" xml:space="preserve">
+                <source>This profile has no glossary entries yet.</source>
+                <target>Dieses Profil hat noch keine Glossareinträge.</target>
+            </trans-unit>
+            <trans-unit id="glossary.hidden" xml:space="preserve">
+                <source>disabled</source>
+                <target>deaktiviert</target>
+            </trans-unit>
+            <trans-unit id="glossary.delete" xml:space="preserve">
+                <source>Delete</source>
+                <target>Löschen</target>
+            </trans-unit>
+            <trans-unit id="glossary.deleteConfirm" xml:space="preserve">
+                <source>Delete the entry "%s → %s"?</source>
+                <target>Eintrag „%s → %s" löschen?</target>
+            </trans-unit>
+            <trans-unit id="glossary.deleteCancel" xml:space="preserve">
+                <source>Cancel</source>
+                <target>Abbrechen</target>
+            </trans-unit>
             <trans-unit id="js.pageMeta" xml:space="preserve">
                 <source>Page metadata</source>
                 <target>Seiten-Metadaten</target>

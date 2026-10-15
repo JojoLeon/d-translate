@@ -42,6 +42,13 @@ versions follow [Semantic Versioning](https://semver.org/).
 
 - The "does not know that model or endpoint" error (HTTP 404) now also names
   the URL that was actually requested, in all 39 interface languages
+- The glossary has moved out of the profile form into its own view, *Web →
+  Translation → Glossary*: a paged list per profile (25–200 entries a page)
+  with search and a language filter, each entry opening in the standard
+  record form. The profile form used to render every entry inline and took
+  ages to open once a glossary had grown to thousands of terms; it now shows
+  the entry count and a button into the list. A glossary entry carries its
+  profile as a plain select field
 
 ## [0.1.1] — 2026-08-04
 

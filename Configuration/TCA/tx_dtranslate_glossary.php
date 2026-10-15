@@ -18,13 +18,23 @@ return [
             'disabled' => 'hidden',
         ],
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text.svg',
+        'searchFields' => 'source_term,target_term,note',
     ],
     'columns' => [
         'hidden' => [
             'config' => ['type' => 'check', 'renderType' => 'checkboxToggle', 'default' => 0],
         ],
         'profile' => [
-            'config' => ['type' => 'passthrough'],
+            'label' => 'LLL:EXT:d_translate/Resources/Private/Language/locallang_db.xlf:tx_dtranslate_glossary.profile',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'foreign_table' => 'tx_dtranslate_profile',
+                'foreign_table_where' => 'AND {#tx_dtranslate_profile}.{#deleted} = 0 ORDER BY tx_dtranslate_profile.title',
+                'minitems' => 1,
+                'maxitems' => 1,
+                'required' => true,
+            ],
         ],
         'target_language' => [
             'label' => 'LLL:EXT:d_translate/Resources/Private/Language/locallang_db.xlf:tx_dtranslate_glossary.target_language',
@@ -50,6 +60,6 @@ return [
         ],
     ],
     'types' => [
-        '0' => ['showitem' => 'source_term, target_term, target_language, note, --div--;LLL:EXT:d_translate/Resources/Private/Language/locallang_db.xlf:tabs.access, hidden'],
+        '0' => ['showitem' => 'profile, source_term, target_term, target_language, note, --div--;LLL:EXT:d_translate/Resources/Private/Language/locallang_db.xlf:tabs.access, hidden'],
     ],
 ];

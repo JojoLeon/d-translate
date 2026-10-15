@@ -82,18 +82,13 @@ return [
         'glossary' => [
             'label' => 'LLL:EXT:d_translate/Resources/Private/Language/locallang_db.xlf:tx_dtranslate_profile.glossary',
             'description' => 'LLL:EXT:d_translate/Resources/Private/Language/locallang_db.xlf:tx_dtranslate_profile.glossary.description',
+            // Not an inline field any more: FormEngine rendered every entry
+            // into the form, and a grown glossary (thousands of terms) made the
+            // profile take ages to open. Entries live in the module's glossary
+            // list (Web → Translation → Glossary); this element links there.
             'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_dtranslate_glossary',
-                'foreign_field' => 'profile',
-                'foreign_sortby' => 'sorting',
-                'appearance' => [
-                    'collapseAll' => true,
-                    'useSortable' => true,
-                    'showSynchronizationLink' => false,
-                    'showAllLocalizationLink' => false,
-                    'levelLinksPosition' => 'top',
-                ],
+                'type' => 'user',
+                'renderType' => 'dtranslateGlossaryManager',
             ],
         ],
     ],

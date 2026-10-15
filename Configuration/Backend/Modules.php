@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Dreistein\DTranslate\Controller\Backend\GlossaryController;
 use Dreistein\DTranslate\Controller\Backend\TranslationModuleController;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -39,6 +40,9 @@ return [
             ],
             'cancel' => [
                 'target' => TranslationModuleController::class . '::cancel',
+            ],
+            'glossary' => [
+                'target' => GlossaryController::class . '::list',
             ],
         ],
     ],

@@ -1,0 +1,151 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Module" />
+<f:section name="Content">
+
+<!-- Plain tags on purpose, see Overview.html: {assetVersion} busts the cache. -->
+<link rel="stylesheet" href="{f:uri.resource(path: 'EXT:d_translate/Resources/Public/Css/backend-module.css')}?v={assetVersion}" />
+<script defer src="{f:uri.resource(path: 'EXT:d_translate/Resources/Public/JavaScript/glossary-list.js')}?v={assetVersion}"></script>
+
+<f:variable name="ll">LLL:EXT:d_translate/Resources/Private/Language/locallang.xlf:</f:variable>
+
+<div class="dtranslate-page" style="max-width: 1400px;">
+    <h1><f:translate key="{ll}glossary.title" /></h1>
+    <p class="text-muted"><f:translate key="{ll}glossary.intro" /></p>
+
+    <div class="mb-3 d-flex" style="gap: .5rem; flex-wrap: wrap;">
+        <a class="btn btn-default" href="{backUrl}">← <f:translate key="{ll}glossary.back" /></a>
+        <f:if condition="{profileUid} > 0">
+            <a class="btn btn-default" href="{profileEditUrl}"><f:translate key="{ll}glossary.editProfile" /></a>
+            <a class="btn btn-primary" href="{newUrl}"><f:translate key="{ll}glossary.new" /></a>
+        </f:if>
+    </div>
+
+    <f:if condition="{profiles}">
+        <f:then>
+            <!-- GET on purpose: every list state is a URL an editor can bookmark
+                 or come back to after editing an entry. -->
+            <form method="get" action="{form.action}" class="card mb-4">
+                <f:for each="{form.hidden}" as="value" key="name">
+                    <input type="hidden" name="{name}" value="{value}" />
+                </f:for>
+                <div class="card-body dtr-glossary-filter">
+                    <div>
+                        <label class="form-label" for="dtr-glossary-profile"><f:translate key="{ll}glossary.profile" /></label>
+                        <select class="form-select" name="profile" id="dtr-glossary-profile" data-glossary-autosubmit>
+                            <f:for each="{profiles}" as="p">
+                                <option value="{p.uid}"<f:if condition="{p.uid} == {profileUid}"> selected="selected"</f:if>>{p.title}<f:if condition="{p.site_identifier}"> ({p.site_identifier})</f:if><f:if condition="{p.hidden}"> — <f:translate key="{ll}glossary.hidden" /></f:if></option>
+                            </f:for>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label" for="dtr-glossary-language"><f:translate key="{ll}glossary.language" /></label>
+                        <select class="form-select" name="language" id="dtr-glossary-language" data-glossary-autosubmit>
+                            <f:for each="{languageOptions}" as="o">
+                                <option value="{o.value}"<f:if condition="{o.selected}"> selected="selected"</f:if>>{o.label}</option>
+                            </f:for>
+                        </select>
+                    </div>
+                    <div class="dtr-glossary-filter__search">
+                        <label class="form-label" for="dtr-glossary-search"><f:translate key="{ll}glossary.search" /></label>
+                        <input type="search" class="form-control" name="search" id="dtr-glossary-search" value="{search}"
+                               placeholder="{f:translate(key: '{ll}glossary.searchPlaceholder')}" />
+                    </div>
+                    <div>
+                        <label class="form-label" for="dtr-glossary-size"><f:translate key="{ll}glossary.perPage" /></label>
+                        <select class="form-select" name="size" id="dtr-glossary-size" data-glossary-autosubmit>
+                            <f:for each="{sizeOptions}" as="s">
+                                <option value="{s.value}"<f:if condition="{s.selected}"> selected="selected"</f:if>>{s.value}</option>
+                            </f:for>
+                        </select>
+                    </div>
+                    <div class="dtr-glossary-filter__actions">
+                        <button type="submit" class="btn btn-default"><f:translate key="{ll}glossary.filter" /></button>
+                        <a class="btn btn-link" href="{resetUrl}"><f:translate key="{ll}glossary.reset" /></a>
+                    </div>
+                </div>
+            </form>
+
+            <div class="card mb-3">
+                <div class="card-header d-flex justify-content-between" style="gap: 1rem; flex-wrap: wrap;">
+                    <span>{profile.title}</span>
+                    <span class="text-muted"><f:translate key="{ll}glossary.count" arguments="{0: from, 1: to, 2: total}" /></span>
+                </div>
+                <f:if condition="{entries}">
+                    <f:then>
+                        <table class="table table-striped table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th><f:translate key="{ll}glossary.column.source" /></th>
+                                    <th><f:translate key="{ll}glossary.column.target" /></th>
+                                    <th><f:translate key="{ll}glossary.column.language" /></th>
+                                    <th><f:translate key="{ll}glossary.column.note" /></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <f:for each="{entries}" as="e">
+                                    <tr{f:if(condition: e.hidden, then: ' class="text-muted"')}>
+                                        <td>{e.sourceTerm}<f:if condition="{e.hidden}"> <span class="badge bg-secondary"><f:translate key="{ll}glossary.hidden" /></span></f:if></td>
+                                        <td>{e.targetTerm}</td>
+                                        <td>{e.language}</td>
+                                        <td>{e.note}</td>
+                                        <td class="text-end text-nowrap">
+                                            <a class="btn btn-sm btn-default" href="{e.editUrl}"><f:translate key="{ll}module.edit" /></a>
+                                            <a class="btn btn-sm btn-default" href="{e.deleteUrl}" data-glossary-delete data-confirm="{e.confirm}"><f:translate key="{ll}glossary.delete" /></a>
+                                        </td>
+                                    </tr>
+                                </f:for>
+                            </tbody>
+                        </table>
+                    </f:then>
+                    <f:else>
+                        <div class="card-body text-muted">
+                            <f:if condition="{total} == 0 && '{search}' == '' && '{language}' == ''">
+                                <f:then><f:translate key="{ll}glossary.emptyProfile" /></f:then>
+                                <f:else><f:translate key="{ll}glossary.empty" /></f:else>
+                            </f:if>
+                        </div>
+                    </f:else>
+                </f:if>
+            </div>
+
+            <f:if condition="{pageCount} > 1">
+                <nav aria-label="{f:translate(key: '{ll}glossary.page', arguments: {0: page, 1: pageCount})}" class="d-flex align-items-center" style="gap: 1rem; flex-wrap: wrap;">
+                    <ul class="pagination mb-0">
+                        <li class="page-item{f:if(condition: '{page} == 1', then: ' disabled')}"><a class="page-link" href="{pagination.first}" title="{f:translate(key: '{ll}glossary.first')}">«</a></li>
+                        <li class="page-item{f:if(condition: '{page} == 1', then: ' disabled')}"><a class="page-link" href="{pagination.prev}" title="{f:translate(key: '{ll}glossary.prev')}">‹</a></li>
+                        <f:for each="{pagination.pages}" as="pg">
+                            <f:if condition="{pg.gap}">
+                                <f:then><li class="page-item disabled"><span class="page-link">…</span></li></f:then>
+                                <f:else><li class="page-item{f:if(condition: pg.current, then: ' active')}"><a class="page-link" href="{pg.url}">{pg.page}</a></li></f:else>
+                            </f:if>
+                        </f:for>
+                        <li class="page-item{f:if(condition: '{page} == {pageCount}', then: ' disabled')}"><a class="page-link" href="{pagination.next}" title="{f:translate(key: '{ll}glossary.next')}">›</a></li>
+                        <li class="page-item{f:if(condition: '{page} == {pageCount}', then: ' disabled')}"><a class="page-link" href="{pagination.last}" title="{f:translate(key: '{ll}glossary.last')}">»</a></li>
+                    </ul>
+                    <span class="text-muted"><f:translate key="{ll}glossary.page" arguments="{0: page, 1: pageCount}" /></span>
+                </nav>
+            </f:if>
+
+            <!-- Same native dialog as the run confirmation: method="dialog" closes
+                 it without JS, only the delete link needs a handler. -->
+            <dialog class="dtr-confirm" data-glossary-confirm aria-labelledby="dtr-glossary-confirm-title">
+                <form method="dialog" class="dtr-confirm__body">
+                    <h2 class="dtr-confirm__title" id="dtr-glossary-confirm-title"><f:translate key="{ll}glossary.delete" /></h2>
+                    <p class="dtr-confirm__text" data-glossary-confirm-text></p>
+                    <div class="dtr-confirm__actions">
+                        <button type="submit" class="btn btn-default"><f:translate key="{ll}glossary.deleteCancel" /></button>
+                        <a class="btn btn-danger" href="#" data-glossary-confirm-continue><f:translate key="{ll}glossary.delete" /></a>
+                    </div>
+                </form>
+            </dialog>
+        </f:then>
+        <f:else>
+            <p class="text-muted"><f:translate key="{ll}module.noProfiles" /></p>
+        </f:else>
+    </f:if>
+</div>
+
+</f:section>
+</html>

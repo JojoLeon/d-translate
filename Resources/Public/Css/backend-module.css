@@ -159,3 +159,26 @@
     gap: 0.5rem;
     margin-top: 1.5rem;
 }
+
+/* ------------------------------------------------------------ glossary list */
+.dtr-glossary-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.dtr-glossary-filter > div {
+    min-width: 12rem;
+}
+
+.dtr-glossary-filter__search {
+    flex: 1 1 18rem;
+}
+
+.dtr-glossary-filter__actions {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    min-width: 0;
+}

@@ -18,6 +18,7 @@ namespace Dreistein\DTranslate\Service;
 
 use Doctrine\DBAL\ParameterType;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 
 /**
  * Data-access for tx_dtranslate_glossary. Returns the term pairs for a profile
@@ -63,5 +64,83 @@ final class GlossaryStore
             ],
             $rows,
         );
+    }
+
+    /**
+     * One page of a profile's entries for the module's glossary list, hidden
+     * ones included. $languageId null = every entry, -1 = the entries that
+     * apply to all target languages, otherwise the entries of that language.
+     *
+     * @return list<array<string, mixed>>
+     */
+    public function page(int $profileUid, ?int $languageId, string $search, int $offset, int $limit): array
+    {
+        return $this->listQuery($profileUid, $languageId, $search)
+            ->select('uid', 'source_term', 'target_term', 'target_language', 'note', 'hidden')
+            ->orderBy('source_term')
+            ->addOrderBy('target_language')
+            ->addOrderBy('uid')
+            ->setFirstResult(max(0, $offset))
+            ->setMaxResults(max(1, $limit))
+            ->executeQuery()
+            ->fetchAllAssociative();
+    }
+
+    public function count(int $profileUid, ?int $languageId = null, string $search = ''): int
+    {
+        if ($profileUid <= 0) {
+            return 0;
+        }
+        return (int)$this->listQuery($profileUid, $languageId, $search)
+            ->count('uid')
+            ->executeQuery()
+            ->fetchOne();
+    }
+
+    /**
+     * Entries per target language of a profile (-1 = all target languages).
+     *
+     * @return array<int, int>
+     */
+    public function countByLanguage(int $profileUid): array
+    {
+        if ($profileUid <= 0) {
+            return [];
+        }
+        $rows = $this->listQuery($profileUid, null, '')
+            ->select('target_language')
+            ->addSelectLiteral('COUNT(*) AS entries')
+            ->groupBy('target_language')
+            ->executeQuery()
+            ->fetchAllAssociative();
+        $counts = [];
+        foreach ($rows as $row) {
+            $counts[(int)$row['target_language']] = (int)$row['entries'];
+        }
+        return $counts;
+    }
+
+    private function listQuery(int $profileUid, ?int $languageId, string $search): QueryBuilder
+    {
+        $qb = $this->connectionPool->getQueryBuilderForTable(self::TABLE);
+        $qb->getRestrictions()->removeAll();
+        $qb->from(self::TABLE)
+            ->where(
+                $qb->expr()->eq('profile', $qb->createNamedParameter($profileUid, ParameterType::INTEGER)),
+                $qb->expr()->eq('deleted', 0),
+            );
+        if ($languageId !== null) {
+            $qb->andWhere($qb->expr()->eq('target_language', $qb->createNamedParameter($languageId, ParameterType::INTEGER)));
+        }
+        $search = trim($search);
+        if ($search !== '') {
+            $like = $qb->createNamedParameter('%' . $qb->escapeLikeWildcards($search) . '%');
+            $qb->andWhere($qb->expr()->or(
+                $qb->expr()->like('source_term', $like),
+                $qb->expr()->like('target_term', $like),
+                $qb->expr()->like('note', $like),
+            ));
+        }
+        return $qb;
     }
 }

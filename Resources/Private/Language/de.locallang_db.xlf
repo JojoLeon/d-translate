@@ -127,9 +127,25 @@
                 <source>Term pairs injected into the system prompt for consistent terminology.</source>
                 <target>Begriffspaare, die für einheitliche Terminologie in den System-Prompt eingefügt werden.</target>
             </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.hint" xml:space="preserve">
+                <source>The entries are managed in Web → Translation → Glossary: a paged list with search and language filter. This form stays quick to open however many terms there are.</source>
+                <target>Die Einträge werden unter Web → Übersetzung → Glossar gepflegt: seitenweise, mit Suche und Sprachfilter. Dieses Formular öffnet sich dadurch schnell, egal wie viele Begriffe es gibt.</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.manage" xml:space="preserve">
+                <source>Manage glossary (%s entries)</source>
+                <target>Glossar verwalten (%s Einträge)</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_profile.glossary.saveFirst" xml:space="preserve">
+                <source>Save the profile first — its glossary can be filled afterwards.</source>
+                <target>Bitte das Profil zuerst speichern — danach lässt sich sein Glossar füllen.</target>
+            </trans-unit>
             <trans-unit id="tx_dtranslate_glossary" xml:space="preserve">
                 <source>Glossary entry</source>
                 <target>Glossareintrag</target>
+            </trans-unit>
+            <trans-unit id="tx_dtranslate_glossary.profile" xml:space="preserve">
+                <source>Profile</source>
+                <target>Profil</target>
             </trans-unit>
             <trans-unit id="tx_dtranslate_glossary.target_language" xml:space="preserve">
                 <source>Applies to target language</source>
