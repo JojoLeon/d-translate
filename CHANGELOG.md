@@ -4,6 +4,25 @@ All notable changes to this extension are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.1.4] — 2026-10-27
+
+### Added
+
+- `dtranslate:fill-columns <table>`: translates the columns of existing
+  translations that still hold the source text — the catch-up after a column
+  was added to a profile's additional fields, which only reached translations
+  made afterwards. Default columns are the profile's additional fields for the
+  table, `--column` names others. Only values identical to the source are
+  sent to the model, synchronized columns are skipped, changed records get a
+  new `tstamp`. `--dry-run` lists them
+
+### Fixed
+
+- The glossary list of a profile shows the shared entries (those for every
+  profile) too, marked as such. A glossary consolidated into the shared list
+  was invisible in the default view, which only listed the profile's own
+  entries — the terms added by hand
+
 ## [0.1.3] — 2026-10-15
 
 ### Changed

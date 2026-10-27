@@ -89,6 +89,20 @@ moves subpages along, exactly as for a change in the page properties.
 `--language` limits a run to one language id, `--site` and `--page` take
 several values.
 
+A column added to a profile's *additional fields* later on only reaches the
+translations made from then on. The ones made before still hold the source
+text there; this translates exactly those values and nothing else:
+
+```bash
+vendor/bin/typo3 dtranslate:fill-columns tx_news_domain_model_news --dry-run
+vendor/bin/typo3 dtranslate:fill-columns tx_news_domain_model_news            # the profile's additional fields
+vendor/bin/typo3 dtranslate:fill-columns tx_news_domain_model_news --column=teaser --language=2
+```
+
+A value is only sent to the model while it is identical to the source, so
+reviewed translations stay as they are; columns synchronized with the source
+(*Value of default language*) are skipped. Changed records get a new `tstamp`.
+
 ## Glossary
 
 Term pairs ("keep *Streamer* as *Streamer*") are handed to the model with
@@ -98,7 +112,8 @@ every site), to a regional variant (`en-GB`) or to a single site language id.
 The most specific entry wins when several name the same term.
 
 Entries are managed in **Web → Translation → Glossary**: a paged list per
-profile (plus one for the shared entries) with search and a language filter;
+profile — with the shared entries that apply to it, marked as such — plus one
+for the shared entries alone, with search and a language filter;
 each entry opens in the standard record form. The profile form only links
 there, so it opens quickly however many terms a glossary has.
 
