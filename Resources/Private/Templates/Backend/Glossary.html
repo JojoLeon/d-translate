@@ -99,7 +99,7 @@
                             <tbody>
                                 <f:for each="{entries}" as="e">
                                     <tr{f:if(condition: e.hidden, then: ' class="text-muted"')}>
-                                        <td>{e.sourceTerm}<f:if condition="{e.hidden}"> <span class="badge bg-secondary"><f:translate key="{ll}glossary.hidden" /></span></f:if></td>
+                                        <td>{e.sourceTerm}<f:if condition="{e.shared}"> <span class="badge bg-info"><f:translate key="{ll}glossary.sharedProfile" /></span></f:if><f:if condition="{e.hidden}"> <span class="badge bg-secondary"><f:translate key="{ll}glossary.hidden" /></span></f:if></td>
                                         <td>{e.targetTerm}</td>
                                         <td>{e.language}</td>
                                         <td>{e.note}</td>

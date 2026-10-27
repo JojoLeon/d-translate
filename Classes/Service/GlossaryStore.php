@@ -16,7 +16,6 @@ declare(strict_types=1);
 
 namespace Dreistein\DTranslate\Service;
 
-use Doctrine\DBAL\ParameterType;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
@@ -96,15 +95,16 @@ final class GlossaryStore
 
     /**
      * One page of a profile's entries for the module's glossary list, hidden
-     * ones included. $languageKey null = every entry, otherwise the entries
-     * stored with exactly that key ('-1', 'en', 'en-GB', '15').
+     * ones included, the shared entries with them (see listQuery()).
+     * $languageKey null = every entry, otherwise the entries stored with
+     * exactly that key ('-1', 'en', 'en-GB', '15').
      *
      * @return list<array<string, mixed>>
      */
     public function page(int $profileUid, ?string $languageKey, string $search, int $offset, int $limit): array
     {
         return $this->listQuery($profileUid, $languageKey, $search)
-            ->select('uid', 'source_term', 'target_term', 'target_language', 'note', 'hidden')
+            ->select('uid', 'profile', 'source_term', 'target_term', 'target_language', 'note', 'hidden')
             ->orderBy('source_term')
             ->addOrderBy('target_language')
             ->addOrderBy('uid')
@@ -198,9 +198,15 @@ final class GlossaryStore
     {
         $qb = $this->connectionPool->getQueryBuilderForTable(self::TABLE);
         $qb->getRestrictions()->removeAll();
+        // A profile's list includes the shared entries (profile 0): they apply
+        // to the profile just the same (findForProfile()). Listing only the
+        // profile's own entries hid a whole uploaded glossary once it had been
+        // consolidated into the shared list — editors saw nothing but the terms
+        // they had added by hand.
+        $profileUids = array_values(array_unique([self::SHARED_PROFILE, $profileUid]));
         $qb->from(self::TABLE)
             ->where(
-                $qb->expr()->eq('profile', $qb->createNamedParameter($profileUid, ParameterType::INTEGER)),
+                $qb->expr()->in('profile', $qb->createNamedParameter($profileUids, Connection::PARAM_INT_ARRAY)),
                 $qb->expr()->eq('deleted', 0),
             );
         if ($languageKey !== null) {

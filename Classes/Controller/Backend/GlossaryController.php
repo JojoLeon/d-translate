@@ -111,6 +111,8 @@ final class GlossaryController
                 'targetTerm' => (string)$row['target_term'],
                 'note' => (string)$row['note'],
                 'hidden' => (bool)$row['hidden'],
+                // Listed with a profile, but stored for every profile.
+                'shared' => $profileUid !== GlossaryStore::SHARED_PROFILE && (int)$row['profile'] === GlossaryStore::SHARED_PROFILE,
                 'language' => $this->keyLabel((string)$row['target_language']),
                 'confirm' => Messages::tr('glossary.deleteConfirm', (string)$row['source_term'], (string)$row['target_term']),
                 'editUrl' => (string)$this->uriBuilder->buildUriFromRoute('record_edit', [
