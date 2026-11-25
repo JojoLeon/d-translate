@@ -99,6 +99,7 @@ final class AnchorLinkRemapper
         if ($pageId <= 0 || $targetLanguageId <= 0) {
             return 0;
         }
+        $this->forgetLookups();
         $tables = array_values(array_unique(array_merge(['pages', self::CONTENT_TABLE], $tables)));
         $changed = 0;
         foreach ($tables as $table) {
@@ -124,6 +125,7 @@ final class AnchorLinkRemapper
         if ($pageIds === [] || $targetLanguageId <= 0) {
             return 0;
         }
+        $this->forgetLookups();
         $changed = 0;
         foreach ($this->linkBearingTables() as $table) {
             foreach (array_chunk($pageIds, 1000) as $chunk) {
@@ -442,6 +444,21 @@ final class AnchorLinkRemapper
             }
         }
         return $columns;
+    }
+
+    /**
+     * Drop the looked-up rows and translations. The service is shared for the
+     * whole process, and the background worker translates a page one record
+     * at a time: a hero translated first would cache "no translation" for the
+     * elements it links to, and the remap after their own translation, a few
+     * seconds later in the same process, would then leave the anchors on the
+     * source elements (and read the hero's row as it was before). Every
+     * remap therefore starts from the database as it is now.
+     */
+    private function forgetLookups(): void
+    {
+        $this->anchorCache = [];
+        $this->rowCache = [];
     }
 
     /**

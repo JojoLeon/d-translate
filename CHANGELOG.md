@@ -4,6 +4,19 @@ All notable changes to this extension are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- Element anchors of page links point at the translated element again when
+  the background worker translates a page record by record. The remapper
+  kept what it had looked up for the whole process: a hero translated before
+  the elements it links to cached "no translation" for them, and the remap
+  after their translation, in the same worker run, left the anchors on the
+  source elements (`#c<source uid>`, which a free-mode page does not render).
+  Every remap now reads the current state of the database.
+  `dtranslate:remap-anchors` repairs translations made before the fix
+
 ## [0.1.4] — 2026-10-27
 
 ### Added
